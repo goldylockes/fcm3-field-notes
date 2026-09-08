@@ -11,7 +11,6 @@
     content="A reflective weekly journal for Family and Community Medicine 3."
   >
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -20,11 +19,6 @@
   >
 
   <style>
-
-    /* =========================
-       COLOUR PALETTE
-       ========================= */
-
     :root {
       --ivory: #f4f0e8;
       --paper: #faf8f3;
@@ -41,11 +35,6 @@
       --max-width: 1180px;
     }
 
-
-    /* =========================
-       RESET
-       ========================= */
-
     * {
       margin: 0;
       padding: 0;
@@ -54,6 +43,7 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 84px;
     }
 
     body {
@@ -62,6 +52,8 @@
       font-family: var(--sans);
       line-height: 1.75;
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
     a {
@@ -79,11 +71,12 @@
       color: white;
     }
 
+    :focus-visible {
+      outline: 2px solid var(--clay);
+      outline-offset: 4px;
+    }
 
-    /* =========================
-       NAVIGATION
-       ========================= */
-
+    /* NAVIGATION */
     .site-nav {
       position: fixed;
       top: 0;
@@ -95,31 +88,45 @@
       justify-content: space-between;
       align-items: center;
 
-      padding: 22px 5vw;
-
+      padding: 20px 5vw;
       color: white;
 
-      background:
-        linear-gradient(
-          to bottom,
-          rgba(20, 23, 20, 0.72),
-          rgba(20, 23, 20, 0)
-        );
+      background: linear-gradient(
+        to bottom,
+        rgba(20, 23, 20, 0.78),
+        rgba(20, 23, 20, 0.08)
+      );
+
+      border-bottom: 1px solid transparent;
+      transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        backdrop-filter 0.25s ease,
+        padding 0.25s ease;
+    }
+
+    .site-nav.scrolled {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      background: rgba(40, 47, 39, 0.94);
+      border-bottom-color: rgba(255,255,255,0.10);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
     }
 
     .brand {
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       font-weight: 600;
       letter-spacing: 0.18em;
       text-transform: uppercase;
+      white-space: nowrap;
     }
 
     .nav-links {
       display: flex;
-      gap: 32px;
+      gap: 30px;
       list-style: none;
-
-      font-size: 0.73rem;
+      font-size: 0.72rem;
       font-weight: 500;
       letter-spacing: 0.14em;
       text-transform: uppercase;
@@ -130,22 +137,17 @@
       transition: opacity 0.2s ease;
     }
 
-    .nav-links a:hover {
+    .nav-links a:hover,
+    .nav-links a.active {
       opacity: 1;
     }
 
-
-    /* =========================
-       HERO
-       ========================= */
-
+    /* HERO */
     .hero {
-      min-height: 100vh;
-
+      min-height: 96vh;
       display: flex;
       align-items: center;
       justify-content: center;
-
       position: relative;
 
       color: white;
@@ -153,42 +155,38 @@
 
       background:
         linear-gradient(
-          rgba(26, 31, 26, 0.50),
+          rgba(26, 31, 26, 0.47),
           rgba(26, 31, 26, 0.68)
         ),
         url("barangay-hall.jpeg");
 
       background-size: cover;
-      background-position: center;
+      background-position: center 48%;
     }
 
     .hero::after {
       content: "";
       position: absolute;
       inset: 0;
-
       background:
         linear-gradient(
           to top,
-          rgba(20, 23, 20, 0.38),
-          transparent 40%
+          rgba(20, 23, 20, 0.42),
+          transparent 42%
         );
-
       pointer-events: none;
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
-
       width: min(900px, 88%);
-      padding-top: 50px;
+      padding-top: 54px;
     }
 
     .hero-kicker {
       margin-bottom: 24px;
-
-      font-size: 0.75rem;
+      font-size: 0.74rem;
       letter-spacing: 0.28em;
       text-transform: uppercase;
       font-weight: 600;
@@ -200,11 +198,11 @@
       line-height: 0.95;
       font-weight: 500;
       letter-spacing: -0.035em;
+      text-shadow: 0 8px 32px rgba(0,0,0,0.18);
     }
 
     .hero-course {
       margin-top: 28px;
-
       font-size: clamp(0.9rem, 1.5vw, 1.1rem);
       font-weight: 500;
       letter-spacing: 0.20em;
@@ -213,7 +211,6 @@
 
     .hero-subtitle {
       margin-top: 14px;
-
       font-family: var(--serif);
       font-style: italic;
       font-size: clamp(1.15rem, 2.4vw, 1.65rem);
@@ -222,24 +219,19 @@
     .scroll-note {
       position: absolute;
       z-index: 3;
-
-      bottom: 34px;
+      bottom: 30px;
       left: 50%;
       transform: translateX(-50%);
-
-      font-size: 0.68rem;
+      font-size: 0.67rem;
       letter-spacing: 0.20em;
       text-transform: uppercase;
       opacity: 0.78;
     }
 
-
-    /* =========================
-       GENERAL SECTIONS
-       ========================= */
-
+    /* GENERAL */
     section {
       position: relative;
+      scroll-margin-top: 72px;
     }
 
     .section-inner {
@@ -249,34 +241,27 @@
 
     .eyebrow {
       color: var(--olive);
-
       font-size: 0.7rem;
       font-weight: 600;
       letter-spacing: 0.20em;
       text-transform: uppercase;
     }
 
-
-    /* =========================
-       INTRODUCTION
-       ========================= */
-
+    /* INTRO */
     .intro {
-      padding: 130px 0 125px;
+      padding: 112px 0 108px;
     }
 
     .intro-grid {
       display: grid;
       grid-template-columns: 0.7fr 1.5fr;
-      gap: 80px;
+      gap: 76px;
       align-items: start;
     }
 
     .intro h2 {
-      margin-top: 18px;
-
+      margin-top: 16px;
       max-width: 750px;
-
       font-family: var(--serif);
       font-size: clamp(2.8rem, 5vw, 5rem);
       line-height: 1.06;
@@ -286,14 +271,12 @@
 
     .intro-copy {
       max-width: 650px;
-      padding-top: 12px;
-
-      font-size: 1.05rem;
+      padding-top: 10px;
+      font-size: 1.03rem;
     }
 
     .keywords {
-      margin-top: 36px;
-
+      margin-top: 32px;
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
@@ -303,33 +286,31 @@
       padding: 8px 13px;
       border: 1px solid var(--line);
       border-radius: 100px;
-
-      font-size: 0.68rem;
+      font-size: 0.67rem;
       font-weight: 600;
       letter-spacing: 0.12em;
       text-transform: uppercase;
+      background: rgba(255,255,255,0.20);
     }
 
-
-    /* =========================
-       JOURNAL INDEX
-       ========================= */
-
+    /* INDEX */
     .journal-index {
-      padding: 110px 0;
+      padding: 96px 0 102px;
       background: var(--paper);
     }
 
     .index-heading {
-      margin-bottom: 50px;
+      margin-bottom: 42px;
     }
 
     .index-heading h2 {
-      margin-top: 12px;
-
+      margin-top: 10px;
+      max-width: 920px;
       font-family: var(--serif);
-      font-size: clamp(2.7rem, 5vw, 4.5rem);
+      font-size: clamp(2.6rem, 5vw, 4.4rem);
+      line-height: 1.07;
       font-weight: 500;
+      letter-spacing: -0.02em;
     }
 
     .index-item {
@@ -338,7 +319,7 @@
       gap: 35px;
       align-items: center;
 
-      padding: 38px 0;
+      padding: 33px 0;
       border-top: 1px solid var(--line);
 
       transition:
@@ -351,21 +332,19 @@
     }
 
     .index-item:hover {
-      transform: translateX(8px);
+      transform: translateX(7px);
     }
 
     .index-number {
       font-family: var(--serif);
-      font-size: 2.6rem;
+      font-size: 2.45rem;
       color: var(--sage);
     }
 
     .index-category {
-      margin-bottom: 6px;
-
+      margin-bottom: 5px;
       color: var(--olive);
-
-      font-size: 0.66rem;
+      font-size: 0.65rem;
       font-weight: 600;
       letter-spacing: 0.18em;
       text-transform: uppercase;
@@ -373,40 +352,34 @@
 
     .index-title {
       font-family: var(--serif);
-      font-size: clamp(1.6rem, 3vw, 2.5rem);
+      font-size: clamp(1.55rem, 3vw, 2.35rem);
       line-height: 1.15;
       font-weight: 500;
     }
 
     .index-date {
       text-align: right;
-
-      font-size: 0.68rem;
+      font-size: 0.67rem;
       font-weight: 600;
       letter-spacing: 0.13em;
       text-transform: uppercase;
     }
 
-
-    /* =========================
-       REFLECTION ENTRIES
-       ========================= */
-
+    /* ENTRIES */
     .entry {
-      padding: 130px 0;
+      padding: 104px 0;
       border-bottom: 1px solid var(--line);
     }
 
     .entry:nth-of-type(even) {
-      background: rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.14);
     }
 
     .entry-header {
       display: grid;
       grid-template-columns: 180px 1fr;
-      gap: 60px;
-
-      margin-bottom: 70px;
+      gap: 56px;
+      margin-bottom: 58px;
     }
 
     .entry-number {
@@ -417,11 +390,9 @@
     }
 
     .entry-meta {
-      margin-bottom: 18px;
-
+      margin-bottom: 16px;
       color: var(--olive);
-
-      font-size: 0.7rem;
+      font-size: 0.69rem;
       font-weight: 600;
       letter-spacing: 0.18em;
       text-transform: uppercase;
@@ -429,83 +400,69 @@
 
     .entry h2 {
       max-width: 850px;
-
       font-family: var(--serif);
-      font-size: clamp(3rem, 6vw, 5.6rem);
+      font-size: clamp(3rem, 6vw, 5.45rem);
       line-height: 1;
       font-weight: 500;
       letter-spacing: -0.035em;
     }
 
     .entry-subtitle {
-      margin-top: 24px;
+      margin-top: 22px;
       max-width: 720px;
-
       font-family: var(--serif);
-      font-size: 1.35rem;
+      font-size: 1.30rem;
       font-style: italic;
       color: #5f645f;
     }
 
     .entry-body {
-      width: min(740px, 100%);
+      width: min(760px, 100%);
       margin-left: auto;
       margin-right: 8%;
     }
 
     .entry-body p {
-      margin-bottom: 26px;
-      font-size: 1.04rem;
+      margin-bottom: 23px;
+      font-size: 1.02rem;
     }
 
     .entry-body p:first-child::first-letter {
       float: left;
-
       margin-right: 10px;
-      margin-top: 9px;
-
+      margin-top: 8px;
       font-family: var(--serif);
-      font-size: 4.2rem;
+      font-size: 4.15rem;
       line-height: 0.72;
       color: var(--olive);
     }
 
-
-    /* =========================
-       PULL QUOTE
-       ========================= */
-
+    /* PULL QUOTE */
     .pull-quote {
-      margin: 58px 0;
-
-      padding: 10px 0 10px 30px;
+      margin: 46px 0;
+      padding: 8px 0 8px 28px;
       border-left: 2px solid var(--clay);
 
+      max-width: 720px;
       font-family: var(--serif);
-      font-size: clamp(1.7rem, 3.3vw, 2.6rem);
-      line-height: 1.28;
+      font-size: clamp(1.65rem, 3.1vw, 2.45rem);
+      line-height: 1.24;
       font-style: italic;
     }
 
-
-    /* =========================
-       FIELD NOTE BOX
-       ========================= */
-
+    /* FIELD NOTE */
     .field-note {
-      margin-top: 62px;
-      padding: 34px 38px;
-
+      margin-top: 48px;
+      padding: 30px 36px;
       background: var(--olive);
       color: white;
+      box-shadow: 0 18px 50px rgba(35,42,34,0.08);
     }
 
     .field-note-label {
-      margin-bottom: 13px;
-
+      margin-bottom: 11px;
       color: #cbd0c5;
-
-      font-size: 0.67rem;
+      font-size: 0.65rem;
       font-weight: 600;
       letter-spacing: 0.19em;
       text-transform: uppercase;
@@ -513,71 +470,57 @@
 
     .field-note p {
       margin: 0;
-
       font-family: var(--serif);
-      font-size: clamp(1.4rem, 2.5vw, 2rem);
-      line-height: 1.35;
+      font-size: clamp(1.35rem, 2.4vw, 1.92rem);
+      line-height: 1.34;
     }
 
-
-    /* =========================
-       SPECIAL VISUAL: WEEK 3
-       ========================= */
-
+    /* WEEK 3 */
     .timeline {
-      margin: 55px 0;
-
+      margin: 48px 0;
       display: grid;
       grid-template-columns: 1fr auto 1fr;
-      gap: 28px;
+      gap: 26px;
       align-items: center;
     }
 
     .timeline-year {
-      padding: 30px;
+      padding: 28px;
       border: 1px solid var(--line);
-
       text-align: center;
+      background: rgba(255,255,255,0.16);
     }
 
     .timeline-year strong {
       display: block;
-
       font-family: var(--serif);
-      font-size: 3rem;
+      font-size: 2.8rem;
       color: var(--olive);
     }
 
     .timeline-year span {
-      font-size: 0.68rem;
+      font-size: 0.67rem;
       letter-spacing: 0.13em;
       text-transform: uppercase;
     }
 
     .timeline-arrow {
-      font-size: 1.8rem;
+      font-size: 1.7rem;
       color: var(--sage);
     }
 
-
-    /* =========================
-       SPECIAL VISUAL: WEEK 5
-       ========================= */
-
+    /* WEEK 5 */
     .priorities {
-      margin: 55px 0;
-
+      margin: 48px 0;
       display: grid;
-      gap: 12px;
+      gap: 10px;
     }
 
     .priority {
       display: grid;
       grid-template-columns: 45px 1fr;
       gap: 15px;
-
-      padding: 18px 20px;
-
+      padding: 16px 20px;
       border-top: 1px solid var(--line);
     }
 
@@ -588,38 +531,31 @@
     .priority-number {
       color: var(--sage);
       font-family: var(--serif);
-      font-size: 1.3rem;
+      font-size: 1.25rem;
     }
 
-
-    /* =========================
-       WEEK 6 ROOTS VISUAL
-       ========================= */
-
+    /* WEEK 6 */
     .roots {
-      margin: 55px 0;
-      padding: 42px;
-
+      margin: 48px 0;
+      padding: 38px;
       background: #e8e5dc;
     }
 
     .roots h3 {
-      margin-bottom: 28px;
-
+      margin-bottom: 24px;
       font-family: var(--serif);
-      font-size: 2rem;
+      font-size: 1.95rem;
       font-weight: 500;
     }
 
     .roots-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+      gap: 16px;
     }
 
     .root-card {
-      padding: 22px;
-
+      padding: 21px;
       background: var(--paper);
       border-top: 3px solid var(--sage);
     }
@@ -627,105 +563,92 @@
     .root-card small {
       display: block;
       margin-bottom: 8px;
-
       color: var(--olive);
       font-weight: 600;
       letter-spacing: 0.13em;
       text-transform: uppercase;
     }
 
-
-    /* =========================
-       WEEK 7 PHOTO
-       ========================= */
-
+    /* WEEK 7 PHOTO */
     .entry-photo {
-      width: min(1050px, 100%);
-      margin: 0 auto 70px;
+      width: min(1080px, 100%);
+      margin: -4px auto 56px;
     }
 
     .entry-photo img {
       width: 100%;
       max-height: 680px;
       object-fit: cover;
+      object-position: center 54%;
     }
 
     .photo-caption {
-      margin-top: 12px;
-
+      margin-top: 11px;
       color: #686d67;
-
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       letter-spacing: 0.10em;
       text-transform: uppercase;
     }
 
-
-    /* =========================
-       ENDING
-       ========================= */
-
+    /* CLOSING */
     .closing {
-      padding: 150px 0;
-
+      padding: 128px 0;
       background: var(--olive);
       color: white;
       text-align: center;
     }
 
     .closing h2 {
-      margin: 15px auto 25px;
-
+      margin: 14px auto 24px;
       max-width: 850px;
-
       font-family: var(--serif);
-      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-size: clamp(3rem, 6vw, 5.2rem);
       font-weight: 500;
       line-height: 1;
     }
 
     .closing p {
-      width: min(640px, 88%);
+      width: min(650px, 88%);
       margin: 0 auto;
-
       color: #d9ddd5;
-      font-size: 1rem;
+      font-size: 0.98rem;
     }
 
-
-    /* =========================
-       FOOTER
-       ========================= */
-
+    /* FOOTER */
     footer {
-      padding: 34px 5vw;
-
+      padding: 30px 5vw;
       display: flex;
       justify-content: space-between;
       gap: 20px;
-
       background: #252925;
       color: #aeb5ab;
-
-      font-size: 0.68rem;
+      font-size: 0.67rem;
       letter-spacing: 0.13em;
       text-transform: uppercase;
     }
 
-
-    /* =========================
-       MOBILE
-       ========================= */
-
+    /* MOBILE */
     @media (max-width: 800px) {
+      html {
+        scroll-padding-top: 70px;
+      }
 
       .site-nav {
-        padding: 18px 6vw;
+        padding: 17px 6vw;
+      }
+
+      .site-nav.scrolled {
+        padding-top: 13px;
+        padding-bottom: 13px;
+      }
+
+      .brand {
+        font-size: 0.66rem;
       }
 
       .nav-links {
-        gap: 15px;
-        font-size: 0.61rem;
+        gap: 14px;
+        font-size: 0.60rem;
       }
 
       .nav-links li:first-child {
@@ -733,28 +656,34 @@
       }
 
       .hero {
-        min-height: 92vh;
+        min-height: 90vh;
+        background-position: center 50%;
       }
 
       .hero h1 {
         font-size: clamp(4rem, 18vw, 6.7rem);
       }
 
+      .scroll-note {
+        bottom: 22px;
+      }
+
       .intro,
       .journal-index,
       .entry {
-        padding-top: 85px;
-        padding-bottom: 85px;
+        padding-top: 76px;
+        padding-bottom: 76px;
       }
 
       .intro-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 26px;
       }
 
       .index-item {
         grid-template-columns: 55px 1fr;
         gap: 18px;
+        padding: 27px 0;
       }
 
       .index-date {
@@ -764,11 +693,20 @@
 
       .entry-header {
         grid-template-columns: 1fr;
-        gap: 32px;
+        gap: 28px;
+        margin-bottom: 44px;
       }
 
       .entry-number {
-        font-size: 5.2rem;
+        font-size: 5rem;
+      }
+
+      .entry h2 {
+        font-size: clamp(2.7rem, 13vw, 4.8rem);
+      }
+
+      .entry-subtitle {
+        font-size: 1.12rem;
       }
 
       .entry-body {
@@ -785,8 +723,24 @@
         text-align: center;
       }
 
+      .roots {
+        padding: 28px 22px;
+      }
+
       .roots-grid {
         grid-template-columns: 1fr;
+      }
+
+      .field-note {
+        padding: 26px 24px;
+      }
+
+      .entry-photo {
+        margin-bottom: 44px;
+      }
+
+      .closing {
+        padding: 100px 0;
       }
 
       footer {
@@ -794,17 +748,51 @@
       }
     }
 
+    @media (max-width: 520px) {
+      .brand {
+        max-width: 160px;
+        line-height: 1.35;
+      }
+
+      .nav-links {
+        gap: 11px;
+      }
+
+      .nav-links a {
+        letter-spacing: 0.08em;
+      }
+
+      .hero-course {
+        letter-spacing: 0.14em;
+      }
+
+      .entry-body p {
+        font-size: 0.98rem;
+      }
+
+      .pull-quote {
+        padding-left: 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+        animation: none !important;
+      }
+    }
   </style>
 </head>
 
-
 <body>
 
-  <!-- =========================
-       NAVIGATION
-       ========================= -->
-
-  <nav class="site-nav">
+  <nav class="site-nav" id="siteNav">
     <a class="brand" href="#home">Field Notes · FCM 3</a>
 
     <ul class="nav-links">
@@ -814,58 +802,27 @@
     </ul>
   </nav>
 
-
-  <!-- =========================
-       HERO
-       ========================= -->
-
   <header class="hero" id="home">
-
     <div class="hero-content">
-
-      <div class="hero-kicker">
-        A Reflective Journal · 2026
-      </div>
-
+      <div class="hero-kicker">A Reflective Journal · 2026</div>
       <h1>Field<br>Notes</h1>
-
-      <div class="hero-course">
-        Family &amp; Community Medicine 3
-      </div>
-
-      <div class="hero-subtitle">
-        Learning medicine where people live.
-      </div>
-
+      <div class="hero-course">Family &amp; Community Medicine 3</div>
+      <div class="hero-subtitle">Learning medicine where people live.</div>
     </div>
 
-    <div class="scroll-note">
-      Scroll to begin ↓
-    </div>
-
+    <div class="scroll-note">Scroll to begin ↓</div>
   </header>
 
-
-  <!-- =========================
-       ABOUT
-       ========================= -->
-
   <section class="intro" id="about">
-
     <div class="section-inner intro-grid">
-
       <div>
         <div class="eyebrow">About the Journal</div>
       </div>
 
       <div>
-
-        <h2>
-          Medicine does not happen in isolation.
-        </h2>
+        <h2>Medicine does not happen in isolation.</h2>
 
         <div class="intro-copy">
-
           <p>
             Family and Community Medicine asks us to see patients
             beyond disease alone—to understand the families,
@@ -887,22 +844,12 @@
             <span class="keyword">Primary Care</span>
             <span class="keyword">Reflection</span>
           </div>
-
         </div>
-
       </div>
-
     </div>
-
   </section>
 
-
-  <!-- =========================
-       JOURNAL INDEX
-       ========================= -->
-
   <section class="journal-index" id="journal">
-
     <div class="section-inner">
 
       <div class="index-heading">
@@ -910,157 +857,86 @@
         <h2>Seven weeks, one evolving perspective.</h2>
       </div>
 
-
       <a href="#week1" class="index-item">
         <div class="index-number">01</div>
-
         <div>
           <div class="index-category">Foundations</div>
-          <div class="index-title">
-            Returning to the Bigger Picture
-          </div>
+          <div class="index-title">Returning to the Bigger Picture</div>
         </div>
-
-        <div class="index-date">
-          July 22 · 2026
-        </div>
+        <div class="index-date">July 22 · 2026</div>
       </a>
-
 
       <a href="#week2" class="index-item">
         <div class="index-number">02</div>
-
         <div>
           <div class="index-category">Context</div>
-          <div class="index-title">
-            The Patient Beyond the Diagnosis
-          </div>
+          <div class="index-title">The Patient Beyond the Diagnosis</div>
         </div>
-
-        <div class="index-date">
-          July 29 · 2026
-        </div>
+        <div class="index-date">July 29 · 2026</div>
       </a>
-
 
       <a href="#week3" class="index-item">
         <div class="index-number">03</div>
-
         <div>
           <div class="index-category">Primary Care</div>
-          <div class="index-title">
-            Health for All, Then and Now
-          </div>
+          <div class="index-title">Health for All, Then and Now</div>
         </div>
-
-        <div class="index-date">
-          August 03 · 2026
-        </div>
+        <div class="index-date">August 03 · 2026</div>
       </a>
-
 
       <a href="#week4" class="index-item">
         <div class="index-number">04</div>
-
         <div>
           <div class="index-category">Reassessment</div>
-          <div class="index-title">
-            Looking Back Before Moving Forward
-          </div>
+          <div class="index-title">Looking Back Before Moving Forward</div>
         </div>
-
-        <div class="index-date">
-          August 12 · 2026
-        </div>
+        <div class="index-date">August 12 · 2026</div>
       </a>
-
 
       <a href="#week5" class="index-item">
         <div class="index-number">05</div>
-
         <div>
           <div class="index-category">Priorities</div>
-          <div class="index-title">
-            Naming What Matters
-          </div>
+          <div class="index-title">Naming What Matters</div>
         </div>
-
-        <div class="index-date">
-          August 19 · 2026
-        </div>
+        <div class="index-date">August 19 · 2026</div>
       </a>
-
 
       <a href="#week6" class="index-item">
         <div class="index-number">06</div>
-
         <div>
           <div class="index-category">Root Causes</div>
-          <div class="index-title">
-            Tracing the Roots
-          </div>
+          <div class="index-title">Tracing the Roots</div>
         </div>
-
-        <div class="index-date">
-          August 26 · 2026
-        </div>
+        <div class="index-date">August 26 · 2026</div>
       </a>
-
 
       <a href="#week7" class="index-item">
         <div class="index-number">07</div>
-
         <div>
           <div class="index-category">Partnership</div>
-          <div class="index-title">
-            Before We Enter the Community
-          </div>
+          <div class="index-title">Before We Enter the Community</div>
         </div>
-
-        <div class="index-date">
-          September 02 · 2026
-        </div>
+        <div class="index-date">September 02 · 2026</div>
       </a>
-
     </div>
-
   </section>
 
-
-
-  <!-- =====================================================
-       WEEK 1
-       ===================================================== -->
-
   <section class="entry" id="week1">
-
     <div class="section-inner">
-
       <div class="entry-header">
-
         <div class="entry-number">01</div>
 
         <div>
-
-          <div class="entry-meta">
-            Foundations · July 22, 2026
-          </div>
-
-          <h2>
-            Returning to the Bigger Picture
-          </h2>
-
+          <div class="entry-meta">Foundations · July 22, 2026</div>
+          <h2>Returning to the Bigger Picture</h2>
           <div class="entry-subtitle">
             Family, social determinants, and the many roles of a physician.
           </div>
-
         </div>
-
       </div>
 
-
       <div class="entry-body">
-
         <p>
           Week 1 of FCM 3 was a recap of key concepts from FCM 1
           and FCM 2 to ease us back into the course. We revisited
@@ -1102,60 +978,32 @@
         </p>
 
         <div class="field-note">
-
-          <div class="field-note-label">
-            Field Note · 01
-          </div>
-
+          <div class="field-note-label">Field Note · 01</div>
           <p>
             A physician's work extends beyond diagnosing disease;
             it also means understanding the circumstances in which
             disease occurs.
           </p>
-
         </div>
-
       </div>
-
     </div>
-
   </section>
 
-
-
-  <!-- =====================================================
-       WEEK 2
-       ===================================================== -->
-
   <section class="entry" id="week2">
-
     <div class="section-inner">
-
       <div class="entry-header">
-
         <div class="entry-number">02</div>
 
         <div>
-
-          <div class="entry-meta">
-            Context · July 29, 2026
-          </div>
-
-          <h2>
-            The Patient Beyond the Diagnosis
-          </h2>
-
+          <div class="entry-meta">Context · July 29, 2026</div>
+          <h2>The Patient Beyond the Diagnosis</h2>
           <div class="entry-subtitle">
             Seeing chronic disease through the circumstances that shape it.
           </div>
-
         </div>
-
       </div>
 
-
       <div class="entry-body">
-
         <p>
           For Week 2, we were grouped and assigned a case to report
           on and discuss in relation to social determinants of health
@@ -1206,61 +1054,32 @@
           the first place.
         </p>
 
-
         <div class="field-note">
-
-          <div class="field-note-label">
-            Field Note · 02
-          </div>
-
+          <div class="field-note-label">Field Note · 02</div>
           <p>
             Continuity of care matters most when illness is complicated
             by the realities of everyday life.
           </p>
-
         </div>
-
       </div>
-
     </div>
-
   </section>
 
-
-
-  <!-- =====================================================
-       WEEK 3
-       ===================================================== -->
-
   <section class="entry" id="week3">
-
     <div class="section-inner">
-
       <div class="entry-header">
-
         <div class="entry-number">03</div>
 
         <div>
-
-          <div class="entry-meta">
-            Primary Care · August 03, 2026
-          </div>
-
-          <h2>
-            Health for All, Then and Now
-          </h2>
-
+          <div class="entry-meta">Primary Care · August 03, 2026</div>
+          <h2>Health for All, Then and Now</h2>
           <div class="entry-subtitle">
             From Alma-Ata to Astana—and why primary health care still matters.
           </div>
-
         </div>
-
       </div>
 
-
       <div class="entry-body">
-
         <p>
           This week's session picked up from our earlier introduction
           to social determinants of health and tied it more closely
@@ -1276,9 +1095,7 @@
           health can't stop at the level of the individual patient.
         </p>
 
-
         <div class="timeline">
-
           <div class="timeline-year">
             <strong>1978</strong>
             <span>Alma-Ata Declaration</span>
@@ -1290,9 +1107,7 @@
             <strong>2018</strong>
             <span>Astana Declaration</span>
           </div>
-
         </div>
-
 
         <p>
           We went through the Alma-Ata Declaration of 1978, the first
@@ -1322,61 +1137,32 @@
           still is to the health issues we're learning about now.
         </p>
 
-
         <div class="field-note">
-
-          <div class="field-note-label">
-            Field Note · 03
-          </div>
-
+          <div class="field-note-label">Field Note · 03</div>
           <p>
             Equity, participation, and accessible primary care remain
             central because health is created far beyond the clinic.
           </p>
-
         </div>
-
       </div>
-
     </div>
-
   </section>
 
-
-
-  <!-- =====================================================
-       WEEK 4
-       ===================================================== -->
-
   <section class="entry" id="week4">
-
     <div class="section-inner">
-
       <div class="entry-header">
-
         <div class="entry-number">04</div>
 
         <div>
-
-          <div class="entry-meta">
-            Reassessment · August 12, 2026
-          </div>
-
-          <h2>
-            Looking Back Before Moving Forward
-          </h2>
-
+          <div class="entry-meta">Reassessment · August 12, 2026</div>
+          <h2>Looking Back Before Moving Forward</h2>
           <div class="entry-subtitle">
             Revisiting what we once knew about the community.
           </div>
-
         </div>
-
       </div>
 
-
       <div class="entry-body">
-
         <p>
           Week 4 was centered on revisiting our community diagnosis,
           starting with a presentation of the collated paper from
@@ -1416,62 +1202,33 @@
           true and what needs revising.
         </p>
 
-
         <div class="field-note">
-
-          <div class="field-note-label">
-            Field Note · 04
-          </div>
-
+          <div class="field-note-label">Field Note · 04</div>
           <p>
             Community diagnosis is not static. Good assessment begins
             by questioning whether yesterday's picture still describes
             today's community.
           </p>
-
         </div>
-
       </div>
-
     </div>
-
   </section>
 
-
-
-  <!-- =====================================================
-       WEEK 5
-       ===================================================== -->
-
   <section class="entry" id="week5">
-
     <div class="section-inner">
-
       <div class="entry-header">
-
         <div class="entry-number">05</div>
 
         <div>
-
-          <div class="entry-meta">
-            Priorities · August 19, 2026
-          </div>
-
-          <h2>
-            Naming What Matters
-          </h2>
-
+          <div class="entry-meta">Priorities · August 19, 2026</div>
+          <h2>Naming What Matters</h2>
           <div class="entry-subtitle">
             From a list of diseases to a clearer picture of community priorities.
           </div>
-
         </div>
-
       </div>
 
-
       <div class="entry-body">
-
         <p>
           Week 5 was held online, and we had a synchronous session
           presenting our re-identification and re-prioritization of
@@ -1484,9 +1241,7 @@
           and reflective of current priorities.
         </p>
 
-
         <div class="priorities">
-
           <div class="priority">
             <div class="priority-number">01</div>
             <div>Communicable respiratory illnesses</div>
@@ -1514,9 +1269,7 @@
             <div class="priority-number">05</div>
             <div>Unclean environmental surroundings</div>
           </div>
-
         </div>
-
 
         <p>
           Reframing the problems this way pushed us to think beyond
@@ -1543,61 +1296,32 @@
           following week.
         </p>
 
-
         <div class="field-note">
-
-          <div class="field-note-label">
-            Field Note · 05
-          </div>
-
+          <div class="field-note-label">Field Note · 05</div>
           <p>
             Naming a problem well means looking beyond its diagnosis
             and identifying the conditions that allow it to persist.
           </p>
-
         </div>
-
       </div>
-
     </div>
-
   </section>
 
-
-
-  <!-- =====================================================
-       WEEK 6
-       ===================================================== -->
-
   <section class="entry" id="week6">
-
     <div class="section-inner">
-
       <div class="entry-header">
-
         <div class="entry-number">06</div>
 
         <div>
-
-          <div class="entry-meta">
-            Root Causes · August 26, 2026
-          </div>
-
-          <h2>
-            Tracing the Roots
-          </h2>
-
+          <div class="entry-meta">Root Causes · August 26, 2026</div>
+          <h2>Tracing the Roots</h2>
           <div class="entry-subtitle">
             Understanding the causes beneath the problems we see.
           </div>
-
         </div>
-
       </div>
 
-
       <div class="entry-body">
-
         <p>
           For Week 6, our main focus was constructing the problem
           tree based on the five priority problems we finalized the
@@ -1612,13 +1336,10 @@
           worsened the disease-related problems.
         </p>
 
-
         <div class="roots">
-
           <h3>Reading a problem from the roots upward.</h3>
 
           <div class="roots-grid">
-
             <div class="root-card">
               <small>Roots</small>
               Contributing and underlying factors
@@ -1633,11 +1354,8 @@
               <small>Branches</small>
               Consequences and downstream effects
             </div>
-
           </div>
-
         </div>
-
 
         <blockquote class="pull-quote">
           The most visible problem is not necessarily where an
@@ -1658,62 +1376,32 @@
           and move into planning actual interventions.
         </p>
 
-
         <div class="field-note">
-
-          <div class="field-note-label">
-            Field Note · 06
-          </div>
-
+          <div class="field-note-label">Field Note · 06</div>
           <p>
             Effective community intervention starts by understanding
             not only what is happening, but why it keeps happening.
           </p>
-
         </div>
-
       </div>
-
     </div>
-
   </section>
 
-
-
-  <!-- =====================================================
-       WEEK 7
-       ===================================================== -->
-
   <section class="entry" id="week7">
-
     <div class="section-inner">
-
       <div class="entry-header">
-
         <div class="entry-number">07</div>
 
         <div>
-
-          <div class="entry-meta">
-            Partnership · September 02, 2026
-          </div>
-
-          <h2>
-            Before We Enter the Community
-          </h2>
-
+          <div class="entry-meta">Partnership · September 02, 2026</div>
+          <h2>Before We Enter the Community</h2>
           <div class="entry-subtitle">
             Why community work begins with relationships.
           </div>
-
         </div>
-
       </div>
 
-
-      <!-- SAME PHOTO AS HERO, DIFFERENT CROP -->
       <div class="entry-photo">
-
         <img
           src="barangay-hall.jpeg"
           alt="FCM 3 students during a courtesy visit at the barangay hall"
@@ -1722,12 +1410,9 @@
         <div class="photo-caption">
           Barangay courtesy visit · September 2026
         </div>
-
       </div>
 
-
       <div class="entry-body">
-
         <p>
           Week 7 was originally scheduled to be our community visit,
           but it ended up being more limited than planned. Instead of
@@ -1769,42 +1454,20 @@
           community visit in the coming weeks.
         </p>
 
-
         <div class="field-note">
-
-          <div class="field-note-label">
-            Field Note · 07
-          </div>
-
+          <div class="field-note-label">Field Note · 07</div>
           <p>
             Before a community becomes a source of data, it must first
             be approached as a partner.
           </p>
-
         </div>
-
       </div>
-
     </div>
-
   </section>
 
-
-
-  <!-- =========================
-       CLOSING
-       ========================= -->
-
   <section class="closing">
-
     <div class="section-inner">
-
-      <div
-        class="eyebrow"
-        style="color:#cbd0c5;"
-      >
-        Seven Weeks In
-      </div>
+      <div class="eyebrow" style="color:#cbd0c5;">Seven Weeks In</div>
 
       <h2>
         From frameworks on paper to relationships in the community.
@@ -1816,28 +1479,42 @@
         environments, and communities in which health actually
         happens.
       </p>
-
     </div>
-
   </section>
 
-
-  <!-- =========================
-       FOOTER
-       ========================= -->
-
   <footer>
-
-    <div>
-      Field Notes · Family &amp; Community Medicine 3
-    </div>
-
-    <div>
-      2026
-    </div>
-
+    <div>Field Notes · Family &amp; Community Medicine 3</div>
+    <div>2026</div>
   </footer>
 
+  <script>
+    const nav = document.getElementById("siteNav");
+    const navLinks = [...document.querySelectorAll(".nav-links a")];
+
+    function updateNav() {
+      nav.classList.toggle("scrolled", window.scrollY > 48);
+
+      const targets = navLinks
+        .map(link => {
+          const id = link.getAttribute("href");
+          const el = document.querySelector(id);
+          return { link, el };
+        })
+        .filter(item => item.el);
+
+      let current = null;
+
+      for (const item of targets) {
+        const rect = item.el.getBoundingClientRect();
+        if (rect.top <= 140) current = item.link;
+      }
+
+      navLinks.forEach(link => link.classList.toggle("active", link === current));
+    }
+
+    updateNav();
+    window.addEventListener("scroll", updateNav, { passive: true });
+  </script>
 
 </body>
 </html>

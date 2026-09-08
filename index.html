@@ -1,0 +1,1843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Field Notes | FCM 3</title>
+
+  <meta
+    name="description"
+    content="A reflective weekly journal for Family and Community Medicine 3."
+  >
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    /* =========================
+       COLOUR PALETTE
+       ========================= */
+
+    :root {
+      --ivory: #f4f0e8;
+      --paper: #faf8f3;
+      --charcoal: #292c29;
+      --olive: #465244;
+      --sage: #87907c;
+      --clay: #a77963;
+      --line: #d8d3c9;
+      --white: #ffffff;
+
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+
+      --max-width: 1180px;
+    }
+
+
+    /* =========================
+       RESET
+       ========================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--ivory);
+      color: var(--charcoal);
+      font-family: var(--sans);
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    ::selection {
+      background: var(--sage);
+      color: white;
+    }
+
+
+    /* =========================
+       NAVIGATION
+       ========================= */
+
+    .site-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 22px 5vw;
+
+      color: white;
+
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(20, 23, 20, 0.72),
+          rgba(20, 23, 20, 0)
+        );
+    }
+
+    .brand {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+
+      font-size: 0.73rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .nav-links a {
+      opacity: 0.82;
+      transition: opacity 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+    }
+
+
+    /* =========================
+       HERO
+       ========================= */
+
+    .hero {
+      min-height: 100vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      position: relative;
+
+      color: white;
+      text-align: center;
+
+      background:
+        linear-gradient(
+          rgba(26, 31, 26, 0.50),
+          rgba(26, 31, 26, 0.68)
+        ),
+        url("barangay-hall.jpg");
+
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          to top,
+          rgba(20, 23, 20, 0.38),
+          transparent 40%
+        );
+
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+
+      width: min(900px, 88%);
+      padding-top: 50px;
+    }
+
+    .hero-kicker {
+      margin-bottom: 24px;
+
+      font-size: 0.75rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(3.8rem, 9vw, 8rem);
+      line-height: 0.95;
+      font-weight: 500;
+      letter-spacing: -0.035em;
+    }
+
+    .hero-course {
+      margin-top: 28px;
+
+      font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+      font-weight: 500;
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+    }
+
+    .hero-subtitle {
+      margin-top: 14px;
+
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(1.15rem, 2.4vw, 1.65rem);
+    }
+
+    .scroll-note {
+      position: absolute;
+      z-index: 3;
+
+      bottom: 34px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      font-size: 0.68rem;
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+      opacity: 0.78;
+    }
+
+
+    /* =========================
+       GENERAL SECTIONS
+       ========================= */
+
+    section {
+      position: relative;
+    }
+
+    .section-inner {
+      width: min(var(--max-width), 88%);
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      color: var(--olive);
+
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+    }
+
+
+    /* =========================
+       INTRODUCTION
+       ========================= */
+
+    .intro {
+      padding: 130px 0 125px;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 0.7fr 1.5fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .intro h2 {
+      margin-top: 18px;
+
+      max-width: 750px;
+
+      font-family: var(--serif);
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      line-height: 1.06;
+      font-weight: 500;
+      letter-spacing: -0.025em;
+    }
+
+    .intro-copy {
+      max-width: 650px;
+      padding-top: 12px;
+
+      font-size: 1.05rem;
+    }
+
+    .keywords {
+      margin-top: 36px;
+
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .keyword {
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      border-radius: 100px;
+
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+
+    /* =========================
+       JOURNAL INDEX
+       ========================= */
+
+    .journal-index {
+      padding: 110px 0;
+      background: var(--paper);
+    }
+
+    .index-heading {
+      margin-bottom: 50px;
+    }
+
+    .index-heading h2 {
+      margin-top: 12px;
+
+      font-family: var(--serif);
+      font-size: clamp(2.7rem, 5vw, 4.5rem);
+      font-weight: 500;
+    }
+
+    .index-item {
+      display: grid;
+      grid-template-columns: 100px 1fr 160px;
+      gap: 35px;
+      align-items: center;
+
+      padding: 38px 0;
+      border-top: 1px solid var(--line);
+
+      transition:
+        transform 0.25s ease,
+        opacity 0.25s ease;
+    }
+
+    .index-item:last-child {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .index-item:hover {
+      transform: translateX(8px);
+    }
+
+    .index-number {
+      font-family: var(--serif);
+      font-size: 2.6rem;
+      color: var(--sage);
+    }
+
+    .index-category {
+      margin-bottom: 6px;
+
+      color: var(--olive);
+
+      font-size: 0.66rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .index-title {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 3vw, 2.5rem);
+      line-height: 1.15;
+      font-weight: 500;
+    }
+
+    .index-date {
+      text-align: right;
+
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+
+    /* =========================
+       REFLECTION ENTRIES
+       ========================= */
+
+    .entry {
+      padding: 130px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .entry:nth-of-type(even) {
+      background: rgba(255,255,255,0.16);
+    }
+
+    .entry-header {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 60px;
+
+      margin-bottom: 70px;
+    }
+
+    .entry-number {
+      font-family: var(--serif);
+      font-size: clamp(5rem, 9vw, 8rem);
+      line-height: 0.8;
+      color: var(--sage);
+    }
+
+    .entry-meta {
+      margin-bottom: 18px;
+
+      color: var(--olive);
+
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .entry h2 {
+      max-width: 850px;
+
+      font-family: var(--serif);
+      font-size: clamp(3rem, 6vw, 5.6rem);
+      line-height: 1;
+      font-weight: 500;
+      letter-spacing: -0.035em;
+    }
+
+    .entry-subtitle {
+      margin-top: 24px;
+      max-width: 720px;
+
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-style: italic;
+      color: #5f645f;
+    }
+
+    .entry-body {
+      width: min(740px, 100%);
+      margin-left: auto;
+      margin-right: 8%;
+    }
+
+    .entry-body p {
+      margin-bottom: 26px;
+      font-size: 1.04rem;
+    }
+
+    .entry-body p:first-child::first-letter {
+      float: left;
+
+      margin-right: 10px;
+      margin-top: 9px;
+
+      font-family: var(--serif);
+      font-size: 4.2rem;
+      line-height: 0.72;
+      color: var(--olive);
+    }
+
+
+    /* =========================
+       PULL QUOTE
+       ========================= */
+
+    .pull-quote {
+      margin: 58px 0;
+
+      padding: 10px 0 10px 30px;
+      border-left: 2px solid var(--clay);
+
+      font-family: var(--serif);
+      font-size: clamp(1.7rem, 3.3vw, 2.6rem);
+      line-height: 1.28;
+      font-style: italic;
+    }
+
+
+    /* =========================
+       FIELD NOTE BOX
+       ========================= */
+
+    .field-note {
+      margin-top: 62px;
+      padding: 34px 38px;
+
+      background: var(--olive);
+      color: white;
+    }
+
+    .field-note-label {
+      margin-bottom: 13px;
+
+      color: #cbd0c5;
+
+      font-size: 0.67rem;
+      font-weight: 600;
+      letter-spacing: 0.19em;
+      text-transform: uppercase;
+    }
+
+    .field-note p {
+      margin: 0;
+
+      font-family: var(--serif);
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      line-height: 1.35;
+    }
+
+
+    /* =========================
+       SPECIAL VISUAL: WEEK 3
+       ========================= */
+
+    .timeline {
+      margin: 55px 0;
+
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .timeline-year {
+      padding: 30px;
+      border: 1px solid var(--line);
+
+      text-align: center;
+    }
+
+    .timeline-year strong {
+      display: block;
+
+      font-family: var(--serif);
+      font-size: 3rem;
+      color: var(--olive);
+    }
+
+    .timeline-year span {
+      font-size: 0.68rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .timeline-arrow {
+      font-size: 1.8rem;
+      color: var(--sage);
+    }
+
+
+    /* =========================
+       SPECIAL VISUAL: WEEK 5
+       ========================= */
+
+    .priorities {
+      margin: 55px 0;
+
+      display: grid;
+      gap: 12px;
+    }
+
+    .priority {
+      display: grid;
+      grid-template-columns: 45px 1fr;
+      gap: 15px;
+
+      padding: 18px 20px;
+
+      border-top: 1px solid var(--line);
+    }
+
+    .priority:last-child {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .priority-number {
+      color: var(--sage);
+      font-family: var(--serif);
+      font-size: 1.3rem;
+    }
+
+
+    /* =========================
+       WEEK 6 ROOTS VISUAL
+       ========================= */
+
+    .roots {
+      margin: 55px 0;
+      padding: 42px;
+
+      background: #e8e5dc;
+    }
+
+    .roots h3 {
+      margin-bottom: 28px;
+
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 500;
+    }
+
+    .roots-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .root-card {
+      padding: 22px;
+
+      background: var(--paper);
+      border-top: 3px solid var(--sage);
+    }
+
+    .root-card small {
+      display: block;
+      margin-bottom: 8px;
+
+      color: var(--olive);
+      font-weight: 600;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+
+    /* =========================
+       WEEK 7 PHOTO
+       ========================= */
+
+    .entry-photo {
+      width: min(1050px, 100%);
+      margin: 0 auto 70px;
+    }
+
+    .entry-photo img {
+      width: 100%;
+      max-height: 680px;
+      object-fit: cover;
+    }
+
+    .photo-caption {
+      margin-top: 12px;
+
+      color: #686d67;
+
+      font-size: 0.7rem;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+    }
+
+
+    /* =========================
+       ENDING
+       ========================= */
+
+    .closing {
+      padding: 150px 0;
+
+      background: var(--olive);
+      color: white;
+      text-align: center;
+    }
+
+    .closing h2 {
+      margin: 15px auto 25px;
+
+      max-width: 850px;
+
+      font-family: var(--serif);
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 500;
+      line-height: 1;
+    }
+
+    .closing p {
+      width: min(640px, 88%);
+      margin: 0 auto;
+
+      color: #d9ddd5;
+      font-size: 1rem;
+    }
+
+
+    /* =========================
+       FOOTER
+       ========================= */
+
+    footer {
+      padding: 34px 5vw;
+
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+
+      background: #252925;
+      color: #aeb5ab;
+
+      font-size: 0.68rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+
+    /* =========================
+       MOBILE
+       ========================= */
+
+    @media (max-width: 800px) {
+
+      .site-nav {
+        padding: 18px 6vw;
+      }
+
+      .nav-links {
+        gap: 15px;
+        font-size: 0.61rem;
+      }
+
+      .nav-links li:first-child {
+        display: none;
+      }
+
+      .hero {
+        min-height: 92vh;
+      }
+
+      .hero h1 {
+        font-size: clamp(4rem, 18vw, 6.7rem);
+      }
+
+      .intro,
+      .journal-index,
+      .entry {
+        padding-top: 85px;
+        padding-bottom: 85px;
+      }
+
+      .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .index-item {
+        grid-template-columns: 55px 1fr;
+        gap: 18px;
+      }
+
+      .index-date {
+        grid-column: 2;
+        text-align: left;
+      }
+
+      .entry-header {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .entry-number {
+        font-size: 5.2rem;
+      }
+
+      .entry-body {
+        margin: 0;
+        width: 100%;
+      }
+
+      .timeline {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-arrow {
+        transform: rotate(90deg);
+        text-align: center;
+      }
+
+      .roots-grid {
+        grid-template-columns: 1fr;
+      }
+
+      footer {
+        flex-direction: column;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <!-- =========================
+       NAVIGATION
+       ========================= -->
+
+  <nav class="site-nav">
+    <a class="brand" href="#home">Field Notes · FCM 3</a>
+
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#journal">Journal</a></li>
+      <li><a href="#week7">Community</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- =========================
+       HERO
+       ========================= -->
+
+  <header class="hero" id="home">
+
+    <div class="hero-content">
+
+      <div class="hero-kicker">
+        A Reflective Journal · 2026
+      </div>
+
+      <h1>Field<br>Notes</h1>
+
+      <div class="hero-course">
+        Family &amp; Community Medicine 3
+      </div>
+
+      <div class="hero-subtitle">
+        Learning medicine where people live.
+      </div>
+
+    </div>
+
+    <div class="scroll-note">
+      Scroll to begin ↓
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       ABOUT
+       ========================= -->
+
+  <section class="intro" id="about">
+
+    <div class="section-inner intro-grid">
+
+      <div>
+        <div class="eyebrow">About the Journal</div>
+      </div>
+
+      <div>
+
+        <h2>
+          Medicine does not happen in isolation.
+        </h2>
+
+        <div class="intro-copy">
+
+          <p>
+            Family and Community Medicine asks us to see patients
+            beyond disease alone—to understand the families,
+            communities, environments, and systems that shape health.
+          </p>
+
+          <br>
+
+          <p>
+            This journal follows that perspective across each week
+            of FCM 3, from revisiting the foundations of primary
+            health care to returning to the community itself.
+          </p>
+
+          <div class="keywords">
+            <span class="keyword">Family</span>
+            <span class="keyword">Community</span>
+            <span class="keyword">Equity</span>
+            <span class="keyword">Primary Care</span>
+            <span class="keyword">Reflection</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       JOURNAL INDEX
+       ========================= -->
+
+  <section class="journal-index" id="journal">
+
+    <div class="section-inner">
+
+      <div class="index-heading">
+        <div class="eyebrow">The Journal</div>
+        <h2>Seven weeks, one evolving perspective.</h2>
+      </div>
+
+
+      <a href="#week1" class="index-item">
+        <div class="index-number">01</div>
+
+        <div>
+          <div class="index-category">Foundations</div>
+          <div class="index-title">
+            Returning to the Bigger Picture
+          </div>
+        </div>
+
+        <div class="index-date">
+          July 22 · 2026
+        </div>
+      </a>
+
+
+      <a href="#week2" class="index-item">
+        <div class="index-number">02</div>
+
+        <div>
+          <div class="index-category">Context</div>
+          <div class="index-title">
+            The Patient Beyond the Diagnosis
+          </div>
+        </div>
+
+        <div class="index-date">
+          July 29 · 2026
+        </div>
+      </a>
+
+
+      <a href="#week3" class="index-item">
+        <div class="index-number">03</div>
+
+        <div>
+          <div class="index-category">Primary Care</div>
+          <div class="index-title">
+            Health for All, Then and Now
+          </div>
+        </div>
+
+        <div class="index-date">
+          August 03 · 2026
+        </div>
+      </a>
+
+
+      <a href="#week4" class="index-item">
+        <div class="index-number">04</div>
+
+        <div>
+          <div class="index-category">Reassessment</div>
+          <div class="index-title">
+            Looking Back Before Moving Forward
+          </div>
+        </div>
+
+        <div class="index-date">
+          August 12 · 2026
+        </div>
+      </a>
+
+
+      <a href="#week5" class="index-item">
+        <div class="index-number">05</div>
+
+        <div>
+          <div class="index-category">Priorities</div>
+          <div class="index-title">
+            Naming What Matters
+          </div>
+        </div>
+
+        <div class="index-date">
+          August 19 · 2026
+        </div>
+      </a>
+
+
+      <a href="#week6" class="index-item">
+        <div class="index-number">06</div>
+
+        <div>
+          <div class="index-category">Root Causes</div>
+          <div class="index-title">
+            Tracing the Roots
+          </div>
+        </div>
+
+        <div class="index-date">
+          August 26 · 2026
+        </div>
+      </a>
+
+
+      <a href="#week7" class="index-item">
+        <div class="index-number">07</div>
+
+        <div>
+          <div class="index-category">Partnership</div>
+          <div class="index-title">
+            Before We Enter the Community
+          </div>
+        </div>
+
+        <div class="index-date">
+          September 02 · 2026
+        </div>
+      </a>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       WEEK 1
+       ===================================================== -->
+
+  <section class="entry" id="week1">
+
+    <div class="section-inner">
+
+      <div class="entry-header">
+
+        <div class="entry-number">01</div>
+
+        <div>
+
+          <div class="entry-meta">
+            Foundations · July 22, 2026
+          </div>
+
+          <h2>
+            Returning to the Bigger Picture
+          </h2>
+
+          <div class="entry-subtitle">
+            Family, social determinants, and the many roles of a physician.
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="entry-body">
+
+        <p>
+          Week 1 of FCM 3 was a recap of key concepts from FCM 1
+          and FCM 2 to ease us back into the course. We revisited
+          how families respond to health and illness—the different
+          ways a family unit adjusts, copes, and reorganizes itself
+          when a member gets sick, and how that response can either
+          support or hinder recovery.
+        </p>
+
+        <p>
+          We also went over the WHO's 6-star doctor concept, which
+          outlines the six roles a physician is expected to fulfill.
+          Tying into that, we touched on social determinants of health
+          again, reinforcing the idea that a doctor's role extends
+          beyond the clinic and into addressing the broader conditions
+          that shape a patient's health.
+        </p>
+
+        <blockquote class="pull-quote">
+          Patients are not simply individuals with a diagnosis,
+          but people embedded in families and communities.
+        </blockquote>
+
+        <p>
+          It was a useful reset before starting a new year in the
+          course, especially since these frameworks tie directly into
+          how we're expected to think about patients this term—not
+          just as individuals with a diagnosis, but as people embedded
+          in families and communities.
+        </p>
+
+        <p>
+          Revisiting the 6-star doctor model in particular made me
+          reflect on how much of good primary care depends on roles
+          we don't always associate with “being a doctor,” like being
+          a manager or community leader. It set the stage well for the
+          deeper dive into social determinants of health and primary
+          health care that followed in the next sessions.
+        </p>
+
+        <div class="field-note">
+
+          <div class="field-note-label">
+            Field Note · 01
+          </div>
+
+          <p>
+            A physician's work extends beyond diagnosing disease;
+            it also means understanding the circumstances in which
+            disease occurs.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       WEEK 2
+       ===================================================== -->
+
+  <section class="entry" id="week2">
+
+    <div class="section-inner">
+
+      <div class="entry-header">
+
+        <div class="entry-number">02</div>
+
+        <div>
+
+          <div class="entry-meta">
+            Context · July 29, 2026
+          </div>
+
+          <h2>
+            The Patient Beyond the Diagnosis
+          </h2>
+
+          <div class="entry-subtitle">
+            Seeing chronic disease through the circumstances that shape it.
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="entry-body">
+
+        <p>
+          For Week 2, we were grouped and assigned a case to report
+          on and discuss in relation to social determinants of health
+          and primary health care.
+        </p>
+
+        <p>
+          Our case involved Mr. Santos, a 58-year-old tricycle driver
+          with poorly controlled diabetes mellitus, hypertension,
+          chronic kidney disease, and recurrent diabetic foot
+          infections. As a group, we broke down how his occupation
+          and everyday circumstances tied into his poor disease control.
+        </p>
+
+        <p>
+          The physically demanding, irregular nature of tricycle
+          driving made consistent follow-up and medication adherence
+          difficult, and this was compounded by limited access to
+          healthcare services, inadequate patient education about
+          managing his conditions, and poor coordination between
+          health services and social support systems.
+        </p>
+
+        <blockquote class="pull-quote">
+          Disease does not exist separately from the life in which
+          it occurs.
+        </blockquote>
+
+        <p>
+          In discussing possible solutions, we focused on improving
+          healthcare access and strengthening continuity of care
+          through primary health care as the key levers for change.
+        </p>
+
+        <p>
+          We reasoned that if Mr. Santos had more consistent access
+          to a primary care provider who could coordinate his diabetes,
+          hypertension, and kidney disease management in one continuous
+          relationship, many of his complications—like the recurrent
+          foot infections—could be caught and managed before they
+          escalated to the point of hospitalization.
+        </p>
+
+        <p>
+          It reinforced for me how a strong primary health care system
+          isn't just about treating illness but about addressing the
+          social and structural barriers that make illness worse in
+          the first place.
+        </p>
+
+
+        <div class="field-note">
+
+          <div class="field-note-label">
+            Field Note · 02
+          </div>
+
+          <p>
+            Continuity of care matters most when illness is complicated
+            by the realities of everyday life.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       WEEK 3
+       ===================================================== -->
+
+  <section class="entry" id="week3">
+
+    <div class="section-inner">
+
+      <div class="entry-header">
+
+        <div class="entry-number">03</div>
+
+        <div>
+
+          <div class="entry-meta">
+            Primary Care · August 03, 2026
+          </div>
+
+          <h2>
+            Health for All, Then and Now
+          </h2>
+
+          <div class="entry-subtitle">
+            From Alma-Ata to Astana—and why primary health care still matters.
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="entry-body">
+
+        <p>
+          This week's session picked up from our earlier introduction
+          to social determinants of health and tied it more closely
+          to primary health care and universal health coverage.
+        </p>
+
+        <p>
+          We talked about how factors such as income, education,
+          housing, employment, and access to services shape a person's
+          health outcomes just as much as, if not more than, clinical
+          care itself. Framing primary health care and universal health
+          coverage within that context made it clearer why addressing
+          health can't stop at the level of the individual patient.
+        </p>
+
+
+        <div class="timeline">
+
+          <div class="timeline-year">
+            <strong>1978</strong>
+            <span>Alma-Ata Declaration</span>
+          </div>
+
+          <div class="timeline-arrow">→</div>
+
+          <div class="timeline-year">
+            <strong>2018</strong>
+            <span>Astana Declaration</span>
+          </div>
+
+        </div>
+
+
+        <p>
+          We went through the Alma-Ata Declaration of 1978, the first
+          major international commitment to primary health care as a
+          strategy for achieving “Health for All,” which emphasized
+          community participation, equity, and intersectoral
+          collaboration.
+        </p>
+
+        <p>
+          From there we discussed the Astana Declaration of 2018,
+          which reaffirmed and updated those same principles for the
+          modern context, with a stronger push toward integrated
+          health services and empowering people and communities to
+          take an active role in their own health.
+        </p>
+
+        <blockquote class="pull-quote">
+          Forty years apart, the language changed—but the foundation
+          remained remarkably familiar.
+        </blockquote>
+
+        <p>
+          Seeing how two declarations 40 years apart still echo the
+          same core values made me appreciate how foundational the
+          primary health care approach really is, and how relevant it
+          still is to the health issues we're learning about now.
+        </p>
+
+
+        <div class="field-note">
+
+          <div class="field-note-label">
+            Field Note · 03
+          </div>
+
+          <p>
+            Equity, participation, and accessible primary care remain
+            central because health is created far beyond the clinic.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       WEEK 4
+       ===================================================== -->
+
+  <section class="entry" id="week4">
+
+    <div class="section-inner">
+
+      <div class="entry-header">
+
+        <div class="entry-number">04</div>
+
+        <div>
+
+          <div class="entry-meta">
+            Reassessment · August 12, 2026
+          </div>
+
+          <h2>
+            Looking Back Before Moving Forward
+          </h2>
+
+          <div class="entry-subtitle">
+            Revisiting what we once knew about the community.
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="entry-body">
+
+        <p>
+          Week 4 was centered on revisiting our community diagnosis,
+          starting with a presentation of the collated paper from
+          last year's data.
+        </p>
+
+        <p>
+          Our group went through the past findings together, which
+          centered on three major health concerns in the community:
+          diarrheal diseases, upper respiratory tract infections,
+          and non-communicable diseases, particularly hypertension
+          and diabetes mellitus.
+        </p>
+
+        <blockquote class="pull-quote">
+          Before deciding what needs to change, we first have to ask
+          whether what we once knew still holds true.
+        </blockquote>
+
+        <p>
+          Going through last year's paper as a group helped us get
+          everyone on the same page, since some of us remembered
+          different details from when the data was originally gathered.
+        </p>
+
+        <p>
+          Presenting it back to each other also made it easier to spot
+          which parts of the data might already be outdated or need
+          rechecking once we go back to collect updated information.
+        </p>
+
+        <p>
+          It felt like a necessary first step before we could move on
+          to re-identifying and re-prioritizing the community's health
+          problems in the coming weeks—we needed to be reminded of
+          exactly what we'd found before deciding what still holds
+          true and what needs revising.
+        </p>
+
+
+        <div class="field-note">
+
+          <div class="field-note-label">
+            Field Note · 04
+          </div>
+
+          <p>
+            Community diagnosis is not static. Good assessment begins
+            by questioning whether yesterday's picture still describes
+            today's community.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       WEEK 5
+       ===================================================== -->
+
+  <section class="entry" id="week5">
+
+    <div class="section-inner">
+
+      <div class="entry-header">
+
+        <div class="entry-number">05</div>
+
+        <div>
+
+          <div class="entry-meta">
+            Priorities · August 19, 2026
+          </div>
+
+          <h2>
+            Naming What Matters
+          </h2>
+
+          <div class="entry-subtitle">
+            From a list of diseases to a clearer picture of community priorities.
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="entry-body">
+
+        <p>
+          Week 5 was held online, and we had a synchronous session
+          presenting our re-identification and re-prioritization of
+          the community's health problems.
+        </p>
+
+        <p>
+          After reviewing the collated paper from the week before,
+          our group revised the problem statements to be more specific
+          and reflective of current priorities.
+        </p>
+
+
+        <div class="priorities">
+
+          <div class="priority">
+            <div class="priority-number">01</div>
+            <div>Communicable respiratory illnesses</div>
+          </div>
+
+          <div class="priority">
+            <div class="priority-number">02</div>
+            <div>Diarrheal diseases</div>
+          </div>
+
+          <div class="priority">
+            <div class="priority-number">03</div>
+            <div>
+              Non-communicable diseases:
+              stroke, hypertension, and diabetes mellitus
+            </div>
+          </div>
+
+          <div class="priority">
+            <div class="priority-number">04</div>
+            <div>Health knowledge deficit</div>
+          </div>
+
+          <div class="priority">
+            <div class="priority-number">05</div>
+            <div>Unclean environmental surroundings</div>
+          </div>
+
+        </div>
+
+
+        <p>
+          Reframing the problems this way pushed us to think beyond
+          just naming diseases and consider the underlying knowledge
+          and environmental factors contributing to them.
+        </p>
+
+        <p>
+          This is likely why health knowledge deficit and unclean
+          surroundings came up as their own separate priority problems
+          rather than being folded into the disease categories.
+        </p>
+
+        <blockquote class="pull-quote">
+          A health problem is rarely only the disease we can name.
+        </blockquote>
+
+        <p>
+          Doing this over an online synchronous format worked well
+          enough for walking through our reasoning as a group and
+          getting feedback in real time. By the end of the session,
+          we had a clearer, finalized list of priority problems to
+          guide the new data collection we were set to carry out the
+          following week.
+        </p>
+
+
+        <div class="field-note">
+
+          <div class="field-note-label">
+            Field Note · 05
+          </div>
+
+          <p>
+            Naming a problem well means looking beyond its diagnosis
+            and identifying the conditions that allow it to persist.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       WEEK 6
+       ===================================================== -->
+
+  <section class="entry" id="week6">
+
+    <div class="section-inner">
+
+      <div class="entry-header">
+
+        <div class="entry-number">06</div>
+
+        <div>
+
+          <div class="entry-meta">
+            Root Causes · August 26, 2026
+          </div>
+
+          <h2>
+            Tracing the Roots
+          </h2>
+
+          <div class="entry-subtitle">
+            Understanding the causes beneath the problems we see.
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="entry-body">
+
+        <p>
+          For Week 6, our main focus was constructing the problem
+          tree based on the five priority problems we finalized the
+          week before.
+        </p>
+
+        <p>
+          We worked through mapping out the root causes, core problems,
+          and effects for each, laying them out in a way that showed
+          how underlying factors like health knowledge deficit and
+          poor environmental conditions connected to and likely
+          worsened the disease-related problems.
+        </p>
+
+
+        <div class="roots">
+
+          <h3>Reading a problem from the roots upward.</h3>
+
+          <div class="roots-grid">
+
+            <div class="root-card">
+              <small>Roots</small>
+              Contributing and underlying factors
+            </div>
+
+            <div class="root-card">
+              <small>Trunk</small>
+              The central community health problem
+            </div>
+
+            <div class="root-card">
+              <small>Branches</small>
+              Consequences and downstream effects
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <blockquote class="pull-quote">
+          The most visible problem is not necessarily where an
+          intervention should begin.
+        </blockquote>
+
+        <p>
+          Building the problem tree made the relationships between
+          causes and effects much more concrete than just listing the
+          problems on their own.
+        </p>
+
+        <p>
+          It pushed us to think more critically about what was
+          actually driving these conditions in the community, rather
+          than treating each problem as isolated, and gave us a
+          clearer framework to work from once we collect the new data
+          and move into planning actual interventions.
+        </p>
+
+
+        <div class="field-note">
+
+          <div class="field-note-label">
+            Field Note · 06
+          </div>
+
+          <p>
+            Effective community intervention starts by understanding
+            not only what is happening, but why it keeps happening.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       WEEK 7
+       ===================================================== -->
+
+  <section class="entry" id="week7">
+
+    <div class="section-inner">
+
+      <div class="entry-header">
+
+        <div class="entry-number">07</div>
+
+        <div>
+
+          <div class="entry-meta">
+            Partnership · September 02, 2026
+          </div>
+
+          <h2>
+            Before We Enter the Community
+          </h2>
+
+          <div class="entry-subtitle">
+            Why community work begins with relationships.
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- SAME PHOTO AS HERO, DIFFERENT CROP -->
+      <div class="entry-photo">
+
+        <img
+          src="barangay-hall.jpg"
+          alt="FCM 3 students during a courtesy visit at the barangay hall"
+        >
+
+        <div class="photo-caption">
+          Barangay courtesy visit · September 2026
+        </div>
+
+      </div>
+
+
+      <div class="entry-body">
+
+        <p>
+          Week 7 was originally scheduled to be our community visit,
+          but it ended up being more limited than planned. Instead of
+          going out into the community itself, we went to the barangay
+          hall for a courtesy visit to the barangay officials.
+        </p>
+
+        <p>
+          It still felt like an important step, since building rapport
+          with the officials is essential before we can actually go
+          around collecting data or interacting with residents. We
+          used the time to introduce our group and our project, and
+          to formally inform them about our plans for the community
+          diagnosis this year.
+        </p>
+
+        <blockquote class="pull-quote">
+          Community work begins before data collection—it begins
+          with trust.
+        </blockquote>
+
+        <p>
+          Even though it wasn't the full community immersion we
+          expected, the courtesy visit served as a necessary formality
+          to get local officials' buy-in and, hopefully, their support
+          once we do proceed with actual data collection.
+        </p>
+
+        <p>
+          It was a good reminder that community work often has to go
+          through these institutional channels first—you can't just
+          show up and start collecting data without first establishing
+          that relationship with the people who represent and know the
+          area best.
+        </p>
+
+        <p>
+          Hopefully this paves the way for a smoother, more substantial
+          community visit in the coming weeks.
+        </p>
+
+
+        <div class="field-note">
+
+          <div class="field-note-label">
+            Field Note · 07
+          </div>
+
+          <p>
+            Before a community becomes a source of data, it must first
+            be approached as a partner.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       CLOSING
+       ========================= -->
+
+  <section class="closing">
+
+    <div class="section-inner">
+
+      <div
+        class="eyebrow"
+        style="color:#cbd0c5;"
+      >
+        Seven Weeks In
+      </div>
+
+      <h2>
+        From frameworks on paper to relationships in the community.
+      </h2>
+
+      <p>
+        FCM 3 is gradually shifting the way I think about health:
+        from individual disease toward the families, systems,
+        environments, and communities in which health actually
+        happens.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
+
+  <footer>
+
+    <div>
+      Field Notes · Family &amp; Community Medicine 3
+    </div>
+
+    <div>
+      2026
+    </div>
+
+  </footer>
+
+
+</body>
+</html>

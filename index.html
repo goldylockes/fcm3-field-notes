@@ -759,36 +759,34 @@
       font-size: 1rem;
     }
 
-    .framework-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
+    /* Personal framework — balanced editorial rows */
+    .framework-list {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
     }
 
-    .framework-card {
+    .framework-row {
       display: grid;
-      grid-template-columns: 56px 1fr;
-      gap: 20px;
-      min-height: 250px;
-      padding: 30px;
-      border: 1px solid var(--line);
-      background: var(--ivory);
+      grid-template-columns: 110px 220px minmax(0, 1fr);
+      gap: 30px;
+      align-items: start;
+      padding: 34px 0 38px;
     }
 
-    .framework-card-wide {
-      grid-column: 1 / -1;
-      min-height: auto;
+    .framework-row + .framework-row {
+      border-top: 1px solid var(--line);
     }
 
     .framework-number {
       font-family: var(--serif);
-      font-size: 2.5rem;
+      font-size: 3rem;
       color: var(--sage);
       line-height: 1;
+      letter-spacing: -0.04em;
     }
 
     .framework-label {
-      margin-bottom: 14px;
+      padding-top: 8px;
       color: var(--olive);
       font-size: .68rem;
       font-weight: 600;
@@ -796,10 +794,17 @@
       text-transform: uppercase;
     }
 
-    .framework-card p {
+    .framework-row p {
+      max-width: 900px;
       font-family: var(--serif);
-      font-size: clamp(1.25rem, 2.2vw, 1.8rem);
-      line-height: 1.4;
+      font-size: clamp(1.45rem, 2.25vw, 2.05rem);
+      line-height: 1.38;
+      letter-spacing: -0.012em;
+    }
+
+    .framework-row em {
+      color: var(--olive);
+      font-style: italic;
     }
 
     .dsa-panel {
@@ -1039,19 +1044,25 @@
       }
 
 
-      .framework-grid,
       .dsa-grid,
       .project-columns,
       .documentation-log {
         grid-template-columns: 1fr;
       }
 
-      .framework-card-wide {
-        grid-column: auto;
+      .framework-row {
+        grid-template-columns: 70px 1fr;
+        gap: 18px;
+        padding: 28px 0 30px;
       }
 
-      .framework-card {
-        min-height: auto;
+      .framework-label {
+        padding-top: 6px;
+      }
+
+      .framework-row p {
+        grid-column: 2;
+        font-size: 1.25rem;
       }
 
       .project-step {
@@ -1303,42 +1314,38 @@
         <h2>What I hope to carry into FCM 3.</h2>
       </div>
 
-      <div class="framework-grid">
-        <article class="framework-card framework-card-wide">
+      <div class="framework-list">
+
+        <article class="framework-row">
           <div class="framework-number">01</div>
-          <div>
-            <div class="framework-label">Expectation for FCM 3</div>
-            <p>
-              I expect FCM 3 to help me move beyond understanding community medicine
-              conceptually and learn how to translate assessment, collaboration, and
-              primary care principles into work with an actual community.
-            </p>
-          </div>
+          <div class="framework-label">Expectation for FCM 3</div>
+          <p>
+            I expect FCM 3 to help me move beyond understanding community medicine
+            conceptually and learn how to translate assessment, collaboration, and
+            primary care principles into work with an actual community.
+          </p>
         </article>
 
-        <article class="framework-card">
+        <article class="framework-row">
           <div class="framework-number">02</div>
-          <div>
-            <div class="framework-label">Personal Mission</div>
-            <p>
-              To become a physician who listens carefully, thinks beyond the diagnosis,
-              and provides compassionate, evidence-informed care while recognizing the
-              family, community, and social conditions that shape health.
-            </p>
-          </div>
+          <div class="framework-label">Personal Mission</div>
+          <p>
+            To become a physician who <em>listens carefully</em>, thinks beyond the diagnosis,
+            and provides compassionate, evidence-informed care while recognizing the
+            family, community, and social conditions that shape health.
+          </p>
         </article>
 
-        <article class="framework-card">
+        <article class="framework-row">
           <div class="framework-number">03</div>
-          <div>
-            <div class="framework-label">Personal Vision</div>
-            <p>
-              To grow into a physician who combines clinical competence with community
-              partnership and helps make care more understandable, accessible, preventive,
-              and responsive to the realities of people's lives.
-            </p>
-          </div>
+          <div class="framework-label">Personal Vision</div>
+          <p>
+            To grow into a physician who combines clinical competence with
+            <em>community partnership</em> and helps make care more understandable,
+            accessible, preventive, and responsive to the realities of people's lives.
+          </p>
         </article>
+
       </div>
     </div>
   </section>

@@ -725,6 +725,258 @@
     }
 
     /* MOBILE */
+
+
+    /* REQUIRED E-PORTFOLIO FORMAT */
+    .home-framework {
+      padding: 96px 0 102px;
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .framework-heading,
+    .projects-heading,
+    .documentation-heading {
+      max-width: 850px;
+      margin-bottom: 42px;
+    }
+
+    .framework-heading h2,
+    .projects-heading h2,
+    .documentation-heading h2 {
+      margin-top: 10px;
+      font-family: var(--serif);
+      font-size: clamp(2.6rem, 5vw, 4.4rem);
+      line-height: 1.06;
+      font-weight: 500;
+      letter-spacing: -0.025em;
+    }
+
+    .projects-heading p,
+    .documentation-heading p {
+      margin-top: 20px;
+      max-width: 760px;
+      font-size: 1rem;
+    }
+
+    .framework-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .framework-card {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 20px;
+      min-height: 250px;
+      padding: 30px;
+      border: 1px solid var(--line);
+      background: var(--ivory);
+    }
+
+    .framework-card-wide {
+      grid-column: 1 / -1;
+      min-height: auto;
+    }
+
+    .framework-number {
+      font-family: var(--serif);
+      font-size: 2.5rem;
+      color: var(--sage);
+      line-height: 1;
+    }
+
+    .framework-label {
+      margin-bottom: 14px;
+      color: var(--olive);
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .framework-card p {
+      font-family: var(--serif);
+      font-size: clamp(1.25rem, 2.2vw, 1.8rem);
+      line-height: 1.4;
+    }
+
+    .dsa-panel {
+      margin: 50px 0 8px;
+      padding-top: 30px;
+      border-top: 1px solid var(--line);
+    }
+
+    .dsa-heading {
+      margin-bottom: 20px;
+    }
+
+    .dsa-heading h3 {
+      margin-top: 7px;
+      font-family: var(--serif);
+      font-size: 1.75rem;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+
+    .dsa-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .dsa-card {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 14px;
+      padding: 20px;
+      background: #ebe7de;
+      border-top: 2px solid var(--sage);
+    }
+
+    .dsa-card.challenge-card {
+      border-top-color: var(--clay);
+    }
+
+    .dsa-letter {
+      font-family: var(--serif);
+      font-size: 2rem;
+      color: var(--sage);
+      line-height: 1;
+    }
+
+    .challenge-card .dsa-letter {
+      color: var(--clay);
+    }
+
+    .dsa-card strong {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--olive);
+      font-size: .68rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .dsa-card p {
+      margin: 0;
+      font-size: .92rem;
+      line-height: 1.58;
+    }
+
+    .projects-section {
+      padding: 108px 0;
+      background: #e8e5dc;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .project-timeline {
+      border-top: 1px solid #cbc6bb;
+    }
+
+    .project-step {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 38px;
+      padding: 34px 0;
+      border-bottom: 1px solid #cbc6bb;
+    }
+
+    .project-week {
+      color: var(--sage);
+      font-family: var(--serif);
+      font-size: 1.8rem;
+    }
+
+    .project-main h3 {
+      margin-bottom: 20px;
+      font-family: var(--serif);
+      font-size: clamp(1.65rem, 3vw, 2.5rem);
+      font-weight: 500;
+      line-height: 1.15;
+    }
+
+    .project-columns {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+    }
+
+    .project-columns small {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--olive);
+      font-weight: 600;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .project-columns p {
+      font-size: .95rem;
+      line-height: 1.65;
+    }
+
+    .documentation-section {
+      padding: 108px 0;
+      background: var(--paper);
+    }
+
+    .documentation-photo {
+      margin: 0 0 46px;
+    }
+
+    .documentation-photo img {
+      width: 100%;
+      max-height: 650px;
+      object-fit: cover;
+      object-position: center 54%;
+    }
+
+    .documentation-photo figcaption {
+      margin-top: 12px;
+      color: #686d67;
+      font-size: .68rem;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+    }
+
+    .documentation-log {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .doc-item {
+      padding: 22px;
+      border: 1px solid var(--line);
+      background: var(--ivory);
+    }
+
+    .doc-item span {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--sage);
+      font-family: var(--serif);
+      font-size: 1.35rem;
+    }
+
+    .doc-item strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--olive);
+      font-size: .68rem;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+
+    .doc-item p {
+      font-size: .92rem;
+      line-height: 1.55;
+    }
+
+
     @media (max-width: 800px) {
       html {
         scroll-padding-top: 70px;
@@ -740,15 +992,24 @@
       }
 
       .brand {
-        font-size: 0.66rem;
+        display: none;
+      }
+
+      .site-nav {
+        justify-content: center;
       }
 
       .nav-links {
-        gap: 14px;
-        font-size: 0.60rem;
+        width: 100%;
+        justify-content: space-between;
+        gap: 10px;
+        overflow-x: auto;
+        white-space: nowrap;
+        font-size: 0.56rem;
+        scrollbar-width: none;
       }
 
-      .nav-links li:first-child {
+      .nav-links::-webkit-scrollbar {
         display: none;
       }
 
@@ -775,6 +1036,38 @@
       .intro-grid {
         grid-template-columns: 1fr;
         gap: 26px;
+      }
+
+
+      .framework-grid,
+      .dsa-grid,
+      .project-columns,
+      .documentation-log {
+        grid-template-columns: 1fr;
+      }
+
+      .framework-card-wide {
+        grid-column: auto;
+      }
+
+      .framework-card {
+        min-height: auto;
+      }
+
+      .project-step {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .project-week {
+        font-size: 1.45rem;
+      }
+
+      .home-framework,
+      .projects-section,
+      .documentation-section {
+        padding-top: 76px;
+        padding-bottom: 76px;
       }
 
       .author-section {
@@ -870,11 +1163,6 @@
     }
 
     @media (max-width: 520px) {
-      .brand {
-        max-width: 160px;
-        line-height: 1.35;
-      }
-
       .nav-links {
         gap: 11px;
       }
@@ -917,9 +1205,11 @@
     <a class="brand" href="#home">Field Notes · FCM 3</a>
 
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#journal">Journal</a></li>
-      <li><a href="#week7">Community</a></li>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#reflections">Reflections</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#documentation">Documentation</a></li>
+      <li><a href="#closing">Closing</a></li>
     </ul>
   </nav>
 
@@ -937,7 +1227,7 @@
   <section class="intro" id="about">
     <div class="section-inner intro-grid">
       <div>
-        <div class="eyebrow">About the Journal</div>
+        <div class="eyebrow">Introduction</div>
       </div>
 
       <div>
@@ -1004,11 +1294,60 @@
     </div>
   </section>
 
-  <section class="journal-index" id="journal">
+
+
+  <section class="home-framework" id="home-framework">
+    <div class="section-inner">
+      <div class="framework-heading">
+        <div class="eyebrow">Home · Personal Framework</div>
+        <h2>What I hope to carry into FCM 3.</h2>
+      </div>
+
+      <div class="framework-grid">
+        <article class="framework-card framework-card-wide">
+          <div class="framework-number">01</div>
+          <div>
+            <div class="framework-label">Expectation for FCM 3</div>
+            <p>
+              I expect FCM 3 to help me move beyond understanding community medicine
+              conceptually and learn how to translate assessment, collaboration, and
+              primary care principles into work with an actual community.
+            </p>
+          </div>
+        </article>
+
+        <article class="framework-card">
+          <div class="framework-number">02</div>
+          <div>
+            <div class="framework-label">Personal Mission</div>
+            <p>
+              To become a physician who listens carefully, thinks beyond the diagnosis,
+              and provides compassionate, evidence-informed care while recognizing the
+              family, community, and social conditions that shape health.
+            </p>
+          </div>
+        </article>
+
+        <article class="framework-card">
+          <div class="framework-number">03</div>
+          <div>
+            <div class="framework-label">Personal Vision</div>
+            <p>
+              To grow into a physician who combines clinical competence with community
+              partnership and helps make care more understandable, accessible, preventive,
+              and responsive to the realities of people's lives.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="journal-index" id="reflections">
     <div class="section-inner">
 
       <div class="index-heading">
-        <div class="eyebrow">The Journal</div>
+        <div class="eyebrow">Weekly Insights &amp; Reflections</div>
         <h2>Eight weeks, one evolving perspective.</h2>
       </div>
 
@@ -1141,6 +1480,33 @@
           health care that followed in the next sessions.
         </p>
 
+
+        <div class="dsa-panel" aria-label="Week 1 DSA reflection">
+          <div class="dsa-heading">
+            <div class="eyebrow">DSA · Week 01</div>
+            <h3>Discovery · Surprise · Affirmation · Challenge</h3>
+          </div>
+
+          <div class="dsa-grid">
+            <article class="dsa-card">
+              <div class="dsa-letter">D</div>
+              <div><strong>Discovery</strong><p>Seeing patients through family, social, and community contexts changes what good care requires.</p></div>
+            </article>
+            <article class="dsa-card">
+              <div class="dsa-letter">S</div>
+              <div><strong>Surprise</strong><p>The physician roles that stood out most were the ones outside the usual clinical image—especially manager and community leader.</p></div>
+            </article>
+            <article class="dsa-card">
+              <div class="dsa-letter">A</div>
+              <div><strong>Affirmation</strong><p>The session reaffirmed that health is shaped by more than diagnosis and treatment alone.</p></div>
+            </article>
+            <article class="dsa-card challenge-card">
+              <div class="dsa-letter">C</div>
+              <div><strong>Challenge</strong><p>The challenge is to move from recalling these frameworks to actually applying them when thinking through patients and communities.</p></div>
+            </article>
+          </div>
+        </div>
+
         <div class="field-note">
           <div class="field-note-label">Field Note · 01</div>
           <p>
@@ -1217,6 +1583,33 @@
           social and structural barriers that make illness worse in
           the first place.
         </p>
+
+
+        <div class="dsa-panel" aria-label="Week 2 DSA reflection">
+          <div class="dsa-heading">
+            <div class="eyebrow">DSA · Week 02</div>
+            <h3>Discovery · Surprise · Affirmation · Challenge</h3>
+          </div>
+
+          <div class="dsa-grid">
+            <article class="dsa-card">
+              <div class="dsa-letter">D</div>
+              <div><strong>Discovery</strong><p>Continuity of primary care can prevent complications by addressing medical needs together with the barriers that make disease harder to control.</p></div>
+            </article>
+            <article class="dsa-card">
+              <div class="dsa-letter">S</div>
+              <div><strong>Surprise</strong><p>A patient's occupation and daily schedule can influence follow-up, medication adherence, and ultimately clinical outcomes in very concrete ways.</p></div>
+            </article>
+            <article class="dsa-card">
+              <div class="dsa-letter">A</div>
+              <div><strong>Affirmation</strong><p>The case reinforced the importance of social determinants of health in understanding why chronic disease may remain poorly controlled.</p></div>
+            </article>
+            <article class="dsa-card challenge-card">
+              <div class="dsa-letter">C</div>
+              <div><strong>Challenge</strong><p>The challenge is designing care that is medically sound while still being realistic for a patient's work, access, resources, and everyday circumstances.</p></div>
+            </article>
+          </div>
+        </div>
 
         <div class="field-note">
           <div class="field-note-label">Field Note · 02</div>
@@ -1301,6 +1694,33 @@
           still is to the health issues we're learning about now.
         </p>
 
+
+        <div class="dsa-panel" aria-label="Week 3 DSA reflection">
+          <div class="dsa-heading">
+            <div class="eyebrow">DSA · Week 03</div>
+            <h3>Discovery · Surprise · Affirmation · Challenge</h3>
+          </div>
+
+          <div class="dsa-grid">
+            <article class="dsa-card">
+              <div class="dsa-letter">D</div>
+              <div><strong>Discovery</strong><p>Alma-Ata and Astana, despite being 40 years apart, are anchored in many of the same primary health care principles.</p></div>
+            </article>
+            <article class="dsa-card">
+              <div class="dsa-letter">S</div>
+              <div><strong>Surprise</strong><p>The continuity of ideas such as equity, participation, and accessible care across decades was more striking than I expected.</p></div>
+            </article>
+            <article class="dsa-card">
+              <div class="dsa-letter">A</div>
+              <div><strong>Affirmation</strong><p>The discussion reaffirmed that strong primary health care remains central to improving health beyond the level of individual treatment.</p></div>
+            </article>
+            <article class="dsa-card challenge-card">
+              <div class="dsa-letter">C</div>
+              <div><strong>Challenge</strong><p>The challenge is translating broad international principles into practical action within actual local communities and health systems.</p></div>
+            </article>
+          </div>
+        </div>
+
         <div class="field-note">
           <div class="field-note-label">Field Note · 03</div>
           <p>
@@ -1365,6 +1785,33 @@
           exactly what we'd found before deciding what still holds
           true and what needs revising.
         </p>
+
+
+        <div class="dsa-panel" aria-label="Week 4 DSA reflection">
+          <div class="dsa-heading">
+            <div class="eyebrow">DSA · Week 04</div>
+            <h3>Discovery · Surprise · Affirmation · Challenge</h3>
+          </div>
+
+          <div class="dsa-grid">
+            <article class="dsa-card">
+              <div class="dsa-letter">D</div>
+              <div><strong>Discovery</strong><p>A community diagnosis is not permanent; it has to be reassessed as conditions, memories, and available information change.</p></div>
+            </article>
+            <article class="dsa-card">
+              <div class="dsa-letter">S</div>
+              <div><strong>Surprise</strong><p>Even within our own group, people remembered different details from the earlier data collection, showing how easily a shared picture can become uneven over time.</p></div>
+            </article>
+            <article class="dsa-card">
+              <div class="dsa-letter">A</div>
+              <div><strong>Affirmation</strong><p>Reviewing the earlier diagnosis before moving forward affirmed the value of reassessment rather than assuming old findings still apply.</p></div>
+            </article>
+            <article class="dsa-card challenge-card">
+              <div class="dsa-letter">C</div>
+              <div><strong>Challenge</strong><p>The challenge is identifying which findings remain valid and which need updated community data before reprioritizing problems.</p></div>
+            </article>
+          </div>
+        </div>
 
         <div class="field-note">
           <div class="field-note-label">Field Note · 04</div>
@@ -1460,6 +1907,33 @@
           following week.
         </p>
 
+
+        <div class="dsa-panel" aria-label="Week 5 DSA reflection">
+          <div class="dsa-heading">
+            <div class="eyebrow">DSA · Week 05</div>
+            <h3>Discovery · Surprise · Affirmation · Challenge</h3>
+          </div>
+
+          <div class="dsa-grid">
+            <article class="dsa-card">
+              <div class="dsa-letter">D</div>
+              <div><strong>Discovery</strong><p>Community problems become clearer when they are framed beyond disease labels and include upstream factors such as knowledge and environmental conditions.</p></div>
+            </article>
+            <article class="dsa-card">
+              <div class="dsa-letter">S</div>
+              <div><strong>Surprise</strong><p>Health knowledge deficit and unclean surroundings emerged as priority problems in their own right instead of simply being buried under disease categories.</p></div>
+            </article>
+            <article class="dsa-card">
+              <div class="dsa-letter">A</div>
+              <div><strong>Affirmation</strong><p>The session affirmed that careful prioritization gives later data collection and intervention planning a more focused direction.</p></div>
+            </article>
+            <article class="dsa-card challenge-card">
+              <div class="dsa-letter">C</div>
+              <div><strong>Challenge</strong><p>The challenge is defining and ranking interconnected problems without oversimplifying how strongly they influence one another.</p></div>
+            </article>
+          </div>
+        </div>
+
         <div class="field-note">
           <div class="field-note-label">Field Note · 05</div>
           <p>
@@ -1540,6 +2014,33 @@
           and move into planning actual interventions.
         </p>
 
+
+        <div class="dsa-panel" aria-label="Week 6 DSA reflection">
+          <div class="dsa-heading">
+            <div class="eyebrow">DSA · Week 06</div>
+            <h3>Discovery · Surprise · Affirmation · Challenge</h3>
+          </div>
+
+          <div class="dsa-grid">
+            <article class="dsa-card">
+              <div class="dsa-letter">D</div>
+              <div><strong>Discovery</strong><p>A problem tree makes the relationship between root causes, a central problem, and its downstream effects much easier to see.</p></div>
+            </article>
+            <article class="dsa-card">
+              <div class="dsa-letter">S</div>
+              <div><strong>Surprise</strong><p>The most visible health problem is not always the best place to begin an intervention.</p></div>
+            </article>
+            <article class="dsa-card">
+              <div class="dsa-letter">A</div>
+              <div><strong>Affirmation</strong><p>The exercise affirmed that root-cause analysis should come before planning solutions if an intervention is meant to address more than symptoms.</p></div>
+            </article>
+            <article class="dsa-card challenge-card">
+              <div class="dsa-letter">C</div>
+              <div><strong>Challenge</strong><p>The challenge is resisting the tendency to treat community problems as isolated and instead mapping how different causes and effects connect.</p></div>
+            </article>
+          </div>
+        </div>
+
         <div class="field-note">
           <div class="field-note-label">Field Note · 06</div>
           <p>
@@ -1618,6 +2119,33 @@
           community visit in the coming weeks.
         </p>
 
+
+        <div class="dsa-panel" aria-label="Week 7 DSA reflection">
+          <div class="dsa-heading">
+            <div class="eyebrow">DSA · Week 07</div>
+            <h3>Discovery · Surprise · Affirmation · Challenge</h3>
+          </div>
+
+          <div class="dsa-grid">
+            <article class="dsa-card">
+              <div class="dsa-letter">D</div>
+              <div><strong>Discovery</strong><p>Community engagement starts with relationships and local coordination before formal data collection begins.</p></div>
+            </article>
+            <article class="dsa-card">
+              <div class="dsa-letter">S</div>
+              <div><strong>Surprise</strong><p>A courtesy visit that initially felt less substantial than a full immersion still turned out to be an important part of community work.</p></div>
+            </article>
+            <article class="dsa-card">
+              <div class="dsa-letter">A</div>
+              <div><strong>Affirmation</strong><p>The experience affirmed the importance of trust, permission, and partnership with local representatives before entering a community as researchers or health workers.</p></div>
+            </article>
+            <article class="dsa-card challenge-card">
+              <div class="dsa-letter">C</div>
+              <div><strong>Challenge</strong><p>The challenge is balancing the eagerness to begin fieldwork with the formal and relational steps needed to do it respectfully.</p></div>
+            </article>
+          </div>
+        </div>
+
         <div class="field-note">
           <div class="field-note-label">Field Note · 07</div>
           <p>
@@ -1691,6 +2219,33 @@
           completely outside our control, like the weather.
         </p>
 
+
+        <div class="dsa-panel" aria-label="Week 8 DSA reflection">
+          <div class="dsa-heading">
+            <div class="eyebrow">DSA · Week 08</div>
+            <h3>Discovery · Surprise · Affirmation · Challenge</h3>
+          </div>
+
+          <div class="dsa-grid">
+            <article class="dsa-card">
+              <div class="dsa-letter">D</div>
+              <div><strong>Discovery</strong><p>Fieldwork requires flexibility because safety and external conditions can change a plan completely.</p></div>
+            </article>
+            <article class="dsa-card">
+              <div class="dsa-letter">S</div>
+              <div><strong>Surprise</strong><p>A day that initially seemed lost to rain and flooding still became productive once the class shifted to revising the community diagnosis online.</p></div>
+            </article>
+            <article class="dsa-card">
+              <div class="dsa-letter">A</div>
+              <div><strong>Affirmation</strong><p>The experience affirmed that meaningful progress in community work is not limited to physically being in the field.</p></div>
+            </article>
+            <article class="dsa-card challenge-card">
+              <div class="dsa-letter">C</div>
+              <div><strong>Challenge</strong><p>Heavy rain and flooded streets prevented the planned data collection, forcing the class to adapt without losing the rest of the session.</p></div>
+            </article>
+          </div>
+        </div>
+
         <div class="field-note">
           <div class="field-note-label">Field Note · 08</div>
           <p>
@@ -1702,20 +2257,121 @@
     </div>
   </section>
 
-  <section class="closing">
-    <div class="section-inner">
-      <div class="eyebrow" style="color:#cbd0c5;">Eight Weeks In</div>
 
-      <h2>
-        From frameworks on paper to relationships in the community.
-      </h2>
+
+  <section class="projects-section" id="projects">
+    <div class="section-inner">
+      <div class="projects-heading">
+        <div class="eyebrow">Community Programs / Project Updates</div>
+        <h2>From community diagnosis to adaptation.</h2>
+        <p>
+          The project developed in stages rather than as a single activity. Each week
+          added another layer—from reassessing earlier findings to identifying priorities,
+          tracing causes, establishing community partnership, and adjusting the plan when
+          field conditions changed.
+        </p>
+      </div>
+
+      <div class="project-timeline">
+        <article class="project-step">
+          <div class="project-week">Week 04</div>
+          <div class="project-main">
+            <h3>Reassessing the Community Diagnosis</h3>
+            <div class="project-columns">
+              <div><small>Activities &amp; Reflections</small><p>Reviewed the previous year's collated community diagnosis and revisited diarrheal diseases, upper respiratory tract infections, hypertension, and diabetes mellitus.</p></div>
+              <div><small>Discoveries &amp; Challenges</small><p>Older findings provided a starting point, but differences in recall and the possibility of outdated data made reassessment necessary before moving forward.</p></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-step">
+          <div class="project-week">Week 05</div>
+          <div class="project-main">
+            <h3>Re-identification &amp; Re-prioritization</h3>
+            <div class="project-columns">
+              <div><small>Activities &amp; Reflections</small><p>Refined the problem statements and finalized five priorities: communicable respiratory illnesses, diarrheal diseases, non-communicable diseases, health knowledge deficit, and unclean environmental surroundings.</p></div>
+              <div><small>Discoveries &amp; Challenges</small><p>The process showed that upstream knowledge and environmental concerns deserve their own place in the diagnosis; the challenge was prioritizing problems that are deeply interconnected.</p></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-step">
+          <div class="project-week">Week 06</div>
+          <div class="project-main">
+            <h3>Problem Tree &amp; Root-Cause Analysis</h3>
+            <div class="project-columns">
+              <div><small>Activities &amp; Reflections</small><p>Mapped root causes, core problems, and effects to make the relationships among the priority concerns more concrete.</p></div>
+              <div><small>Discoveries &amp; Challenges</small><p>The exercise made it clear that the most visible outcome is not always the most useful intervention point; the challenge was avoiding isolated, one-problem-at-a-time thinking.</p></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-step">
+          <div class="project-week">Week 07</div>
+          <div class="project-main">
+            <h3>Barangay Courtesy Visit</h3>
+            <div class="project-columns">
+              <div><small>Activities &amp; Reflections</small><p>Visited the barangay hall, introduced the group and project, and formally informed local officials about the planned community diagnosis activities.</p></div>
+              <div><small>Discoveries &amp; Challenges</small><p>The visit reinforced that community work starts with institutional and relational groundwork. The challenge was accepting that relationship-building comes before the fuller immersion we were eager to begin.</p></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-step">
+          <div class="project-week">Week 08</div>
+          <div class="project-main">
+            <h3>Weather Disruption &amp; Online Revision</h3>
+            <div class="project-columns">
+              <div><small>Activities &amp; Reflections</small><p>Heavy rain and flooded streets prevented the planned community data collection, so the class shifted online and used the remaining period to revise the community diagnosis presentation.</p></div>
+              <div><small>Discoveries &amp; Challenges</small><p>The disruption highlighted fieldwork's dependence on conditions outside our control, while also showing that adapting the plan can still preserve meaningful progress.</p></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="documentation-section" id="documentation">
+    <div class="section-inner">
+      <div class="documentation-heading">
+        <div class="eyebrow">Documentation</div>
+        <h2>What we have documented so far.</h2>
+        <p>
+          My current visual documentation is limited, so I am keeping this section honest:
+          the barangay courtesy visit is the main photograph available at this stage.
+          The weekly entries themselves preserve the sequence of activities, decisions,
+          revisions, discoveries, and challenges while the portfolio remains ongoing.
+        </p>
+      </div>
+
+      <figure class="documentation-photo">
+        <img src="barangay-hall.jpeg" alt="FCM 3 class during the barangay courtesy visit">
+        <figcaption>Barangay courtesy visit · Week 7 · September 2026</figcaption>
+      </figure>
+
+      <div class="documentation-log">
+        <div class="doc-item"><span>Weeks 01–03</span><strong>Foundational learning records</strong><p>Weekly reflections on family context, social determinants, primary health care, Alma-Ata, and Astana.</p></div>
+        <div class="doc-item"><span>Weeks 04–06</span><strong>Community diagnosis development</strong><p>Reflective record of reassessment, problem prioritization, and problem-tree analysis.</p></div>
+        <div class="doc-item"><span>Week 07</span><strong>Photographic documentation</strong><p>Barangay courtesy visit and formal introduction of the community diagnosis project.</p></div>
+        <div class="doc-item"><span>Week 08</span><strong>Adaptation record</strong><p>Weather-related fieldwork disruption and online revision of the community diagnosis presentation.</p></div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="closing" id="closing">
+    <div class="section-inner">
+      <div class="eyebrow" style="color:#cbd0c5;">Closing Message</div>
+
+      <h2>The journal continues.</h2>
 
       <p>
-        FCM 3 is gradually shifting the way I think about health:
-        from individual disease toward the families, systems,
-        environments, and communities in which health actually
-        happens—and toward the flexibility that community work often
-        demands.
+        Eight weeks into FCM 3, I am beginning to see community medicine less as a
+        separate subject and more as a way of understanding how health actually happens.
+        The work has moved from frameworks and case discussions to community diagnosis,
+        partnership, and the practical need to adapt when plans change. This portfolio is
+        still in progress, and I expect the next entries to keep challenging how I connect
+        clinical thinking with the realities of families and communities.
       </p>
     </div>
   </section>

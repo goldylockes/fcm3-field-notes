@@ -626,6 +626,46 @@
       text-transform: uppercase;
     }
 
+
+    /* WEEK 8 ADAPTATION VISUAL */
+    .adaptation-strip {
+      margin: 48px 0;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .adaptation-card {
+      padding: 26px 28px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.18);
+    }
+
+    .adaptation-card small {
+      display: block;
+      margin-bottom: 9px;
+      color: var(--olive);
+      font-size: 0.66rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .adaptation-card strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: 1.45rem;
+      line-height: 1.25;
+      font-weight: 500;
+    }
+
+    .adaptation-arrow {
+      align-self: center;
+      color: var(--sage);
+      font-size: 1.7rem;
+    }
+
     /* WEEK 7 PHOTO */
     .entry-photo {
       width: min(1080px, 100%);
@@ -795,6 +835,15 @@
         text-align: center;
       }
 
+      .adaptation-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .adaptation-arrow {
+        transform: rotate(90deg);
+        text-align: center;
+      }
+
       .roots {
         padding: 28px 22px;
       }
@@ -937,12 +986,12 @@
         </h2>
 
         <div class="author-meta">
-          Year 3A · Pamantasan ng Lungsod ng Maynila
+          YL 3A · Pamantasan ng Lungsod ng Maynila
         </div>
 
         <div class="author-copy">
           <p>
-            I am a third-year medical student at Pamantasan ng Lungsod ng Maynila,
+            I am a YL 3A medical student at Pamantasan ng Lungsod ng Maynila,
             documenting my experiences in Family and Community Medicine 3 through
             this weekly reflective journal. These entries trace how my understanding
             of health continues to develop beyond individual disease—toward the
@@ -960,7 +1009,7 @@
 
       <div class="index-heading">
         <div class="eyebrow">The Journal</div>
-        <h2>Seven weeks, one evolving perspective.</h2>
+        <h2>Eight weeks, one evolving perspective.</h2>
       </div>
 
       <a href="#week1" class="index-item">
@@ -1024,6 +1073,15 @@
           <div class="index-title">Before We Enter the Community</div>
         </div>
         <div class="index-date">September 02 · 2026</div>
+      </a>
+
+      <a href="#week8" class="index-item">
+        <div class="index-number">08</div>
+        <div>
+          <div class="index-category">Adaptation</div>
+          <div class="index-title">When the Weather Changed the Plan</div>
+        </div>
+        <div class="index-date">September 09 · 2026</div>
       </a>
     </div>
   </section>
@@ -1571,9 +1629,82 @@
     </div>
   </section>
 
+  <section class="entry" id="week8">
+    <div class="section-inner">
+      <div class="entry-header">
+        <div class="entry-number">08</div>
+
+        <div>
+          <div class="entry-meta">Adaptation · September 09, 2026</div>
+          <h2>When the Weather Changed the Plan</h2>
+          <div class="entry-subtitle">
+            Fieldwork, flexibility, and making use of an interrupted day.
+          </div>
+        </div>
+      </div>
+
+      <div class="entry-body">
+        <p>
+          Week 8 was supposed to be another community visit to collect
+          additional data, but heavy rain got in the way. I managed to
+          get to the university, but by the time I arrived I was
+          completely soaked from the downpour, so I decided to head
+          back home instead of continuing on.
+        </p>
+
+        <p>
+          As it turned out, the rest of the class who stayed and made
+          it to the classroom had gone through the same flooded streets
+          I did, and the professor ultimately decided not to send anyone
+          out to the community given the conditions.
+        </p>
+
+        <div class="adaptation-strip">
+          <div class="adaptation-card">
+            <small>Planned</small>
+            <strong>Community data collection</strong>
+          </div>
+
+          <div class="adaptation-arrow">→</div>
+
+          <div class="adaptation-card">
+            <small>Adapted</small>
+            <strong>Online revision of the community diagnosis</strong>
+          </div>
+        </div>
+
+        <blockquote class="pull-quote">
+          Not every productive fieldwork day has to happen in the field.
+        </blockquote>
+
+        <p>
+          Instead, we had an online class for the rest of the period,
+          using the time to revise our community diagnosis presentation.
+          In a way, it worked out—even though we didn't get the
+          additional data we were hoping to collect, we made good use
+          of the time by refining what we already had.
+        </p>
+
+        <p>
+          It was a practical adjustment to an uncooperative situation,
+          and a reminder that fieldwork often has to bend around things
+          completely outside our control, like the weather.
+        </p>
+
+        <div class="field-note">
+          <div class="field-note-label">Field Note · 08</div>
+          <p>
+            Community work requires flexibility: when conditions change,
+            progress can mean adapting the plan rather than forcing it.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="closing">
     <div class="section-inner">
-      <div class="eyebrow" style="color:#cbd0c5;">Seven Weeks In</div>
+      <div class="eyebrow" style="color:#cbd0c5;">Eight Weeks In</div>
 
       <h2>
         From frameworks on paper to relationships in the community.
@@ -1583,14 +1714,15 @@
         FCM 3 is gradually shifting the way I think about health:
         from individual disease toward the families, systems,
         environments, and communities in which health actually
-        happens.
+        happens—and toward the flexibility that community work often
+        demands.
       </p>
     </div>
   </section>
 
   <footer>
     <div>Karen Isabelle F. Fernando · Field Notes · FCM 3</div>
-    <div>Year 3A · Pamantasan ng Lungsod ng Maynila · 2026</div>
+    <div>YL 3A · Pamantasan ng Lungsod ng Maynila · 2026</div>
   </footer>
 
   <script>

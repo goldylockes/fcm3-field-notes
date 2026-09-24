@@ -2628,7 +2628,7 @@
   </section>
 
 <footer>
-    <div>Karen Isabelle F. Fernando · Field Notes · FCM 3 · Visitor Count <span id="visitor-count">0</span></div>
+    <div>Karen Isabelle F. Fernando · Field Notes · FCM 3</div>
     <div>Year 3 · Pamantasan ng Lungsod ng Maynila · 2026</div>
   </footer>
 
@@ -2660,58 +2660,5 @@
     updateNav();
     window.addEventListener("scroll", updateNav, { passive: true });
   </script>
-
-  <!--
-    LIVE VISITOR COUNTER
-    Replace YOUR_GOATCOUNTER_CODE with your GoatCounter site code.
-    In GoatCounter, enable "Allow adding visitor counts on your website".
-    Until configured, the footer displays 0.
-  -->
-  <script>
-    (function () {
-      const code = "YOUR_GOATCOUNTER_CODE";
-      const countEl = document.getElementById("visitor-count");
-
-      if (!countEl || code === "YOUR_GOATCOUNTER_CODE") return;
-
-      const counterScript = document.createElement("script");
-      counterScript.src = "https://gc.zgo.at/count.js";
-      counterScript.async = true;
-      counterScript.dataset.goatcounter =
-        "https://" + code + ".goatcounter.com/count";
-
-      counterScript.onload = function () {
-        const hiddenCounter = document.createElement("div");
-        hiddenCounter.id = "gc-hidden-counter";
-        hiddenCounter.style.display = "none";
-        document.body.appendChild(hiddenCounter);
-
-        const timer = setInterval(function () {
-          if (window.goatcounter && window.goatcounter.visit_count) {
-            clearInterval(timer);
-
-            window.goatcounter.visit_count({
-              append: "#gc-hidden-counter",
-              path: "TOTAL",
-              no_branding: true
-            });
-
-            const readTimer = setInterval(function () {
-              const views = hiddenCounter.querySelector("#gcvc-views");
-              if (views) {
-                const number = views.textContent.replace(/[^\d,]/g, "").trim();
-                if (number) countEl.textContent = number;
-                clearInterval(readTimer);
-                hiddenCounter.remove();
-              }
-            }, 100);
-          }
-        }, 100);
-      };
-
-      document.body.appendChild(counterScript);
-    })();
-  </script>
-
 </body>
 </html>

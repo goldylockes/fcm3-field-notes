@@ -713,91 +713,6 @@
 
     /* FOOTER */
 
-    /* PORTFOLIO STATUS / VISITOR COUNTER */
-    .portfolio-status {
-      background: var(--charcoal);
-      color: var(--ivory);
-      border-top: 1px solid rgba(255,255,255,.12);
-    }
-
-    .portfolio-status-inner {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 30px var(--gutter);
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      align-items: center;
-    }
-
-    .status-item {
-      min-height: 72px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 0 28px;
-    }
-
-    .status-item:first-child {
-      padding-left: 0;
-    }
-
-    .status-item + .status-item {
-      border-left: 1px solid rgba(255,255,255,.16);
-    }
-
-    .status-label {
-      margin-bottom: 7px;
-      color: #b9c0b4;
-      font-size: .62rem;
-      font-weight: 600;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-    }
-
-    .status-value {
-      font-family: var(--serif);
-      font-size: clamp(1.15rem, 2vw, 1.55rem);
-      line-height: 1.2;
-      font-weight: 500;
-    }
-
-    .status-value small {
-      font-family: var(--sans);
-      font-size: .72rem;
-      color: #b9c0b4;
-      font-weight: 400;
-      letter-spacing: .04em;
-    }
-
-    #gc-visits {
-      min-height: 30px;
-    }
-
-    #gc-visits > div {
-      width: auto !important;
-      height: auto !important;
-      min-height: 0 !important;
-      padding: 0 !important;
-      border: 0 !important;
-      background: transparent !important;
-      color: inherit !important;
-      box-shadow: none !important;
-      text-align: left !important;
-      font-family: inherit !important;
-    }
-
-    #gc-visits #gcvc-for,
-    #gc-visits #gcvc-by {
-      display: none !important;
-    }
-
-    #gc-visits #gcvc-views {
-      color: var(--ivory) !important;
-      font-family: var(--serif) !important;
-      font-size: clamp(1.15rem, 2vw, 1.55rem) !important;
-      font-weight: 500 !important;
-      line-height: 1.2 !important;
-    }
 
     footer {
       padding: 30px 5vw;
@@ -1190,23 +1105,7 @@
       .documentation-log {
         grid-template-columns: 1fr;
       }
-
-      .portfolio-status-inner {
-        grid-template-columns: 1fr;
-      }
-
-      .status-item,
-      .status-item:first-child {
-        min-height: auto;
-        padding: 18px 0;
-      }
-
-      .status-item + .status-item {
-        border-left: 0;
-        border-top: 1px solid rgba(255,255,255,.16);
-      }
-
-      .framework-row {
+.framework-row {
         grid-template-columns: 70px 1fr;
         gap: 18px;
         padding: 28px 0 30px;
@@ -2728,31 +2627,8 @@
     </div>
   </section>
 
-  <section class="portfolio-status" aria-label="Portfolio status">
-    <div class="portfolio-status-inner">
-
-      <div class="status-item">
-        <div class="status-label">Field Notes</div>
-        <div class="status-value">09 <small>entries · ongoing</small></div>
-      </div>
-
-      <div class="status-item">
-        <div class="status-label">Visitors</div>
-        <div class="status-value" id="gc-visits">
-          <span id="visitor-fallback">— <small>visits</small></span>
-        </div>
-      </div>
-
-      <div class="status-item">
-        <div class="status-label">Last Updated</div>
-        <div class="status-value">24 September 2026</div>
-      </div>
-
-    </div>
-  </section>
-
-  <footer>
-    <div>Karen Isabelle F. Fernando · Field Notes · FCM 3</div>
+<footer>
+    <div>Karen Isabelle F. Fernando · Field Notes · FCM 3 · Visitor Count <span id="visitor-count">0</span></div>
     <div>Year 3 · Pamantasan ng Lungsod ng Maynila · 2026</div>
   </footer>
 
@@ -2787,53 +2663,48 @@
 
   <!--
     LIVE VISITOR COUNTER
-    1) Create a free GoatCounter site.
-    2) Replace YOUR_GOATCOUNTER_CODE below with your GoatCounter site code.
-    3) In GoatCounter Settings > Site settings, enable:
-       "Allow adding visitor counts on your website".
+    Replace YOUR_GOATCOUNTER_CODE with your GoatCounter site code.
+    In GoatCounter, enable "Allow adding visitor counts on your website".
+    Until configured, the footer displays 0.
   -->
   <script>
     (function () {
       const code = "YOUR_GOATCOUNTER_CODE";
-      const target = document.getElementById("gc-visits");
+      const countEl = document.getElementById("visitor-count");
 
-      if (!target || code === "YOUR_GOATCOUNTER_CODE") return;
-
-      const fallback = document.getElementById("visitor-fallback");
-      if (fallback) fallback.remove();
+      if (!countEl || code === "YOUR_GOATCOUNTER_CODE") return;
 
       const counterScript = document.createElement("script");
       counterScript.src = "https://gc.zgo.at/count.js";
       counterScript.async = true;
-      counterScript.dataset.goatcounter = "https://" + code + ".goatcounter.com/count";
+      counterScript.dataset.goatcounter =
+        "https://" + code + ".goatcounter.com/count";
 
       counterScript.onload = function () {
+        const hiddenCounter = document.createElement("div");
+        hiddenCounter.id = "gc-hidden-counter";
+        hiddenCounter.style.display = "none";
+        document.body.appendChild(hiddenCounter);
+
         const timer = setInterval(function () {
           if (window.goatcounter && window.goatcounter.visit_count) {
             clearInterval(timer);
+
             window.goatcounter.visit_count({
-              append: "#gc-visits",
+              append: "#gc-hidden-counter",
               path: "TOTAL",
-              no_branding: true,
-              style: `
-                div {
-                  border: 0;
-                  background: transparent;
-                  color: inherit;
-                  padding: 0;
-                  width: auto;
-                  height: auto;
-                  min-height: 0;
-                  text-align: left;
-                }
-                #gcvc-for, #gcvc-by { display: none; }
-                #gcvc-views {
-                  color: #f4f0e6;
-                  font-size: 24px;
-                  font-family: Georgia, serif;
-                }
-              `
+              no_branding: true
             });
+
+            const readTimer = setInterval(function () {
+              const views = hiddenCounter.querySelector("#gcvc-views");
+              if (views) {
+                const number = views.textContent.replace(/[^\d,]/g, "").trim();
+                if (number) countEl.textContent = number;
+                clearInterval(readTimer);
+                hiddenCounter.remove();
+              }
+            }, 100);
           }
         }, 100);
       };
@@ -2841,7 +2712,6 @@
       document.body.appendChild(counterScript);
     })();
   </script>
-
 
 </body>
 </html>

@@ -2097,6 +2097,322 @@
       }
     }
 
+  
+    /* =========================================================
+       ABOUT ME — refined, calmer first-screen layout
+       ========================================================= */
+
+    .page-view[data-page="about-me"] .author-section {
+      min-height: calc(100vh - 56px);
+      box-sizing: border-box;
+      padding-top: 76px !important;
+      padding-bottom: 76px !important;
+      display: flex;
+      align-items: center;
+    }
+
+    .page-view[data-page="about-me"] .author-section .section-inner {
+      width: 100%;
+    }
+
+    .page-view[data-page="about-me"] .author-grid {
+      grid-template-columns: 0.55fr 1.55fr;
+      gap: 82px;
+      align-items: center;
+    }
+
+    /* Restore the original square placeholder size. */
+    .page-view[data-page="about-me"] .author-mark {
+      width: min(100%, 240px) !important;
+      aspect-ratio: 1 / 1 !important;
+      border-radius: 28px;
+      align-self: center;
+      justify-self: center;
+    }
+
+    .page-view[data-page="about-me"] .author-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* Quieter name scale — still editorial, no longer dominating the page. */
+    .page-view[data-page="about-me"] .author-name {
+      max-width: 760px;
+      font-size: clamp(2.7rem, 4.2vw, 4rem) !important;
+      line-height: 1.02;
+    }
+
+    .page-view[data-page="about-me"] .author-copy {
+      max-width: 760px;
+      font-size: .98rem;
+      line-height: 1.72;
+    }
+
+    .page-view[data-page="about-me"] .author-copy p + p {
+      margin-top: 17px;
+    }
+
+    /* Remove the old keyword/focus strip completely. */
+    .author-focus {
+      display: none !important;
+    }
+
+    /* Personal Framework begins after the About screen. */
+    .page-view[data-page="about-me"] .home-framework {
+      padding-top: 88px;
+    }
+
+    @media (max-width: 900px) {
+      .page-view[data-page="about-me"] .author-section {
+        min-height: auto;
+        padding-top: 94px !important;
+        padding-bottom: 72px !important;
+      }
+
+      .page-view[data-page="about-me"] .author-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .page-view[data-page="about-me"] .author-mark {
+        width: 220px !important;
+        justify-self: start;
+      }
+
+      .page-view[data-page="about-me"] .author-name {
+        font-size: clamp(2.5rem, 9vw, 3.6rem) !important;
+      }
+    }
+
+  
+    /* =========================================================
+       ABOUT ME — rebalance first screen
+       ========================================================= */
+
+    .page-view[data-page="about-me"] .author-grid {
+      grid-template-columns: 300px minmax(0, 920px) !important;
+      gap: 72px !important;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .page-view[data-page="about-me"] .author-mark {
+      width: 240px !important;
+      justify-self: center !important;
+    }
+
+    .page-view[data-page="about-me"] .author-name {
+      max-width: 900px !important;
+      font-size: clamp(2.55rem, 3.7vw, 3.55rem) !important;
+      line-height: 1.03;
+    }
+
+    .page-view[data-page="about-me"] .author-copy {
+      max-width: 900px !important;
+      font-size: .96rem;
+      line-height: 1.68;
+    }
+
+    /* =========================================================
+       PERSONAL FRAMEWORK — compact enough to read in one screen
+       ========================================================= */
+
+    .page-view[data-page="about-me"] .home-framework {
+      min-height: calc(100vh - 56px);
+      box-sizing: border-box;
+      padding-top: 56px !important;
+      padding-bottom: 56px !important;
+      display: flex;
+      align-items: center;
+    }
+
+    .page-view[data-page="about-me"] .home-framework .section-inner {
+      width: 100%;
+    }
+
+    .page-view[data-page="about-me"] .framework-heading {
+      max-width: 760px;
+      margin-bottom: 28px;
+    }
+
+    .page-view[data-page="about-me"] .framework-heading h2 {
+      margin-top: 8px;
+      font-size: clamp(2.5rem, 4.2vw, 3.8rem) !important;
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+    }
+
+    .page-view[data-page="about-me"] .framework-list {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .page-view[data-page="about-me"] .framework-row {
+      grid-template-columns: 110px 220px minmax(0, 1fr) !important;
+      gap: 28px !important;
+      padding: 26px 0 !important;
+      align-items: start;
+    }
+
+    .page-view[data-page="about-me"] .framework-number {
+      font-size: 2.2rem !important;
+      line-height: 1;
+    }
+
+    .page-view[data-page="about-me"] .framework-label {
+      padding-top: 4px;
+      font-size: .66rem !important;
+      line-height: 1.45;
+    }
+
+    .page-view[data-page="about-me"] .framework-row p {
+      margin: 0;
+      max-width: 900px;
+      font-family: var(--serif);
+      font-size: clamp(1.18rem, 1.75vw, 1.55rem) !important;
+      line-height: 1.35 !important;
+      letter-spacing: -0.012em;
+    }
+
+    @media (max-width: 980px) {
+      .page-view[data-page="about-me"] .author-grid {
+        grid-template-columns: 220px minmax(0, 1fr) !important;
+        gap: 46px !important;
+      }
+
+      .page-view[data-page="about-me"] .author-mark {
+        width: 210px !important;
+      }
+
+      .page-view[data-page="about-me"] .framework-row {
+        grid-template-columns: 75px 170px minmax(0, 1fr) !important;
+        gap: 18px !important;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .page-view[data-page="about-me"] .author-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .page-view[data-page="about-me"] .author-mark {
+        width: 200px !important;
+        justify-self: start !important;
+      }
+
+      .page-view[data-page="about-me"] .home-framework {
+        min-height: auto;
+        padding-top: 70px !important;
+        padding-bottom: 70px !important;
+      }
+
+      .page-view[data-page="about-me"] .framework-row {
+        grid-template-columns: 62px 1fr !important;
+      }
+
+      .page-view[data-page="about-me"] .framework-row p {
+        grid-column: 2;
+        font-size: 1.16rem !important;
+      }
+    }
+
+  
+    /* =========================================================
+       ABOUT ME — restore proper editorial margins
+       ========================================================= */
+
+    .page-view[data-page="about-me"] .author-section .section-inner,
+    .page-view[data-page="about-me"] .home-framework .section-inner {
+      width: min(var(--max-width), 88%) !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    /* Personal Framework: same layout, just a little smaller and tighter. */
+    .page-view[data-page="about-me"] .home-framework {
+      min-height: calc(100vh - 56px);
+      padding-top: 42px !important;
+      padding-bottom: 42px !important;
+    }
+
+    .page-view[data-page="about-me"] .framework-heading {
+      max-width: 760px;
+      margin-bottom: 24px;
+    }
+
+    .page-view[data-page="about-me"] .framework-heading h2 {
+      font-size: clamp(2.35rem, 3.7vw, 3.35rem) !important;
+      line-height: 1.03;
+    }
+
+    .page-view[data-page="about-me"] .framework-row {
+      grid-template-columns: 86px 190px minmax(0, 1fr) !important;
+      gap: 24px !important;
+      padding: 22px 0 !important;
+    }
+
+    .page-view[data-page="about-me"] .framework-number {
+      font-size: 2rem !important;
+    }
+
+    .page-view[data-page="about-me"] .framework-label {
+      padding-top: 3px;
+      font-size: .63rem !important;
+      line-height: 1.45;
+    }
+
+    .page-view[data-page="about-me"] .framework-row p {
+      max-width: none !important;
+      font-size: clamp(1.08rem, 1.45vw, 1.34rem) !important;
+      line-height: 1.34 !important;
+    }
+
+    @media (max-width: 980px) {
+      .page-view[data-page="about-me"] .framework-row {
+        grid-template-columns: 70px 165px minmax(0, 1fr) !important;
+        gap: 18px !important;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .page-view[data-page="about-me"] .author-section .section-inner,
+      .page-view[data-page="about-me"] .home-framework .section-inner {
+        width: 88% !important;
+      }
+
+      .page-view[data-page="about-me"] .home-framework {
+        min-height: auto;
+        padding-top: 68px !important;
+        padding-bottom: 68px !important;
+      }
+
+      .page-view[data-page="about-me"] .framework-row {
+        grid-template-columns: 58px 1fr !important;
+      }
+
+      .page-view[data-page="about-me"] .framework-row p {
+        grid-column: 2;
+        font-size: 1.08rem !important;
+      }
+    }
+
+  
+    /* =========================================================
+       ABOUT ME — lower the text slightly to reduce dead space
+       ========================================================= */
+
+    .page-view[data-page="about-me"] .author-grid > div:last-child {
+      transform: translateY(30px);
+    }
+
+    @media (max-width: 900px) {
+      .page-view[data-page="about-me"] .author-grid > div:last-child {
+        transform: none;
+      }
+    }
+
   </style>
 </head>
 
@@ -2196,28 +2512,28 @@
           </p>
 
           <p>
-            I use this portfolio not only to record what happened each week, but also
-            to keep track of how my way of looking at health changes with experience.
-            FCM 3 has made me pay closer attention to the practical details that can
-            easily disappear behind a diagnosis: access to care, health knowledge,
-            family roles, environment, continuity, and the community's own
-            interpretation of its needs.
+            Medical school has taught me to pay attention to details, but FCM has
+            challenged me to ask what those details mean outside the hospital or
+            classroom. I am learning that a diagnosis can explain only part of a
+            person's health story; the rest may be shaped by work, family, access,
+            environment, health knowledge, and the everyday decisions people have
+            to make.
           </p>
 
           <p>
-            As the course progresses, I want these field notes to read less like a
-            checklist of completed requirements and more like a record of a developing
-            clinical perspective—one that listens before it assumes, checks conclusions
-            against lived experience, and keeps individual care connected to the setting
-            in which people actually live.
+            I am still figuring out the kind of physician I want to become, but I know
+            I want to be someone who can combine careful clinical thinking with an
+            understanding of the person and community behind the case. I value being
+            observant, asking questions, and revisiting my first interpretation when
+            new information changes the picture.
           </p>
 
-          <div class="author-focus">
-            <span>Listening</span>
-            <span>Context</span>
-            <span>Continuity</span>
-            <span>Community voice</span>
-          </div>
+          <p>
+            This portfolio is therefore both a course requirement and a record of that
+            process. It gives me a place to look back on what I noticed, what surprised
+            me, what I misunderstood, and what I want to carry forward as my medical
+            training continues.
+          </p>
         </div>
       </div>
 

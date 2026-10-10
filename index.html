@@ -1391,6 +1391,528 @@
         animation: none !important;
       }
     }
+  
+    /* =========================================================
+       EDITORIAL REFINEMENT
+       Less dashboard, more field-journal / magazine.
+       Boxes are reserved almost exclusively for Field Notes.
+       ========================================================= */
+
+    /* Reflections index — typography and rules, not cards */
+    .journal-index .section-inner {
+      column-gap: 54px;
+    }
+
+    .index-item {
+      background: transparent !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+    }
+
+    .index-item.active-week-link {
+      transform: translateX(5px);
+    }
+
+    .index-item.active-week-link::before {
+      content: "→";
+      position: absolute;
+      margin-left: -24px;
+      color: var(--clay);
+      font-family: var(--serif);
+      font-size: 1rem;
+    }
+
+    /* DSA — open editorial 2×2 grid */
+    .dsa-panel {
+      margin: 58px 0 12px;
+      padding-top: 34px;
+      border-top: 1px solid var(--line);
+    }
+
+    .dsa-heading {
+      margin-bottom: 24px;
+    }
+
+    .dsa-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .dsa-card {
+      display: grid;
+      grid-template-columns: 54px minmax(0, 1fr);
+      gap: 18px;
+      padding: 28px 30px 30px 0;
+      background: transparent;
+      border: 0;
+    }
+
+    .dsa-card:nth-child(odd) {
+      border-right: 1px solid var(--line);
+      padding-right: 32px;
+    }
+
+    .dsa-card:nth-child(even) {
+      padding-left: 32px;
+    }
+
+    .dsa-card:nth-child(-n+2) {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .dsa-card.challenge-card {
+      border-top: 0;
+    }
+
+    .dsa-letter {
+      font-size: 2.7rem;
+      color: var(--sage);
+      opacity: .82;
+    }
+
+    .challenge-card .dsa-letter {
+      color: var(--clay);
+    }
+
+    .dsa-card strong {
+      margin-top: 4px;
+      margin-bottom: 8px;
+    }
+
+    .dsa-card p {
+      font-size: .94rem;
+      line-height: 1.65;
+    }
+
+    /* Week 3 — Alma-Ata → Astana as an open typographic spread */
+    .timeline {
+      margin: 52px 0;
+      padding: 30px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .timeline-year {
+      padding: 0;
+      border: 0;
+      background: transparent;
+    }
+
+    .timeline-year strong {
+      font-size: 3.3rem;
+    }
+
+    .timeline-arrow {
+      padding: 0 14px;
+      font-size: 2rem;
+      color: var(--clay);
+    }
+
+    /* Week 6 — problem tree without cards */
+    .roots {
+      margin: 52px 0;
+      padding: 0;
+      background: transparent;
+    }
+
+    .roots h3 {
+      margin-bottom: 22px;
+    }
+
+    .roots-grid {
+      gap: 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .root-card {
+      padding: 24px 24px 26px 0;
+      background: transparent;
+      border: 0;
+    }
+
+    .root-card + .root-card {
+      padding-left: 24px;
+      border-left: 1px solid var(--line);
+    }
+
+    .root-card small {
+      color: var(--sage);
+    }
+
+    /* Week 8 — simple planned → adapted statement */
+    .adaptation-strip {
+      margin: 52px 0;
+      padding: 28px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      align-items: center;
+    }
+
+    .adaptation-card {
+      padding: 0;
+      border: 0;
+      background: transparent;
+    }
+
+    .adaptation-arrow {
+      padding: 0 18px;
+      color: var(--clay);
+      font-size: 2rem;
+    }
+
+    /* Weeks 9 & 10 — process line rather than four boxes */
+    .data-flow {
+      position: relative;
+      margin: 56px 0;
+      padding-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 24px;
+      border: 0;
+    }
+
+    .data-flow::before {
+      content: "";
+      position: absolute;
+      top: 7px;
+      left: 7%;
+      right: 7%;
+      height: 1px;
+      background: var(--line);
+    }
+
+    .data-flow-step {
+      position: relative;
+      min-height: 0;
+      padding: 12px 10px 0;
+      text-align: center;
+    }
+
+    .data-flow-step::before {
+      content: "";
+      position: absolute;
+      top: -25px;
+      left: 50%;
+      width: 9px;
+      height: 9px;
+      border: 1px solid var(--sage);
+      border-radius: 50%;
+      background: var(--paper);
+      transform: translateX(-50%);
+    }
+
+    .data-flow-step + .data-flow-step {
+      border-left: 0;
+    }
+
+    .data-flow-step small {
+      color: var(--sage);
+    }
+
+    .data-flow-step strong {
+      font-size: 1.25rem;
+    }
+
+    /* Field Note remains the one deliberate recurring "card" */
+    .field-note {
+      margin-top: 56px;
+      padding: 32px 38px;
+      box-shadow: none;
+    }
+
+    /* PROJECTS — editorial vertical timeline */
+    .projects-section {
+      background: var(--paper);
+      border-top: 0;
+      border-bottom: 0;
+    }
+
+    .project-timeline {
+      position: relative;
+      border-top: 0;
+    }
+
+    .project-timeline::before {
+      content: "";
+      position: absolute;
+      top: 16px;
+      bottom: 16px;
+      left: 116px;
+      width: 1px;
+      background: var(--line);
+    }
+
+    .project-step {
+      position: relative;
+      display: grid;
+      grid-template-columns: 88px minmax(0, 1fr);
+      gap: 56px;
+      padding: 38px 0 42px;
+      border-bottom: 0;
+    }
+
+    .project-step::after {
+      content: "";
+      position: absolute;
+      top: 49px;
+      left: 111px;
+      width: 9px;
+      height: 9px;
+      border: 1px solid var(--sage);
+      border-radius: 50%;
+      background: var(--paper);
+    }
+
+    .project-week {
+      padding-top: 1px;
+      text-align: right;
+      font-size: 1.55rem;
+      color: var(--sage);
+    }
+
+    .project-main {
+      padding-bottom: 4px;
+    }
+
+    .project-main h3 {
+      margin-bottom: 18px;
+    }
+
+    .project-columns {
+      gap: 0;
+    }
+
+    .project-columns > div {
+      padding-right: 30px;
+    }
+
+    .project-columns > div + div {
+      padding-left: 30px;
+      padding-right: 0;
+      border-left: 1px solid var(--line);
+    }
+
+    /* DOCUMENTATION — photo essay */
+    .documentation-section {
+      background: var(--paper);
+    }
+
+    .documentation-gallery {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 30px;
+      margin-bottom: 70px;
+    }
+
+    .documentation-photo img {
+      aspect-ratio: 16 / 10;
+    }
+
+    .documentation-photo:nth-child(3) {
+      grid-column: 1 / -1;
+      margin-top: 14px;
+    }
+
+    .documentation-photo:nth-child(3) img {
+      aspect-ratio: 16 / 8.5;
+      max-height: 720px;
+    }
+
+    .documentation-photo figcaption {
+      margin-top: 13px;
+    }
+
+    /* Documentation log — reading list / archival register */
+    .documentation-log {
+      display: block;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .doc-item {
+      display: grid;
+      grid-template-columns: 150px 250px minmax(0, 1fr);
+      gap: 28px;
+      align-items: baseline;
+      padding: 20px 0 22px;
+      border: 0;
+      background: transparent;
+    }
+
+    .doc-item + .doc-item {
+      border-top: 1px solid var(--line);
+    }
+
+    .doc-item span {
+      margin: 0;
+      font-size: 1.25rem;
+    }
+
+    .doc-item strong {
+      margin: 0;
+    }
+
+    .doc-item p {
+      margin: 0;
+    }
+
+    /* Home framework was already open; make it even airier */
+    .framework-list {
+      border-bottom: 0;
+    }
+
+    .framework-row {
+      padding-top: 38px;
+      padding-bottom: 42px;
+    }
+
+    /* Keep entries clean and paper-like */
+    .entry:nth-of-type(even) {
+      background: transparent;
+    }
+
+    /* Closing = epilogue, not another card */
+    .closing {
+      padding-top: 150px;
+      padding-bottom: 150px;
+    }
+
+    /* Mobile editorial cleanup */
+    @media (max-width: 800px) {
+      .journal-index .section-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .index-item.active-week-link::before {
+        display: none;
+      }
+
+      .dsa-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .dsa-card,
+      .dsa-card:nth-child(odd),
+      .dsa-card:nth-child(even) {
+        padding: 24px 0;
+        border-right: 0;
+        border-left: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .dsa-card:last-child {
+        border-bottom: 0;
+      }
+
+      .data-flow {
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding-top: 0;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .data-flow::before {
+        display: none;
+      }
+
+      .data-flow-step {
+        padding: 20px 0;
+        text-align: left;
+      }
+
+      .data-flow-step::before {
+        display: none;
+      }
+
+      .data-flow-step + .data-flow-step {
+        border-top: 1px solid var(--line);
+      }
+
+      .roots-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .root-card,
+      .root-card + .root-card {
+        padding: 20px 0;
+        border-left: 0;
+      }
+
+      .root-card + .root-card {
+        border-top: 1px solid var(--line);
+      }
+
+      .adaptation-strip {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .adaptation-arrow {
+        padding: 0;
+        transform: rotate(90deg);
+        justify-self: start;
+      }
+
+      .project-timeline::before {
+        left: 11px;
+      }
+
+      .project-step {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 32px 0 38px 34px;
+      }
+
+      .project-step::after {
+        top: 40px;
+        left: 7px;
+      }
+
+      .project-week {
+        text-align: left;
+      }
+
+      .project-columns {
+        grid-template-columns: 1fr;
+      }
+
+      .project-columns > div,
+      .project-columns > div + div {
+        padding: 0;
+        border-left: 0;
+      }
+
+      .project-columns > div + div {
+        margin-top: 22px;
+        padding-top: 22px;
+        border-top: 1px solid var(--line);
+      }
+
+      .documentation-gallery {
+        grid-template-columns: 1fr;
+        gap: 34px;
+      }
+
+      .documentation-photo:nth-child(3) {
+        grid-column: auto;
+        margin-top: 0;
+      }
+
+      .documentation-photo:nth-child(3) img {
+        aspect-ratio: 16 / 10;
+      }
+
+      .doc-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 22px 0;
+      }
+    }
+
   </style>
 </head>
 

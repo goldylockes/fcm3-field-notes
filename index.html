@@ -2004,6 +2004,99 @@
       }
     }
 
+  
+    /* =========================================================
+       ABOUT ME — full first-screen editorial spread
+       ========================================================= */
+
+    .page-view[data-page="about-me"] .author-section {
+      min-height: calc(100vh - 56px);
+      box-sizing: border-box;
+      padding-top: 72px !important;
+      padding-bottom: 72px !important;
+      display: flex;
+      align-items: center;
+    }
+
+    .page-view[data-page="about-me"] .author-section .section-inner {
+      width: 100%;
+    }
+
+    .page-view[data-page="about-me"] .author-grid {
+      grid-template-columns: minmax(290px, .72fr) minmax(0, 1.5fr);
+      gap: 88px;
+      align-items: center;
+    }
+
+    .page-view[data-page="about-me"] .author-mark {
+      width: min(100%, 340px);
+      aspect-ratio: 4 / 5;
+      border-radius: 32px;
+    }
+
+    .page-view[data-page="about-me"] .author-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 50%;
+    }
+
+    .page-view[data-page="about-me"] .author-copy {
+      max-width: 760px;
+    }
+
+    .page-view[data-page="about-me"] .author-copy p + p {
+      margin-top: 18px;
+    }
+
+    .author-focus {
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 22px;
+      color: var(--olive);
+      font-size: .64rem;
+      font-weight: 600;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .author-focus span {
+      position: relative;
+    }
+
+    .author-focus span + span::before {
+      content: "·";
+      position: absolute;
+      left: -14px;
+      color: var(--clay);
+    }
+
+    /* Let Personal Framework begin only after the About spread. */
+    .page-view[data-page="about-me"] .home-framework {
+      padding-top: 88px;
+    }
+
+    @media (max-width: 900px) {
+      .page-view[data-page="about-me"] .author-section {
+        min-height: auto;
+        padding-top: 96px !important;
+        padding-bottom: 76px !important;
+      }
+
+      .page-view[data-page="about-me"] .author-grid {
+        grid-template-columns: 1fr;
+        gap: 42px;
+      }
+
+      .page-view[data-page="about-me"] .author-mark {
+        width: min(78vw, 360px);
+        aspect-ratio: 4 / 5;
+      }
+    }
+
   </style>
 </head>
 
@@ -2101,6 +2194,30 @@
             families, communities, environments, and systems that shape the lives
             of patients.
           </p>
+
+          <p>
+            I use this portfolio not only to record what happened each week, but also
+            to keep track of how my way of looking at health changes with experience.
+            FCM 3 has made me pay closer attention to the practical details that can
+            easily disappear behind a diagnosis: access to care, health knowledge,
+            family roles, environment, continuity, and the community's own
+            interpretation of its needs.
+          </p>
+
+          <p>
+            As the course progresses, I want these field notes to read less like a
+            checklist of completed requirements and more like a record of a developing
+            clinical perspective—one that listens before it assumes, checks conclusions
+            against lived experience, and keeps individual care connected to the setting
+            in which people actually live.
+          </p>
+
+          <div class="author-focus">
+            <span>Listening</span>
+            <span>Context</span>
+            <span>Continuity</span>
+            <span>Community voice</span>
+          </div>
         </div>
       </div>
 

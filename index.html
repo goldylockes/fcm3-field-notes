@@ -142,6 +142,118 @@
       opacity: 1;
     }
 
+
+    /* PAGE-STYLE TABS */
+    .page-view {
+      display: none;
+      min-height: calc(100vh - 72px);
+    }
+
+    .page-view.active {
+      display: block;
+      animation: pageFade 0.22s ease;
+    }
+
+    @keyframes pageFade {
+      from {
+        opacity: 0;
+        transform: translateY(4px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    body:not([data-active-page="home"]) .site-nav {
+      background: rgba(40, 47, 39, 0.97);
+      border-bottom-color: rgba(255,255,255,0.10);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .nav-links a {
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -8px;
+      height: 1px;
+      background: currentColor;
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.2s ease;
+    }
+
+    .nav-links a.active::after {
+      transform: scaleX(1);
+    }
+
+    /* REFLECTIONS: COMPACT WEEK SELECTOR */
+    .journal-index {
+      padding-bottom: 52px;
+    }
+
+    .journal-index .section-inner {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 42px;
+    }
+
+    .index-heading {
+      grid-column: 1 / -1;
+    }
+
+    .index-instruction {
+      margin-top: 16px;
+      margin-bottom: 14px;
+      max-width: 620px;
+      color: #686d67;
+      font-size: 0.82rem;
+    }
+
+    .index-item {
+      grid-template-columns: 64px minmax(0, 1fr);
+      gap: 18px;
+      padding: 22px 0;
+    }
+
+    .index-number {
+      font-size: 2rem;
+    }
+
+    .index-title {
+      font-size: clamp(1.18rem, 2vw, 1.55rem);
+    }
+
+    .index-date {
+      grid-column: 2;
+      text-align: left;
+      margin-top: 4px;
+    }
+
+    .index-item.active-week-link .index-number,
+    .index-item.active-week-link .index-title {
+      color: var(--olive);
+    }
+
+    .index-item.active-week-link {
+      transform: translateX(7px);
+    }
+
+    .week-panel {
+      display: none !important;
+    }
+
+    .week-panel.active-week {
+      display: block !important;
+      animation: pageFade 0.22s ease;
+    }
+
     /* HERO */
     .hero {
       min-height: 96vh;
@@ -1151,10 +1263,18 @@
       }
 
 
+      .journal-index .section-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .index-heading {
+        grid-column: auto;
+      }
+
       .index-item {
         grid-template-columns: 55px 1fr;
         gap: 18px;
-        padding: 27px 0;
+        padding: 22px 0;
       }
 
       .index-date {
@@ -1274,20 +1394,21 @@
   </style>
 </head>
 
-<body>
+<body data-active-page="home">
 
   <nav class="site-nav" id="siteNav">
-    <a class="brand" href="#home">Field Notes · FCM 3</a>
+    <a class="brand" href="#home" data-page-link="home">Field Notes · FCM 3</a>
 
     <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#reflections">Reflections</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#documentation">Documentation</a></li>
-      <li><a href="#closing">Closing</a></li>
+      <li><a href="#home" data-page-link="home">Home</a></li>
+      <li><a href="#reflections" data-page-link="reflections">Reflections</a></li>
+      <li><a href="#projects" data-page-link="projects">Projects</a></li>
+      <li><a href="#documentation" data-page-link="documentation">Documentation</a></li>
+      <li><a href="#closing" data-page-link="closing">Closing</a></li>
     </ul>
   </nav>
 
+  <main class="page-view active" data-page="home">
   <header class="hero" id="home">
     <div class="hero-content">
       <div class="hero-kicker">A Reflective Journal by Karen Isabelle F. Fernando · 2026</div>
@@ -1414,15 +1535,21 @@
     </div>
   </section>
 
+  </main>
+
+  <main class="page-view" data-page="reflections">
   <section class="journal-index" id="reflections">
     <div class="section-inner">
 
       <div class="index-heading">
         <div class="eyebrow">Weekly Insights &amp; Reflections</div>
         <h2>Ten weeks, one evolving perspective.</h2>
+        <p class="index-instruction">
+          Choose a week below. Only the selected reflection will open.
+        </p>
       </div>
 
-      <a href="#week1" class="index-item">
+      <a href="#week1" class="index-item" data-week-link="week1">
         <div class="index-number">01</div>
         <div>
           <div class="index-category">Foundations</div>
@@ -1431,7 +1558,7 @@
         <div class="index-date">July 22 · 2026</div>
       </a>
 
-      <a href="#week2" class="index-item">
+      <a href="#week2" class="index-item" data-week-link="week2">
         <div class="index-number">02</div>
         <div>
           <div class="index-category">Context</div>
@@ -1440,7 +1567,7 @@
         <div class="index-date">July 29 · 2026</div>
       </a>
 
-      <a href="#week3" class="index-item">
+      <a href="#week3" class="index-item" data-week-link="week3">
         <div class="index-number">03</div>
         <div>
           <div class="index-category">Primary Care</div>
@@ -1449,7 +1576,7 @@
         <div class="index-date">August 03 · 2026</div>
       </a>
 
-      <a href="#week4" class="index-item">
+      <a href="#week4" class="index-item" data-week-link="week4">
         <div class="index-number">04</div>
         <div>
           <div class="index-category">Reassessment</div>
@@ -1458,7 +1585,7 @@
         <div class="index-date">August 12 · 2026</div>
       </a>
 
-      <a href="#week5" class="index-item">
+      <a href="#week5" class="index-item" data-week-link="week5">
         <div class="index-number">05</div>
         <div>
           <div class="index-category">Priorities</div>
@@ -1467,7 +1594,7 @@
         <div class="index-date">August 19 · 2026</div>
       </a>
 
-      <a href="#week6" class="index-item">
+      <a href="#week6" class="index-item" data-week-link="week6">
         <div class="index-number">06</div>
         <div>
           <div class="index-category">Root Causes</div>
@@ -1476,7 +1603,7 @@
         <div class="index-date">August 26 · 2026</div>
       </a>
 
-      <a href="#week7" class="index-item">
+      <a href="#week7" class="index-item" data-week-link="week7">
         <div class="index-number">07</div>
         <div>
           <div class="index-category">Partnership</div>
@@ -1485,7 +1612,7 @@
         <div class="index-date">September 02 · 2026</div>
       </a>
 
-      <a href="#week8" class="index-item">
+      <a href="#week8" class="index-item" data-week-link="week8">
         <div class="index-number">08</div>
         <div>
           <div class="index-category">Adaptation</div>
@@ -1494,7 +1621,7 @@
         <div class="index-date">September 09 · 2026</div>
       </a>
 
-      <a href="#week9" class="index-item">
+      <a href="#week9" class="index-item" data-week-link="week9">
         <div class="index-number">09</div>
         <div>
           <div class="index-category">Fieldwork</div>
@@ -1503,7 +1630,7 @@
         <div class="index-date">September 23 · 2026</div>
       </a>
 
-      <a href="#week10" class="index-item">
+      <a href="#week10" class="index-item" data-week-link="week10">
         <div class="index-number">10</div>
         <div>
           <div class="index-category">Community Validation</div>
@@ -1514,7 +1641,7 @@
     </div>
   </section>
 
-  <section class="entry" id="week1">
+  <section class="entry week-panel" id="week1" data-week="week1">
     <div class="section-inner">
       <div class="entry-header">
         <div class="entry-number">01</div>
@@ -1608,7 +1735,7 @@
     </div>
   </section>
 
-  <section class="entry" id="week2">
+  <section class="entry week-panel" id="week2" data-week="week2">
     <div class="section-inner">
       <div class="entry-header">
         <div class="entry-number">02</div>
@@ -1711,7 +1838,7 @@
     </div>
   </section>
 
-  <section class="entry" id="week3">
+  <section class="entry week-panel" id="week3" data-week="week3">
     <div class="section-inner">
       <div class="entry-header">
         <div class="entry-number">03</div>
@@ -1821,7 +1948,7 @@
     </div>
   </section>
 
-  <section class="entry" id="week4">
+  <section class="entry week-panel" id="week4" data-week="week4">
     <div class="section-inner">
       <div class="entry-header">
         <div class="entry-number">04</div>
@@ -1914,7 +2041,7 @@
     </div>
   </section>
 
-  <section class="entry" id="week5">
+  <section class="entry week-panel" id="week5" data-week="week5">
     <div class="section-inner">
       <div class="entry-header">
         <div class="entry-number">05</div>
@@ -2034,7 +2161,7 @@
     </div>
   </section>
 
-  <section class="entry" id="week6">
+  <section class="entry week-panel" id="week6" data-week="week6">
     <div class="section-inner">
       <div class="entry-header">
         <div class="entry-number">06</div>
@@ -2141,7 +2268,7 @@
     </div>
   </section>
 
-  <section class="entry" id="week7">
+  <section class="entry week-panel" id="week7" data-week="week7">
     <div class="section-inner">
       <div class="entry-header">
         <div class="entry-number">07</div>
@@ -2246,7 +2373,7 @@
     </div>
   </section>
 
-  <section class="entry" id="week8">
+  <section class="entry week-panel" id="week8" data-week="week8">
     <div class="section-inner">
       <div class="entry-header">
         <div class="entry-number">08</div>
@@ -2349,7 +2476,7 @@
 
 
 
-  <section class="entry" id="week9">
+  <section class="entry week-panel" id="week9" data-week="week9">
     <div class="section-inner">
       <div class="entry-header">
         <div class="entry-number">09</div>
@@ -2489,7 +2616,7 @@
 
 
 
-  <section class="entry" id="week10">
+  <section class="entry week-panel active-week" id="week10" data-week="week10">
     <div class="section-inner">
       <div class="entry-header">
         <div class="entry-number">10</div>
@@ -2633,6 +2760,9 @@
   </section>
 
 
+  </main>
+
+  <main class="page-view" data-page="projects">
   <section class="projects-section" id="projects">
     <div class="section-inner">
       <div class="projects-heading">
@@ -2728,6 +2858,9 @@
     </div>
   </section>
 
+  </main>
+
+  <main class="page-view" data-page="documentation">
   <section class="documentation-section" id="documentation">
     <div class="section-inner">
       <div class="documentation-heading">
@@ -2788,6 +2921,9 @@
   </section>
 
 
+  </main>
+
+  <main class="page-view" data-page="closing">
   <section class="closing" id="closing">
     <div class="section-inner">
       <div class="eyebrow" style="color:#cbd0c5;">Closing Message</div>
@@ -2809,6 +2945,8 @@
     </div>
   </section>
 
+  </main>
+
 <footer>
     <div>Karen Isabelle F. Fernando · Field Notes · FCM 3</div>
     <div>Year 3 · Pamantasan ng Lungsod ng Maynila · 2026</div>
@@ -2816,31 +2954,161 @@
 
   <script>
     const nav = document.getElementById("siteNav");
-    const navLinks = [...document.querySelectorAll(".nav-links a")];
+    const pageViews = [...document.querySelectorAll(".page-view")];
+    const pageLinks = [...document.querySelectorAll("[data-page-link]")];
+    const weekLinks = [...document.querySelectorAll("[data-week-link]")];
+    const weekPanels = [...document.querySelectorAll(".week-panel")];
 
-    function updateNav() {
-      nav.classList.toggle("scrolled", window.scrollY > 48);
+    let selectedWeek = "week10";
 
-      const targets = navLinks
-        .map(link => {
-          const id = link.getAttribute("href");
-          const el = document.querySelector(id);
-          return { link, el };
-        })
-        .filter(item => item.el);
+    function setWeek(weekId, updateUrl = true, moveToEntry = false) {
+      if (!document.getElementById(weekId)) return;
 
-      let current = null;
+      selectedWeek = weekId;
 
-      for (const item of targets) {
-        const rect = item.el.getBoundingClientRect();
-        if (rect.top <= 140) current = item.link;
+      weekPanels.forEach(panel => {
+        panel.classList.toggle("active-week", panel.dataset.week === weekId);
+      });
+
+      weekLinks.forEach(link => {
+        const active = link.dataset.weekLink === weekId;
+        link.classList.toggle("active-week-link", active);
+
+        if (active) {
+          link.setAttribute("aria-current", "true");
+        } else {
+          link.removeAttribute("aria-current");
+        }
+      });
+
+      if (updateUrl) {
+        history.pushState(
+          { page: "reflections", week: weekId },
+          "",
+          "#" + weekId
+        );
       }
 
-      navLinks.forEach(link => link.classList.toggle("active", link === current));
+      if (moveToEntry) {
+        const panel = document.getElementById(weekId);
+        const top = panel.getBoundingClientRect().top + window.scrollY - 68;
+        window.scrollTo({ top, behavior: "smooth" });
+      }
     }
 
-    updateNav();
-    window.addEventListener("scroll", updateNav, { passive: true });
+    function showPage(page, options = {}) {
+      const {
+        updateUrl = true,
+        scrollTop = true
+      } = options;
+
+      document.body.dataset.activePage = page;
+
+      pageViews.forEach(view => {
+        view.classList.toggle("active", view.dataset.page === page);
+      });
+
+      pageLinks.forEach(link => {
+        const active = link.dataset.pageLink === page;
+        link.classList.toggle("active", active);
+
+        if (active) {
+          link.setAttribute("aria-current", "page");
+        } else {
+          link.removeAttribute("aria-current");
+        }
+      });
+
+      nav.classList.toggle(
+        "scrolled",
+        page !== "home" || window.scrollY > 48
+      );
+
+      if (updateUrl) {
+        const hash =
+          page === "reflections"
+            ? "#" + selectedWeek
+            : "#" + page;
+
+        history.pushState(
+          { page, week: selectedWeek },
+          "",
+          hash
+        );
+      }
+
+      if (scrollTop) {
+        window.scrollTo({ top: 0, behavior: "auto" });
+      }
+    }
+
+    function routeFromHash() {
+      const hash = location.hash.replace("#", "");
+
+      if (/^week(?:10|[1-9])$/.test(hash)) {
+        setWeek(hash, false, false);
+        showPage("reflections", {
+          updateUrl: false,
+          scrollTop: false
+        });
+        return;
+      }
+
+      const validPages = [
+        "home",
+        "reflections",
+        "projects",
+        "documentation",
+        "closing"
+      ];
+
+      const page = validPages.includes(hash) ? hash : "home";
+
+      showPage(page, {
+        updateUrl: false,
+        scrollTop: false
+      });
+    }
+
+    pageLinks.forEach(link => {
+      link.addEventListener("click", event => {
+        event.preventDefault();
+        showPage(link.dataset.pageLink);
+      });
+    });
+
+    weekLinks.forEach(link => {
+      link.addEventListener("click", event => {
+        event.preventDefault();
+
+        showPage("reflections", {
+          updateUrl: false,
+          scrollTop: false
+        });
+
+        setWeek(link.dataset.weekLink, true, true);
+      });
+    });
+
+    window.addEventListener("scroll", () => {
+      nav.classList.toggle(
+        "scrolled",
+        document.body.dataset.activePage !== "home" ||
+        window.scrollY > 48
+      );
+    }, { passive: true });
+
+    window.addEventListener("popstate", routeFromHash);
+
+    routeFromHash();
+
+    if (!location.hash) {
+      history.replaceState(
+        { page: "home", week: selectedWeek },
+        "",
+        "#home"
+      );
+    }
   </script>
 </body>
 </html>

@@ -923,916 +923,7 @@
 
 
     /* WEEK 9 DATA FLOW */
-    .data-flow {
-      margin: 48px 0;
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .data-flow-step {
-      position: relative;
-      padding: 24px 22px 26px;
-      min-height: 138px;
-    }
-
-    .data-flow-step + .data-flow-step {
-      border-left: 1px solid var(--line);
-    }
-
-    .data-flow-step small {
-      display: block;
-      margin-bottom: 10px;
-      color: var(--sage);
-      font-size: .64rem;
-      font-weight: 600;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-    }
-
-    .data-flow-step strong {
-      display: block;
-      font-family: var(--serif);
-      font-size: 1.32rem;
-      line-height: 1.25;
-      font-weight: 500;
-    }
-
-    .data-flow-step span {
-      display: block;
-      margin-top: 8px;
-      color: #6a6e68;
-      font-size: .78rem;
-      line-height: 1.45;
-    }
-
-    .dsa-panel {
-      margin: 50px 0 8px;
-      padding-top: 30px;
-      border-top: 1px solid var(--line);
-    }
-
-    .dsa-heading {
-      margin-bottom: 20px;
-    }
-
-    .dsa-heading h3 {
-      margin-top: 7px;
-      font-family: var(--serif);
-      font-size: 1.75rem;
-      font-weight: 500;
-      line-height: 1.2;
-    }
-
-    .dsa-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .dsa-card {
-      display: grid;
-      grid-template-columns: 42px 1fr;
-      gap: 14px;
-      padding: 20px;
-      background: #ebe7de;
-      border-top: 2px solid var(--sage);
-    }
-
-    .dsa-card.challenge-card {
-      border-top-color: var(--clay);
-    }
-
-    .dsa-letter {
-      font-family: var(--serif);
-      font-size: 2rem;
-      color: var(--sage);
-      line-height: 1;
-    }
-
-    .challenge-card .dsa-letter {
-      color: var(--clay);
-    }
-
-    .dsa-card strong {
-      display: block;
-      margin-bottom: 7px;
-      color: var(--olive);
-      font-size: .68rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    .dsa-card p {
-      margin: 0;
-      font-size: .92rem;
-      line-height: 1.58;
-    }
-
-    .projects-section {
-      padding: 108px 0;
-      background: #e8e5dc;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .project-timeline {
-      border-top: 1px solid #cbc6bb;
-    }
-
-    .project-step {
-      display: grid;
-      grid-template-columns: 130px 1fr;
-      gap: 38px;
-      padding: 34px 0;
-      border-bottom: 1px solid #cbc6bb;
-    }
-
-    .project-week {
-      color: var(--sage);
-      font-family: var(--serif);
-      font-size: 1.8rem;
-    }
-
-    .project-main h3 {
-      margin-bottom: 20px;
-      font-family: var(--serif);
-      font-size: clamp(1.65rem, 3vw, 2.5rem);
-      font-weight: 500;
-      line-height: 1.15;
-    }
-
-    .project-columns {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 28px;
-    }
-
-    .project-columns small {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--olive);
-      font-weight: 600;
-      letter-spacing: .13em;
-      text-transform: uppercase;
-    }
-
-    .project-columns p {
-      font-size: .95rem;
-      line-height: 1.65;
-    }
-
-    .documentation-section {
-      padding: 108px 0;
-      background: var(--paper);
-    }
-
-    .documentation-gallery {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-      margin: 0 0 46px;
-    }
-
-    .documentation-photo {
-      margin: 0;
-    }
-
-    .documentation-photo img {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-      object-position: center 54%;
-    }
-
-    .documentation-photo figcaption {
-      margin-top: 12px;
-      color: #686d67;
-      font-size: .68rem;
-      letter-spacing: .10em;
-      text-transform: uppercase;
-    }
-
-    .documentation-log {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .doc-item {
-      padding: 22px;
-      border: 1px solid var(--line);
-      background: var(--ivory);
-    }
-
-    .doc-item span {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--sage);
-      font-family: var(--serif);
-      font-size: 1.35rem;
-    }
-
-    .doc-item strong {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--olive);
-      font-size: .68rem;
-      letter-spacing: .11em;
-      text-transform: uppercase;
-    }
-
-    .doc-item p {
-      font-size: .92rem;
-      line-height: 1.55;
-    }
-
-
-    @media (max-width: 800px) {
-      html {
-        scroll-padding-top: 70px;
-      }
-
-      .site-nav {
-        padding: 17px 6vw;
-      }
-
-      .site-nav.scrolled {
-        padding-top: 13px;
-        padding-bottom: 13px;
-      }
-
-      .brand {
-        display: none;
-      }
-
-      .site-nav {
-        justify-content: center;
-      }
-
-      .nav-links {
-        width: 100%;
-        justify-content: space-between;
-        gap: 10px;
-        overflow-x: auto;
-        white-space: nowrap;
-        font-size: 0.56rem;
-        scrollbar-width: none;
-      }
-
-      .nav-links::-webkit-scrollbar {
-        display: none;
-      }
-
-      .hero {
-        min-height: 90vh;
-        background-position: center 50%;
-      }
-
-      .hero h1 {
-        font-size: clamp(4rem, 18vw, 6.7rem);
-      }
-
-      .scroll-note {
-        bottom: 22px;
-      }
-
-      .intro,
-      .journal-index,
-      .entry {
-        padding-top: 76px;
-        padding-bottom: 76px;
-      }
-
-      .intro-grid {
-        grid-template-columns: 1fr;
-        gap: 26px;
-      }
-
-
-      .dsa-grid,
-      .project-columns,
-      .documentation-gallery,
-      .documentation-log {
-        grid-template-columns: 1fr;
-      }
-.framework-row {
-        grid-template-columns: 70px 1fr;
-        gap: 18px;
-        padding: 28px 0 30px;
-      }
-
-      .framework-label {
-        padding-top: 6px;
-      }
-
-      .framework-row p {
-        grid-column: 2;
-        font-size: 1.25rem;
-      }
-
-      .project-step {
-        grid-template-columns: 1fr;
-        gap: 14px;
-      }
-
-      .project-week {
-        font-size: 1.45rem;
-      }
-
-      .home-framework,
-      .projects-section,
-      .documentation-section {
-        padding-top: 76px;
-        padding-bottom: 76px;
-      }
-
-      .author-section {
-        padding-top: 68px;
-        padding-bottom: 68px;
-      }
-
-      .author-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-
-      .author-mark {
-        width: 180px;
-      }
-
-
-      .journal-index .section-inner {
-        grid-template-columns: 1fr;
-      }
-
-      .index-heading {
-        grid-column: auto;
-      }
-
-      .index-item {
-        grid-template-columns: 55px 1fr;
-        gap: 18px;
-        padding: 22px 0;
-      }
-
-      .index-date {
-        grid-column: 2;
-        text-align: left;
-      }
-
-      .entry-header {
-        grid-template-columns: 1fr;
-        gap: 28px;
-        margin-bottom: 44px;
-      }
-
-      .entry-number {
-        font-size: 5rem;
-      }
-
-      .entry h2 {
-        font-size: clamp(2.7rem, 13vw, 4.8rem);
-      }
-
-      .entry-subtitle {
-        font-size: 1.12rem;
-      }
-
-      .entry-body {
-        margin: 0;
-        width: 100%;
-      }
-
-      .timeline {
-        grid-template-columns: 1fr;
-      }
-
-      .timeline-arrow {
-        transform: rotate(90deg);
-        text-align: center;
-      }
-
-      .adaptation-strip {
-        grid-template-columns: 1fr;
-      }
-
-      .data-flow {
-        grid-template-columns: 1fr;
-      }
-
-      .data-flow-step + .data-flow-step {
-        border-left: 0;
-        border-top: 1px solid var(--line);
-      }
-
-      .adaptation-arrow {
-        transform: rotate(90deg);
-        text-align: center;
-      }
-
-      .roots {
-        padding: 28px 22px;
-      }
-
-      .roots-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .field-note {
-        padding: 26px 24px;
-      }
-
-      .entry-photo {
-        margin-bottom: 44px;
-      }
-
-      .closing {
-        padding: 100px 0;
-      }
-
-      footer {
-        flex-direction: column;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .nav-links {
-        gap: 11px;
-      }
-
-      .nav-links a {
-        letter-spacing: 0.08em;
-      }
-
-      .hero-course {
-        letter-spacing: 0.14em;
-      }
-
-      .entry-body p {
-        font-size: 0.98rem;
-      }
-
-      .pull-quote {
-        padding-left: 20px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        transition: none !important;
-        animation: none !important;
-      }
-    }
-  
-    /* =========================================================
-       EDITORIAL REFINEMENT
-       Less dashboard, more field-journal / magazine.
-       Boxes are reserved almost exclusively for Field Notes.
-       ========================================================= */
-
-    /* Reflections index — typography and rules, not cards */
-    .journal-index .section-inner {
-      column-gap: 54px;
-    }
-
-    .index-item {
-      background: transparent !important;
-      border-radius: 0 !important;
-      box-shadow: none !important;
-    }
-
-    .index-item.active-week-link {
-      transform: translateX(5px);
-    }
-
-    .index-item.active-week-link::before {
-      content: "→";
-      position: absolute;
-      margin-left: -24px;
-      color: var(--clay);
-      font-family: var(--serif);
-      font-size: 1rem;
-    }
-
-    /* DSA — open editorial 2×2 grid */
-    .dsa-panel {
-      margin: 58px 0 12px;
-      padding-top: 34px;
-      border-top: 1px solid var(--line);
-    }
-
-    .dsa-heading {
-      margin-bottom: 24px;
-    }
-
-    .dsa-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .dsa-card {
-      display: grid;
-      grid-template-columns: 54px minmax(0, 1fr);
-      gap: 18px;
-      padding: 28px 30px 30px 0;
-      background: transparent;
-      border: 0;
-    }
-
-    .dsa-card:nth-child(odd) {
-      border-right: 1px solid var(--line);
-      padding-right: 32px;
-    }
-
-    .dsa-card:nth-child(even) {
-      padding-left: 32px;
-    }
-
-    .dsa-card:nth-child(-n+2) {
-      border-bottom: 1px solid var(--line);
-    }
-
-    .dsa-card.challenge-card {
-      border-top: 0;
-    }
-
-    .dsa-letter {
-      font-size: 2.7rem;
-      color: var(--sage);
-      opacity: .82;
-    }
-
-    .challenge-card .dsa-letter {
-      color: var(--clay);
-    }
-
-    .dsa-card strong {
-      margin-top: 4px;
-      margin-bottom: 8px;
-    }
-
-    .dsa-card p {
-      font-size: .94rem;
-      line-height: 1.65;
-    }
-
-    /* Week 3 — Alma-Ata → Astana as an open typographic spread */
-    .timeline {
-      margin: 52px 0;
-      padding: 30px 0;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .timeline-year {
-      padding: 0;
-      border: 0;
-      background: transparent;
-    }
-
-    .timeline-year strong {
-      font-size: 3.3rem;
-    }
-
-    .timeline-arrow {
-      padding: 0 14px;
-      font-size: 2rem;
-      color: var(--clay);
-    }
-
-    /* Week 6 — problem tree without cards */
-    .roots {
-      margin: 52px 0;
-      padding: 0;
-      background: transparent;
-    }
-
-    .roots h3 {
-      margin-bottom: 22px;
-    }
-
-    .roots-grid {
-      gap: 0;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .root-card {
-      padding: 24px 24px 26px 0;
-      background: transparent;
-      border: 0;
-    }
-
-    .root-card + .root-card {
-      padding-left: 24px;
-      border-left: 1px solid var(--line);
-    }
-
-    .root-card small {
-      color: var(--sage);
-    }
-
-    /* Week 8 — simple planned → adapted statement */
-    .adaptation-strip {
-      margin: 52px 0;
-      padding: 28px 0;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      align-items: center;
-    }
-
-    .adaptation-card {
-      padding: 0;
-      border: 0;
-      background: transparent;
-    }
-
-    .adaptation-arrow {
-      padding: 0 18px;
-      color: var(--clay);
-      font-size: 2rem;
-    }
-
-    /* Weeks 9 & 10 — process line rather than four boxes */
-    .data-flow {
-      position: relative;
-      margin: 56px 0;
-      padding-top: 28px;
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 24px;
-      border: 0;
-    }
-
-    .data-flow::before {
-      content: "";
-      position: absolute;
-      top: 7px;
-      left: 7%;
-      right: 7%;
-      height: 1px;
-      background: var(--line);
-    }
-
-    .data-flow-step {
-      position: relative;
-      min-height: 0;
-      padding: 12px 10px 0;
-      text-align: center;
-    }
-
-    .data-flow-step::before {
-      content: "";
-      position: absolute;
-      top: -25px;
-      left: 50%;
-      width: 9px;
-      height: 9px;
-      border: 1px solid var(--sage);
-      border-radius: 50%;
-      background: var(--paper);
-      transform: translateX(-50%);
-    }
-
-    .data-flow-step + .data-flow-step {
-      border-left: 0;
-    }
-
-    .data-flow-step small {
-      color: var(--sage);
-    }
-
-    .data-flow-step strong {
-      font-size: 1.25rem;
-    }
-
-    /* Field Note remains the one deliberate recurring "card" */
-    .field-note {
-      margin-top: 56px;
-      padding: 32px 38px;
-      box-shadow: none;
-    }
-
-    /* PROJECTS — editorial vertical timeline */
-    .projects-section {
-      background: var(--paper);
-      border-top: 0;
-      border-bottom: 0;
-    }
-
-    .project-timeline {
-      position: relative;
-      border-top: 0;
-    }
-
-    .project-timeline::before {
-      content: "";
-      position: absolute;
-      top: 16px;
-      bottom: 16px;
-      left: 116px;
-      width: 1px;
-      background: var(--line);
-    }
-
-    .project-step {
-      position: relative;
-      display: grid;
-      grid-template-columns: 88px minmax(0, 1fr);
-      gap: 56px;
-      padding: 38px 0 42px;
-      border-bottom: 0;
-    }
-
-    .project-step::after {
-      content: "";
-      position: absolute;
-      top: 49px;
-      left: 111px;
-      width: 9px;
-      height: 9px;
-      border: 1px solid var(--sage);
-      border-radius: 50%;
-      background: var(--paper);
-    }
-
-    .project-week {
-      padding-top: 1px;
-      text-align: right;
-      font-size: 1.55rem;
-      color: var(--sage);
-    }
-
-    .project-main {
-      padding-bottom: 4px;
-    }
-
-    .project-main h3 {
-      margin-bottom: 18px;
-    }
-
-    .project-columns {
-      gap: 0;
-    }
-
-    .project-columns > div {
-      padding-right: 30px;
-    }
-
-    .project-columns > div + div {
-      padding-left: 30px;
-      padding-right: 0;
-      border-left: 1px solid var(--line);
-    }
-
-    /* DOCUMENTATION — photo essay */
-    .documentation-section {
-      background: var(--paper);
-    }
-
-    .documentation-gallery {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 30px;
-      margin-bottom: 70px;
-    }
-
-    .documentation-photo img {
-      aspect-ratio: 16 / 10;
-    }
-
-    .documentation-photo:nth-child(3) {
-      grid-column: 1 / -1;
-      margin-top: 14px;
-    }
-
-    .documentation-photo:nth-child(3) img {
-      aspect-ratio: 16 / 8.5;
-      max-height: 720px;
-    }
-
-    .documentation-photo figcaption {
-      margin-top: 13px;
-    }
-
-    /* Documentation log — reading list / archival register */
-    .documentation-log {
-      display: block;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .doc-item {
-      display: grid;
-      grid-template-columns: 150px 250px minmax(0, 1fr);
-      gap: 28px;
-      align-items: baseline;
-      padding: 20px 0 22px;
-      border: 0;
-      background: transparent;
-    }
-
-    .doc-item + .doc-item {
-      border-top: 1px solid var(--line);
-    }
-
-    .doc-item span {
-      margin: 0;
-      font-size: 1.25rem;
-    }
-
-    .doc-item strong {
-      margin: 0;
-    }
-
-    .doc-item p {
-      margin: 0;
-    }
-
-    /* Home framework was already open; make it even airier */
-    .framework-list {
-      border-bottom: 0;
-    }
-
-    .framework-row {
-      padding-top: 38px;
-      padding-bottom: 42px;
-    }
-
-    /* Keep entries clean and paper-like */
-    .entry:nth-of-type(even) {
-      background: transparent;
-    }
-
-    /* Closing = epilogue, not another card */
-    .closing {
-      padding-top: 150px;
-      padding-bottom: 150px;
-    }
-
-    /* Mobile editorial cleanup */
-    @media (max-width: 800px) {
-      .journal-index .section-inner {
-        grid-template-columns: 1fr;
-      }
-
-      .index-item.active-week-link::before {
-        display: none;
-      }
-
-      .dsa-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .dsa-card,
-      .dsa-card:nth-child(odd),
-      .dsa-card:nth-child(even) {
-        padding: 24px 0;
-        border-right: 0;
-        border-left: 0;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .dsa-card:last-child {
-        border-bottom: 0;
-      }
-
-      .data-flow {
-        grid-template-columns: 1fr;
-        gap: 0;
-        padding-top: 0;
-        border-top: 1px solid var(--line);
-        border-bottom: 1px solid var(--line);
-      }
-
-      .data-flow::before {
-        display: none;
-      }
-
-      .data-flow-step {
-        padding: 20px 0;
-        text-align: left;
-      }
-
-      .data-flow-step::before {
-        display: none;
-      }
-
-      .data-flow-step + .data-flow-step {
-        border-top: 1px solid var(--line);
-      }
-
-      .roots-grid {
+.roots-grid {
         grid-template-columns: 1fr;
       }
 
@@ -1913,6 +1004,1006 @@
       }
     }
 
+  
+    /* =========================================================
+       FINAL REFINEMENTS
+       ========================================================= */
+
+    /* REFLECTIONS — editorial table of contents */
+    .journal-index {
+      padding-bottom: 42px;
+    }
+
+    .journal-index .section-inner {
+      display: block;
+    }
+
+    .index-heading {
+      margin-bottom: 52px;
+      max-width: 980px;
+    }
+
+    .index-heading h2 {
+      max-width: 900px;
+    }
+
+    .index-instruction {
+      margin-top: 16px;
+      color: #747872;
+      font-size: .82rem;
+    }
+
+    .index-item {
+      position: relative;
+      display: grid;
+      grid-template-columns: 78px minmax(0, 1fr) 150px;
+      gap: 24px;
+      align-items: center;
+      padding: 22px 0;
+      border-top: 1px solid var(--line);
+      background: transparent !important;
+      transform: none !important;
+    }
+
+    .index-item:last-of-type {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .index-item > div:nth-child(2) {
+      display: grid;
+      grid-template-columns: 175px minmax(0, 1fr);
+      gap: 26px;
+      align-items: baseline;
+    }
+
+    .index-number {
+      position: relative;
+      font-family: var(--serif);
+      font-size: 1.7rem;
+      line-height: 1;
+      color: var(--sage);
+    }
+
+    .index-category {
+      margin: 0;
+      color: var(--olive);
+      font-size: .62rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .index-title {
+      font-family: var(--serif);
+      font-size: clamp(1.25rem, 1.8vw, 1.7rem);
+      line-height: 1.15;
+    }
+
+    .index-date {
+      grid-column: auto;
+      margin: 0;
+      text-align: right;
+      color: #747872;
+      font-size: .66rem;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .index-item:hover .index-title,
+    .index-item:hover .index-number,
+    .index-item.active-week-link .index-title,
+    .index-item.active-week-link .index-number {
+      color: var(--olive);
+    }
+
+    .index-item.active-week-link .index-number::after {
+      content: "→";
+      position: absolute;
+      left: 44px;
+      top: 1px;
+      color: var(--clay);
+      font-family: var(--sans);
+      font-size: .9rem;
+    }
+
+    .index-item.active-week-link::before {
+      display: none !important;
+    }
+
+    /* DSA — restore the original four-card layout */
+    .dsa-panel {
+      margin: 50px 0 8px;
+      padding-top: 30px;
+      border-top: 1px solid var(--line);
+    }
+
+    .dsa-heading {
+      margin-bottom: 20px;
+    }
+
+    .dsa-heading h3 {
+      margin-top: 7px;
+      font-family: var(--serif);
+      font-size: 1.75rem;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+
+    .dsa-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      border: 0;
+    }
+
+    .dsa-card,
+    .dsa-card:nth-child(odd),
+    .dsa-card:nth-child(even),
+    .dsa-card:nth-child(-n+2) {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 14px;
+      padding: 20px;
+      background: #ebe7de;
+      border: 0;
+      border-top: 2px solid var(--sage);
+    }
+
+    .dsa-card.challenge-card {
+      border-top: 2px solid var(--clay);
+    }
+
+    .dsa-letter {
+      font-family: var(--serif);
+      font-size: 2rem;
+      color: var(--sage);
+      line-height: 1;
+      opacity: 1;
+    }
+
+    .challenge-card .dsa-letter {
+      color: var(--clay);
+    }
+
+    .dsa-card strong {
+      display: block;
+      margin-top: 0;
+      margin-bottom: 7px;
+      color: var(--olive);
+      font-size: .68rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .dsa-card p {
+      margin: 0;
+      font-size: .92rem;
+      line-height: 1.58;
+    }
+
+    /* DOCUMENTATION — equal image grid, captions only */
+    .documentation-heading {
+      margin-bottom: 48px;
+    }
+
+    .documentation-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin: 0;
+    }
+
+    .documentation-photo,
+    .documentation-photo:nth-child(3) {
+      grid-column: auto;
+      margin: 0;
+    }
+
+    .documentation-photo img,
+    .documentation-photo:nth-child(3) img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      max-height: none;
+      object-fit: cover;
+      object-position: center 54%;
+    }
+
+    .documentation-photo figcaption {
+      margin-top: 12px;
+      color: #686d67;
+      font-size: .68rem;
+      letter-spacing: .10em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+
+    .documentation-log,
+    .doc-item {
+      display: none !important;
+    }
+
+    @media (max-width: 900px) {
+      .index-item {
+        grid-template-columns: 60px minmax(0, 1fr);
+        gap: 18px;
+      }
+
+      .index-item > div:nth-child(2) {
+        grid-template-columns: 1fr;
+        gap: 7px;
+      }
+
+      .index-date {
+        grid-column: 2;
+        text-align: left;
+        margin-top: 3px;
+      }
+
+      .index-item.active-week-link .index-number::after {
+        left: 36px;
+      }
+
+      .documentation-gallery {
+        grid-template-columns: 1fr;
+        gap: 34px;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .dsa-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .dsa-card,
+      .dsa-card:nth-child(odd),
+      .dsa-card:nth-child(even),
+      .dsa-card:nth-child(-n+2) {
+        padding: 20px;
+        border: 0;
+        border-top: 2px solid var(--sage);
+      }
+
+      .dsa-card.challenge-card {
+        border-top: 2px solid var(--clay);
+      }
+    }
+
+  
+    /* =========================================================
+       MINIMAL WEEK SELECTOR
+       ========================================================= */
+
+    .journal-index {
+      padding-top: 110px;
+      padding-bottom: 72px;
+    }
+
+    .journal-index .section-inner {
+      display: block;
+    }
+
+    .minimal-index-heading {
+      max-width: 760px;
+      margin-bottom: 54px;
+    }
+
+    .minimal-index-heading h2 {
+      margin-top: 10px;
+      font-family: var(--serif);
+      font-size: clamp(3rem, 6vw, 5.8rem);
+      line-height: .98;
+      font-weight: 500;
+      letter-spacing: -0.045em;
+    }
+
+    .index-instruction {
+      margin-top: 18px;
+      color: #777b75;
+      font-size: .82rem;
+      line-height: 1.55;
+    }
+
+    .journal-index .section-inner {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      column-gap: 22px;
+      row-gap: 22px;
+    }
+
+    .minimal-index-heading {
+      grid-column: 1 / -1;
+    }
+
+    .week-tile {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-end;
+      min-height: 150px;
+      padding: 24px 4px 22px;
+      border-top: 1px solid var(--line);
+      border-bottom: 0;
+      background: transparent !important;
+      color: inherit;
+      text-decoration: none;
+      transition:
+        transform .18s ease,
+        border-color .18s ease;
+    }
+
+    .week-tile::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: var(--clay);
+      transition: width .2s ease;
+    }
+
+    .week-tile:hover {
+      transform: translateY(-3px) !important;
+      border-top-color: var(--sage);
+    }
+
+    .week-tile:hover::after,
+    .week-tile.active-week-link::after {
+      width: 42px;
+    }
+
+    .week-tile-number {
+      font-family: var(--serif);
+      font-size: clamp(2.7rem, 4.5vw, 4.4rem);
+      line-height: .9;
+      color: var(--sage);
+      letter-spacing: -0.045em;
+    }
+
+    .week-tile-date {
+      margin-top: 16px;
+      color: #747872;
+      font-size: .62rem;
+      font-weight: 600;
+      letter-spacing: .11em;
+      line-height: 1.45;
+      text-transform: uppercase;
+    }
+
+    .week-tile.active-week-link {
+      transform: none !important;
+    }
+
+    .week-tile.active-week-link .week-tile-number {
+      color: var(--olive);
+    }
+
+    /* Reflection entry area remains completely empty until a week is chosen */
+    .week-panel {
+      display: none !important;
+    }
+
+    .week-panel.active-week {
+      display: block !important;
+      animation: pageFade .22s ease;
+    }
+
+    @media (max-width: 980px) {
+      .journal-index .section-inner {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .journal-index {
+        padding-top: 88px;
+      }
+
+      .journal-index .section-inner {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 18px;
+        row-gap: 8px;
+      }
+
+      .minimal-index-heading {
+        margin-bottom: 34px;
+      }
+
+      .week-tile {
+        min-height: 126px;
+        padding-top: 20px;
+        padding-bottom: 18px;
+      }
+
+      .week-tile-number {
+        font-size: 3.1rem;
+      }
+
+      .week-tile-date {
+        font-size: .57rem;
+      }
+    }
+
+  
+    /* =========================================================
+       POLISHED REFLECTION INDEX + PROJECTS
+       ========================================================= */
+
+    /* REFLECTIONS — calm, centered archive */
+    .minimal-index-heading {
+      max-width: none;
+      margin-bottom: 52px;
+      text-align: center;
+    }
+
+    .minimal-index-heading .eyebrow {
+      justify-content: center;
+    }
+
+    .minimal-index-heading h2 {
+      max-width: none;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: clamp(3rem, 5.5vw, 5.2rem);
+    }
+
+    .journal-index .section-inner {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      column-gap: 20px;
+      row-gap: 18px;
+    }
+
+    .week-tile {
+      align-items: center;
+      justify-content: center;
+      min-height: 155px;
+      padding: 28px 10px 24px;
+      text-align: center;
+      border-top: 1px solid var(--line);
+    }
+
+    .week-tile::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .week-tile:hover::after,
+    .week-tile.active-week-link::after {
+      width: 38px;
+    }
+
+    .week-tile-number {
+      text-align: center;
+      font-size: clamp(3rem, 4.2vw, 4.2rem);
+    }
+
+    .week-tile-date {
+      width: 100%;
+      margin-top: 17px;
+      text-align: center;
+      font-size: .60rem;
+      letter-spacing: .12em;
+    }
+
+    /* PROJECTS — open editorial timeline rather than plain text */
+    .projects-section {
+      padding-top: 108px;
+      padding-bottom: 110px;
+    }
+
+    .projects-heading {
+      max-width: 900px;
+      margin-bottom: 62px;
+    }
+
+    .projects-heading h2 {
+      font-size: clamp(3rem, 5.2vw, 5rem);
+      letter-spacing: -0.035em;
+    }
+
+    .projects-heading p {
+      max-width: 700px;
+      color: #6e726d;
+      line-height: 1.7;
+    }
+
+    .project-timeline {
+      border-top: 1px solid var(--line);
+    }
+
+    .project-timeline::before {
+      display: none;
+    }
+
+    .project-step {
+      display: grid;
+      grid-template-columns: 150px minmax(0, 1fr);
+      gap: 46px;
+      padding: 42px 0 46px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .project-step::after {
+      display: none;
+    }
+
+    .project-week {
+      align-self: start;
+      padding-top: 2px;
+      text-align: left;
+      font-family: var(--serif);
+      font-size: clamp(3.3rem, 5vw, 4.8rem);
+      line-height: .85;
+      color: var(--sage);
+      letter-spacing: -0.045em;
+    }
+
+    .project-week span {
+      display: block;
+      margin-bottom: 11px;
+      font-family: var(--sans);
+      font-size: .60rem;
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+      color: var(--olive);
+    }
+
+    .project-main h3 {
+      margin: 0 0 24px;
+      font-family: var(--serif);
+      font-size: clamp(1.65rem, 2.6vw, 2.35rem);
+      font-weight: 500;
+      line-height: 1.15;
+      letter-spacing: -0.015em;
+    }
+
+    .project-columns {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0;
+    }
+
+    .project-columns > div {
+      padding: 0 34px 0 0;
+    }
+
+    .project-columns > div + div {
+      margin: 0;
+      padding: 0 0 0 34px;
+      border-top: 0;
+      border-left: 1px solid var(--line);
+    }
+
+    .project-columns small {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--olive);
+      font-size: .62rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .project-columns p {
+      margin: 0;
+      color: #444943;
+      font-size: .96rem;
+      line-height: 1.72;
+    }
+
+    @media (max-width: 980px) {
+      .journal-index .section-inner {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .project-step {
+        grid-template-columns: 105px minmax(0, 1fr);
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .minimal-index-heading {
+        text-align: left;
+      }
+
+      .minimal-index-heading .eyebrow {
+        justify-content: flex-start;
+      }
+
+      .journal-index .section-inner {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .week-tile {
+        min-height: 132px;
+      }
+
+      .project-step {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 34px 0 38px;
+      }
+
+      .project-week {
+        font-size: 3.4rem;
+      }
+
+      .project-columns {
+        grid-template-columns: 1fr;
+      }
+
+      .project-columns > div,
+      .project-columns > div + div {
+        padding: 0;
+        border-left: 0;
+      }
+
+      .project-columns > div + div {
+        margin-top: 22px;
+        padding-top: 22px;
+        border-top: 1px solid var(--line);
+      }
+    }
+
+  
+    /* =========================================================
+       FINAL SPACING DETAILS
+       ========================================================= */
+
+    /* Carry the Closing section's green all the way to the footer.
+       This removes the stray ivory band created by the page-view min-height. */
+    .page-view[data-page="closing"] {
+      background: var(--olive);
+    }
+
+    /* Complete the lower rule beneath Weeks 06–10. */
+    .week-tile:nth-last-child(-n+5) {
+      border-bottom: 1px solid var(--line);
+    }
+
+  
+    /* =========================================================
+       TAB SPACING FIXES
+       ========================================================= */
+
+    /* Documentation: keep the heading comfortably below the fixed nav. */
+    .documentation-section {
+      padding-top: 118px !important;
+    }
+
+    /* Closing: vertically center the message and remove the oversized
+       empty green area below it. */
+    .page-view[data-page="closing"] {
+      min-height: calc(100vh - 72px - 82px);
+      background: var(--olive);
+    }
+
+    .page-view[data-page="closing"] .closing {
+      min-height: calc(100vh - 72px - 82px);
+      padding-top: 54px;
+      padding-bottom: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .page-view[data-page="closing"] .closing .section-inner {
+      width: 100%;
+    }
+
+    @media (max-width: 800px) {
+      .documentation-section {
+        padding-top: 96px !important;
+      }
+
+      .page-view[data-page="closing"],
+      .page-view[data-page="closing"] .closing {
+        min-height: calc(100vh - 64px - 110px);
+      }
+
+      .page-view[data-page="closing"] .closing {
+        padding-top: 44px;
+        padding-bottom: 44px;
+      }
+    }
+
+  
+    /* =========================================================
+       WARMER REFLECTIONS + WEEK 6 LAYOUT
+       ========================================================= */
+
+    /* Use the warmer ivory tone instead of the near-white paper
+       background throughout the Reflections tab. */
+    .page-view[data-page="reflections"],
+    .journal-index,
+    .page-view[data-page="reflections"] .week-panel,
+    .page-view[data-page="reflections"] .entry,
+    .page-view[data-page="reflections"] .entry:nth-of-type(even) {
+      background: var(--ivory) !important;
+    }
+
+    /* Week 6 — restore the three-column Roots / Trunk / Branches layout */
+    #week6 .roots {
+      margin: 52px 0;
+      padding: 38px;
+      background: #e8e5dc;
+    }
+
+    #week6 .roots h3 {
+      margin-bottom: 28px;
+      font-family: var(--serif);
+      font-size: clamp(1.9rem, 3vw, 2.5rem);
+      font-weight: 500;
+      line-height: 1.2;
+    }
+
+    #week6 .roots-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      border: 0;
+    }
+
+    #week6 .root-card,
+    #week6 .root-card + .root-card {
+      min-height: 190px;
+      padding: 34px 32px;
+      background: var(--paper);
+      border: 0;
+      border-top: 3px solid var(--sage);
+    }
+
+    #week6 .root-card small {
+      display: block;
+      margin-bottom: 20px;
+      color: var(--olive);
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    #week6 .root-card {
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 800px) {
+      #week6 .roots {
+        padding: 26px;
+      }
+
+      #week6 .roots-grid {
+        grid-template-columns: 1fr;
+      }
+
+      #week6 .root-card,
+      #week6 .root-card + .root-card {
+        min-height: 0;
+        padding: 26px 24px;
+        border-left: 0;
+        border-top: 3px solid var(--sage);
+      }
+    }
+
+  
+    /* DSA cards only — no section rule or heading */
+    .dsa-panel {
+      margin-top: 46px;
+      padding-top: 0 !important;
+      border-top: 0 !important;
+    }
+
+    .dsa-heading {
+      display: none !important;
+    }
+
+  
+    /* =========================================================
+       CLOSING PAGE — eliminate any viewport gap below the footer
+       ========================================================= */
+
+    body[data-active-page="closing"] {
+      background: #20251f;
+    }
+
+    body[data-active-page="closing"] footer {
+      margin-bottom: 0;
+    }
+
+    .page-view[data-page="closing"] {
+      min-height: calc(100vh - 56px - 92px) !important;
+      background: var(--olive);
+    }
+
+    .page-view[data-page="closing"] .closing {
+      min-height: calc(100vh - 56px - 92px) !important;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 48px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @media (max-width: 800px) {
+      .page-view[data-page="closing"],
+      .page-view[data-page="closing"] .closing {
+        min-height: calc(100vh - 56px - 104px) !important;
+      }
+    }
+
+  
+    /* =========================================================
+       CLOSING TAB — exact full-screen composition
+       Green begins directly under the nav, footer sits at the bottom,
+       and the message remains centered between them.
+       ========================================================= */
+
+    body[data-active-page="closing"] {
+      overflow: hidden;
+      background: #252925;
+    }
+
+    body[data-active-page="closing"] .site-nav {
+      height: 56px;
+      padding: 0 5vw !important;
+      box-sizing: border-box;
+    }
+
+    body[data-active-page="closing"] .page-view[data-page="closing"] {
+      position: fixed;
+      top: 56px;
+      right: 0;
+      bottom: 74px;
+      left: 0;
+      min-height: 0 !important;
+      height: auto !important;
+      margin: 0 !important;
+      background: var(--olive);
+      overflow: hidden;
+    }
+
+    body[data-active-page="closing"] .closing {
+      width: 100%;
+      height: 100%;
+      min-height: 0 !important;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--olive);
+    }
+
+    body[data-active-page="closing"] .closing .section-inner {
+      width: 100%;
+      transform: translateY(-2px);
+    }
+
+    body[data-active-page="closing"] footer {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1000;
+      height: 74px;
+      margin: 0;
+      padding: 0 5vw;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      background: #252925;
+    }
+
+    @media (max-width: 800px) {
+      body[data-active-page="closing"] {
+        overflow: auto;
+      }
+
+      body[data-active-page="closing"] .site-nav {
+        height: 56px;
+      }
+
+      body[data-active-page="closing"] .page-view[data-page="closing"] {
+        top: 56px;
+        bottom: 104px;
+      }
+
+      body[data-active-page="closing"] footer {
+        height: 104px;
+        padding-top: 18px;
+        padding-bottom: 18px;
+      }
+
+      body[data-active-page="closing"] .closing {
+        padding: 30px 0;
+        box-sizing: border-box;
+      }
+    }
+
+  
+    /* Hypothetical-case clarification */
+    .case-note {
+      margin-top: 12px;
+      color: #747872;
+      font-size: .64rem;
+      font-weight: 600;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+    }
+
+  
+    /* =========================================================
+       HOME TAB — one continuous warm editorial background
+       ========================================================= */
+
+    .page-view[data-page="home"],
+    .page-view[data-page="home"] .intro,
+    .page-view[data-page="home"] .author-section,
+    .page-view[data-page="home"] .home-framework {
+      background: var(--ivory) !important;
+    }
+
+    /* Keep only subtle hairline separators so the sections feel
+       continuous rather than like differently colored blocks. */
+    .page-view[data-page="home"] .author-section {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .page-view[data-page="home"] .home-framework {
+      border-bottom: 0;
+    }
+
+  
+    /* =========================================================
+       ABOUT ME TAB
+       About the Author + Personal Framework on one continuous page
+       ========================================================= */
+
+    .page-view[data-page="about-me"],
+    .page-view[data-page="about-me"] .author-section,
+    .page-view[data-page="about-me"] .home-framework {
+      background: var(--ivory) !important;
+    }
+
+    .page-view[data-page="about-me"] .author-section {
+      padding-top: 112px;
+      padding-bottom: 78px;
+      border-top: 0 !important;
+      border-bottom: 0 !important;
+    }
+
+    .page-view[data-page="about-me"] .home-framework {
+      padding-top: 46px;
+      border-top: 0 !important;
+      border-bottom: 0 !important;
+    }
+
+    /* Home now contains only the hero + introduction: no separator line. */
+    .page-view[data-page="home"] .intro {
+      border-top: 0 !important;
+      border-bottom: 0 !important;
+    }
+
+    @media (max-width: 800px) {
+      .page-view[data-page="about-me"] .author-section {
+        padding-top: 92px;
+        padding-bottom: 58px;
+      }
+
+      .page-view[data-page="about-me"] .home-framework {
+        padding-top: 34px;
+      }
+    }
+
   </style>
 </head>
 
@@ -1923,6 +2014,7 @@
 
     <ul class="nav-links">
       <li><a href="#home" data-page-link="home">Home</a></li>
+      <li><a href="#about-me" data-page-link="about-me">About Me</a></li>
       <li><a href="#reflections" data-page-link="reflections">Reflections</a></li>
       <li><a href="#projects" data-page-link="projects">Projects</a></li>
       <li><a href="#documentation" data-page-link="documentation">Documentation</a></li>
@@ -1979,6 +2071,9 @@
   </section>
 
 
+  </main>
+
+  <main class="page-view" data-page="about-me">
   <section class="author-section" id="author">
     <div class="section-inner author-grid">
 
@@ -2017,7 +2112,7 @@
   <section class="home-framework" id="home-framework">
     <div class="section-inner">
       <div class="framework-heading">
-        <div class="eyebrow">Home · Personal Framework</div>
+        <div class="eyebrow">Personal Framework</div>
         <h2>What I hope to carry into FCM 3.</h2>
       </div>
 
@@ -2063,102 +2158,59 @@
   <section class="journal-index" id="reflections">
     <div class="section-inner">
 
-      <div class="index-heading">
+      <div class="index-heading minimal-index-heading">
         <div class="eyebrow">Weekly Insights &amp; Reflections</div>
-        <h2>Ten weeks, one evolving perspective.</h2>
-        <p class="index-instruction">
-          Choose a week below. Only the selected reflection will open.
-        </p>
+        <h2>Weeks in reflection.</h2>
       </div>
 
-      <a href="#week1" class="index-item" data-week-link="week1">
-        <div class="index-number">01</div>
-        <div>
-          <div class="index-category">Foundations</div>
-          <div class="index-title">Returning to the Bigger Picture</div>
-        </div>
-        <div class="index-date">July 22 · 2026</div>
+      <a href="#week1" class="index-item week-tile" data-week-link="week1">
+        <span class="week-tile-number">01</span>
+        <span class="week-tile-date">July 22 · 2026</span>
       </a>
 
-      <a href="#week2" class="index-item" data-week-link="week2">
-        <div class="index-number">02</div>
-        <div>
-          <div class="index-category">Context</div>
-          <div class="index-title">The Patient Beyond the Diagnosis</div>
-        </div>
-        <div class="index-date">July 29 · 2026</div>
+      <a href="#week2" class="index-item week-tile" data-week-link="week2">
+        <span class="week-tile-number">02</span>
+        <span class="week-tile-date">July 29 · 2026</span>
       </a>
 
-      <a href="#week3" class="index-item" data-week-link="week3">
-        <div class="index-number">03</div>
-        <div>
-          <div class="index-category">Primary Care</div>
-          <div class="index-title">Health for All, Then and Now</div>
-        </div>
-        <div class="index-date">August 03 · 2026</div>
+      <a href="#week3" class="index-item week-tile" data-week-link="week3">
+        <span class="week-tile-number">03</span>
+        <span class="week-tile-date">August 03 · 2026</span>
       </a>
 
-      <a href="#week4" class="index-item" data-week-link="week4">
-        <div class="index-number">04</div>
-        <div>
-          <div class="index-category">Reassessment</div>
-          <div class="index-title">Looking Back Before Moving Forward</div>
-        </div>
-        <div class="index-date">August 12 · 2026</div>
+      <a href="#week4" class="index-item week-tile" data-week-link="week4">
+        <span class="week-tile-number">04</span>
+        <span class="week-tile-date">August 12 · 2026</span>
       </a>
 
-      <a href="#week5" class="index-item" data-week-link="week5">
-        <div class="index-number">05</div>
-        <div>
-          <div class="index-category">Priorities</div>
-          <div class="index-title">Naming What Matters</div>
-        </div>
-        <div class="index-date">August 19 · 2026</div>
+      <a href="#week5" class="index-item week-tile" data-week-link="week5">
+        <span class="week-tile-number">05</span>
+        <span class="week-tile-date">August 19 · 2026</span>
       </a>
 
-      <a href="#week6" class="index-item" data-week-link="week6">
-        <div class="index-number">06</div>
-        <div>
-          <div class="index-category">Root Causes</div>
-          <div class="index-title">Tracing the Roots</div>
-        </div>
-        <div class="index-date">August 26 · 2026</div>
+      <a href="#week6" class="index-item week-tile" data-week-link="week6">
+        <span class="week-tile-number">06</span>
+        <span class="week-tile-date">August 26 · 2026</span>
       </a>
 
-      <a href="#week7" class="index-item" data-week-link="week7">
-        <div class="index-number">07</div>
-        <div>
-          <div class="index-category">Partnership</div>
-          <div class="index-title">Before We Enter the Community</div>
-        </div>
-        <div class="index-date">September 02 · 2026</div>
+      <a href="#week7" class="index-item week-tile" data-week-link="week7">
+        <span class="week-tile-number">07</span>
+        <span class="week-tile-date">September 02 · 2026</span>
       </a>
 
-      <a href="#week8" class="index-item" data-week-link="week8">
-        <div class="index-number">08</div>
-        <div>
-          <div class="index-category">Adaptation</div>
-          <div class="index-title">When the Weather Changed the Plan</div>
-        </div>
-        <div class="index-date">September 09 · 2026</div>
+      <a href="#week8" class="index-item week-tile" data-week-link="week8">
+        <span class="week-tile-number">08</span>
+        <span class="week-tile-date">September 09 · 2026</span>
       </a>
 
-      <a href="#week9" class="index-item" data-week-link="week9">
-        <div class="index-number">09</div>
-        <div>
-          <div class="index-category">Fieldwork</div>
-          <div class="index-title">From Doorsteps to Data</div>
-        </div>
-        <div class="index-date">September 23 · 2026</div>
+      <a href="#week9" class="index-item week-tile" data-week-link="week9">
+        <span class="week-tile-number">09</span>
+        <span class="week-tile-date">September 23 · 2026</span>
       </a>
 
-      <a href="#week10" class="index-item" data-week-link="week10">
-        <div class="index-number">10</div>
-        <div>
-          <div class="index-category">Community Validation</div>
-          <div class="index-title">Closing the Loop</div>
-        </div>
-        <div class="index-date">October 08 · 2026</div>
+      <a href="#week10" class="index-item week-tile" data-week-link="week10">
+        <span class="week-tile-number">10</span>
+        <span class="week-tile-date">October 08 · 2026</span>
       </a>
     </div>
   </section>
@@ -2220,12 +2272,7 @@
 
 
         <div class="dsa-panel" aria-label="Week 1 DSA reflection">
-          <div class="dsa-heading">
-            <div class="eyebrow">DSA · Week 01</div>
-            <h3>Discovery · Surprise · Affirmation · Challenge</h3>
-          </div>
-
-          <div class="dsa-grid">
+<div class="dsa-grid">
             <article class="dsa-card">
               <div class="dsa-letter">D</div>
               <div><strong>Discovery</strong><p>Seeing patients through family, social, and community contexts changes what good care requires.</p></div>
@@ -2268,18 +2315,19 @@
           <div class="entry-subtitle">
             Seeing chronic disease through the circumstances that shape it.
           </div>
+          <div class="case-note">Hypothetical teaching case · no real patient information is presented.</div>
         </div>
       </div>
 
       <div class="entry-body">
         <p>
-          For Week 2, we were grouped and assigned a case to report
-          on and discuss in relation to social determinants of health
+          For Week 2, we were grouped and assigned a <strong>hypothetical teaching case</strong>
+          to report on and discuss in relation to social determinants of health
           and primary health care.
         </p>
 
         <p>
-          Our case involved Mr. Santos, a 58-year-old tricycle driver
+          The fictional case involved “Mr. Santos,” a 58-year-old tricycle driver
           with poorly controlled diabetes mellitus, hypertension,
           chronic kidney disease, and recurrent diabetic foot
           infections. As a group, we broke down how his occupation
@@ -2324,12 +2372,7 @@
 
 
         <div class="dsa-panel" aria-label="Week 2 DSA reflection">
-          <div class="dsa-heading">
-            <div class="eyebrow">DSA · Week 02</div>
-            <h3>Discovery · Surprise · Affirmation · Challenge</h3>
-          </div>
-
-          <div class="dsa-grid">
+<div class="dsa-grid">
             <article class="dsa-card">
               <div class="dsa-letter">D</div>
               <div><strong>Discovery</strong><p>Continuity of primary care can prevent complications by addressing medical needs together with the barriers that make disease harder to control.</p></div>
@@ -2434,12 +2477,7 @@
 
 
         <div class="dsa-panel" aria-label="Week 3 DSA reflection">
-          <div class="dsa-heading">
-            <div class="eyebrow">DSA · Week 03</div>
-            <h3>Discovery · Surprise · Affirmation · Challenge</h3>
-          </div>
-
-          <div class="dsa-grid">
+<div class="dsa-grid">
             <article class="dsa-card">
               <div class="dsa-letter">D</div>
               <div><strong>Discovery</strong><p>Alma-Ata and Astana, despite being 40 years apart, are anchored in many of the same primary health care principles.</p></div>
@@ -2526,12 +2564,7 @@
 
 
         <div class="dsa-panel" aria-label="Week 4 DSA reflection">
-          <div class="dsa-heading">
-            <div class="eyebrow">DSA · Week 04</div>
-            <h3>Discovery · Surprise · Affirmation · Challenge</h3>
-          </div>
-
-          <div class="dsa-grid">
+<div class="dsa-grid">
             <article class="dsa-card">
               <div class="dsa-letter">D</div>
               <div><strong>Discovery</strong><p>A community diagnosis is not permanent; it has to be reassessed as conditions, memories, and available information change.</p></div>
@@ -2647,12 +2680,7 @@
 
 
         <div class="dsa-panel" aria-label="Week 5 DSA reflection">
-          <div class="dsa-heading">
-            <div class="eyebrow">DSA · Week 05</div>
-            <h3>Discovery · Surprise · Affirmation · Challenge</h3>
-          </div>
-
-          <div class="dsa-grid">
+<div class="dsa-grid">
             <article class="dsa-card">
               <div class="dsa-letter">D</div>
               <div><strong>Discovery</strong><p>Community problems become clearer when they are framed beyond disease labels and include upstream factors such as knowledge and environmental conditions.</p></div>
@@ -2754,12 +2782,7 @@
 
 
         <div class="dsa-panel" aria-label="Week 6 DSA reflection">
-          <div class="dsa-heading">
-            <div class="eyebrow">DSA · Week 06</div>
-            <h3>Discovery · Surprise · Affirmation · Challenge</h3>
-          </div>
-
-          <div class="dsa-grid">
+<div class="dsa-grid">
             <article class="dsa-card">
               <div class="dsa-letter">D</div>
               <div><strong>Discovery</strong><p>A problem tree makes the relationship between root causes, a central problem, and its downstream effects much easier to see.</p></div>
@@ -2859,12 +2882,7 @@
 
 
         <div class="dsa-panel" aria-label="Week 7 DSA reflection">
-          <div class="dsa-heading">
-            <div class="eyebrow">DSA · Week 07</div>
-            <h3>Discovery · Surprise · Affirmation · Challenge</h3>
-          </div>
-
-          <div class="dsa-grid">
+<div class="dsa-grid">
             <article class="dsa-card">
               <div class="dsa-letter">D</div>
               <div><strong>Discovery</strong><p>Community engagement starts with relationships and local coordination before formal data collection begins.</p></div>
@@ -2925,20 +2943,6 @@
           out to the community given the conditions.
         </p>
 
-        <div class="adaptation-strip">
-          <div class="adaptation-card">
-            <small>Planned</small>
-            <strong>Community data collection</strong>
-          </div>
-
-          <div class="adaptation-arrow">→</div>
-
-          <div class="adaptation-card">
-            <small>Adapted</small>
-            <strong>Online revision of the community diagnosis</strong>
-          </div>
-        </div>
-
         <blockquote class="pull-quote">
           Not every productive fieldwork day has to happen in the field.
         </blockquote>
@@ -2959,12 +2963,7 @@
 
 
         <div class="dsa-panel" aria-label="Week 8 DSA reflection">
-          <div class="dsa-heading">
-            <div class="eyebrow">DSA · Week 08</div>
-            <h3>Discovery · Surprise · Affirmation · Challenge</h3>
-          </div>
-
-          <div class="dsa-grid">
+<div class="dsa-grid">
             <article class="dsa-card">
               <div class="dsa-letter">D</div>
               <div><strong>Discovery</strong><p>Fieldwork requires flexibility because safety and external conditions can change a plan completely.</p></div>
@@ -3039,32 +3038,6 @@
           complete the additional fieldwork we had been waiting to do.
         </p>
 
-        <div class="data-flow" aria-label="Week 9 data workflow">
-          <div class="data-flow-step">
-            <small>01 · Field</small>
-            <strong>Resident interviews</strong>
-            <span>Paired face-to-face data gathering in Plastikan Compound</span>
-          </div>
-
-          <div class="data-flow-step">
-            <small>02 · Source</small>
-            <strong>Community interviews</strong>
-            <span>Responses gathered through face-to-face interviews</span>
-          </div>
-
-          <div class="data-flow-step">
-            <small>03 · Encode</small>
-            <strong>Google Forms</strong>
-            <span>Interview responses encoded into a digital format</span>
-          </div>
-
-          <div class="data-flow-step">
-            <small>04 · Consolidate</small>
-            <strong>Google Sheets</strong>
-            <span>Group data brought together for the next stage of analysis</span>
-          </div>
-        </div>
-
         <blockquote class="pull-quote">
           Collecting data is only the first step; organizing it is what makes it usable.
         </blockquote>
@@ -3085,12 +3058,7 @@
         </p>
 
         <div class="dsa-panel" aria-label="Week 9 DSA reflection">
-          <div class="dsa-heading">
-            <div class="eyebrow">DSA · Week 09</div>
-            <h3>Discovery · Surprise · Affirmation · Challenge</h3>
-          </div>
-
-          <div class="dsa-grid">
+<div class="dsa-grid">
             <article class="dsa-card">
               <div class="dsa-letter">D</div>
               <div>
@@ -3138,7 +3106,7 @@
 
 
 
-  <section class="entry week-panel active-week" id="week10" data-week="week10">
+  <section class="entry week-panel" id="week10" data-week="week10">
     <div class="section-inner">
       <div class="entry-header">
         <div class="entry-number">10</div>
@@ -3182,32 +3150,6 @@
           of the people actually living in the community.
         </p>
 
-        <div class="data-flow" aria-label="Week 10 community validation process">
-          <div class="data-flow-step">
-            <small>01 · Findings</small>
-            <strong>Community diagnosis</strong>
-            <span>Results prepared after weeks of assessment and data collection</span>
-          </div>
-
-          <div class="data-flow-step">
-            <small>02 · Present</small>
-            <strong>Share the results</strong>
-            <span>Findings presented to barangay officials and community members</span>
-          </div>
-
-          <div class="data-flow-step">
-            <small>03 · Listen</small>
-            <strong>Community feedback</strong>
-            <span>Residents and local officials contributed their own perspectives</span>
-          </div>
-
-          <div class="data-flow-step">
-            <small>04 · Validate</small>
-            <strong>Ground the interpretation</strong>
-            <span>Our analysis was checked against the community's lived experience</span>
-          </div>
-        </div>
-
         <blockquote class="pull-quote">
           A community diagnosis should not only describe a community—it should
           also make sense to the people who live there.
@@ -3230,12 +3172,7 @@
         </p>
 
         <div class="dsa-panel" aria-label="Week 10 DSA reflection">
-          <div class="dsa-heading">
-            <div class="eyebrow">DSA · Week 10</div>
-            <h3>Discovery · Surprise · Affirmation · Challenge</h3>
-          </div>
-
-          <div class="dsa-grid">
+<div class="dsa-grid">
             <article class="dsa-card">
               <div class="dsa-letter">D</div>
               <div>
@@ -3289,19 +3226,16 @@
     <div class="section-inner">
       <div class="projects-heading">
         <div class="eyebrow">Community Programs / Project Updates</div>
-        <h2>From community diagnosis to community validation.</h2>
+        <h2>The project, in stages.</h2>
         <p>
-          The project developed in stages rather than as a single activity. Each week
-          added another layer—from reassessing earlier findings to identifying priorities,
-          tracing causes, establishing community partnership, adapting to field conditions,
-          collecting and consolidating additional data, and finally returning the findings
-          to the community for discussion and validation.
+          A running record of how our community diagnosis developed—from reassessment
+          and prioritization to fieldwork, data consolidation, and community validation.
         </p>
       </div>
 
       <div class="project-timeline">
         <article class="project-step">
-          <div class="project-week">Week 04</div>
+          <div class="project-week"><span>Week</span>04</div>
           <div class="project-main">
             <h3>Reassessing the Community Diagnosis</h3>
             <div class="project-columns">
@@ -3312,7 +3246,7 @@
         </article>
 
         <article class="project-step">
-          <div class="project-week">Week 05</div>
+          <div class="project-week"><span>Week</span>05</div>
           <div class="project-main">
             <h3>Re-identification &amp; Re-prioritization</h3>
             <div class="project-columns">
@@ -3323,7 +3257,7 @@
         </article>
 
         <article class="project-step">
-          <div class="project-week">Week 06</div>
+          <div class="project-week"><span>Week</span>06</div>
           <div class="project-main">
             <h3>Problem Tree &amp; Root-Cause Analysis</h3>
             <div class="project-columns">
@@ -3334,7 +3268,7 @@
         </article>
 
         <article class="project-step">
-          <div class="project-week">Week 07</div>
+          <div class="project-week"><span>Week</span>07</div>
           <div class="project-main">
             <h3>Barangay Courtesy Visit</h3>
             <div class="project-columns">
@@ -3345,7 +3279,7 @@
         </article>
 
         <article class="project-step">
-          <div class="project-week">Week 08</div>
+          <div class="project-week"><span>Week</span>08</div>
           <div class="project-main">
             <h3>Weather Disruption &amp; Online Revision</h3>
             <div class="project-columns">
@@ -3356,7 +3290,7 @@
         </article>
 
         <article class="project-step">
-          <div class="project-week">Week 09</div>
+          <div class="project-week"><span>Week</span>09</div>
           <div class="project-main">
             <h3>Additional Data Collection &amp; Encoding</h3>
             <div class="project-columns">
@@ -3367,7 +3301,7 @@
         </article>
 
         <article class="project-step">
-          <div class="project-week">Week 10</div>
+          <div class="project-week"><span>Week</span>10</div>
           <div class="project-main">
             <h3>Community Presentation &amp; Validation</h3>
             <div class="project-columns">
@@ -3388,13 +3322,6 @@
       <div class="documentation-heading">
         <div class="eyebrow">Documentation</div>
         <h2>What we have documented so far.</h2>
-        <p>
-          My visual documentation now follows three key moments in our community work:
-          the Week 7 barangay courtesy visit, the Week 9 return to field data collection,
-          and the Week 10 presentation of our community diagnosis back to Barangay 655.
-          The weekly entries preserve the sequence of activities, decisions, revisions,
-          discoveries, and challenges while the portfolio remains ongoing.
-        </p>
       </div>
 
       <div class="documentation-gallery">
@@ -3429,15 +3356,6 @@
             Community diagnosis presentation · Week 10 · October 08, 2026
           </figcaption>
         </figure>
-      </div>
-
-      <div class="documentation-log">
-        <div class="doc-item"><span>Weeks 01–03</span><strong>Foundational learning records</strong><p>Weekly reflections on family context, social determinants, primary health care, Alma-Ata, and Astana.</p></div>
-        <div class="doc-item"><span>Weeks 04–06</span><strong>Community diagnosis development</strong><p>Reflective record of reassessment, problem prioritization, and problem-tree analysis.</p></div>
-        <div class="doc-item"><span>Week 07</span><strong>Photographic documentation</strong><p>Barangay courtesy visit and formal introduction of the community diagnosis project.</p></div>
-        <div class="doc-item"><span>Week 08</span><strong>Adaptation record</strong><p>Weather-related fieldwork disruption and online revision of the community diagnosis presentation.</p></div>
-        <div class="doc-item"><span>Week 09</span><strong>Fieldwork &amp; digitization record</strong><p>Additional community data collection in Plastikan Compound followed by encoding through Google Forms and consolidation in Google Sheets.</p></div>
-        <div class="doc-item"><span>Week 10</span><strong>Community validation record</strong><p>Presentation of the community diagnosis to barangay officials and community members, followed by a two-way discussion of the findings.</p></div>
       </div>
     </div>
   </section>
@@ -3481,15 +3399,29 @@
     const weekLinks = [...document.querySelectorAll("[data-week-link]")];
     const weekPanels = [...document.querySelectorAll(".week-panel")];
 
-    let selectedWeek = "week10";
+    let selectedWeek = null;
 
-    function setWeek(weekId, updateUrl = true, moveToEntry = false) {
-      if (!document.getElementById(weekId)) return;
+    function clearWeekSelection() {
+      selectedWeek = null;
+
+      weekPanels.forEach(panel => {
+        panel.classList.remove("active-week");
+      });
+
+      weekLinks.forEach(link => {
+        link.classList.remove("active-week-link");
+        link.removeAttribute("aria-current");
+      });
+    }
+
+    function setWeek(weekId, updateUrl = true, moveToEntry = true) {
+      const panel = document.getElementById(weekId);
+      if (!panel) return;
 
       selectedWeek = weekId;
 
-      weekPanels.forEach(panel => {
-        panel.classList.toggle("active-week", panel.dataset.week === weekId);
+      weekPanels.forEach(item => {
+        item.classList.toggle("active-week", item.dataset.week === weekId);
       });
 
       weekLinks.forEach(link => {
@@ -3512,16 +3444,25 @@
       }
 
       if (moveToEntry) {
-        const panel = document.getElementById(weekId);
-        const top = panel.getBoundingClientRect().top + window.scrollY - 68;
-        window.scrollTo({ top, behavior: "smooth" });
+        requestAnimationFrame(() => {
+          const top =
+            panel.getBoundingClientRect().top +
+            window.scrollY -
+            68;
+
+          window.scrollTo({
+            top,
+            behavior: "smooth"
+          });
+        });
       }
     }
 
     function showPage(page, options = {}) {
       const {
         updateUrl = true,
-        scrollTop = true
+        scrollTop = true,
+        preserveWeek = false
       } = options;
 
       document.body.dataset.activePage = page;
@@ -3541,26 +3482,33 @@
         }
       });
 
+      /*
+        Important:
+        Opening the Reflections tab itself shows ONLY the week selector.
+        A reflection appears only after the visitor chooses a week.
+      */
+      if (page === "reflections" && !preserveWeek) {
+        clearWeekSelection();
+      }
+
       nav.classList.toggle(
         "scrolled",
         page !== "home" || window.scrollY > 48
       );
 
       if (updateUrl) {
-        const hash =
-          page === "reflections"
-            ? "#" + selectedWeek
-            : "#" + page;
-
         history.pushState(
-          { page, week: selectedWeek },
+          { page },
           "",
-          hash
+          "#" + page
         );
       }
 
       if (scrollTop) {
-        window.scrollTo({ top: 0, behavior: "auto" });
+        window.scrollTo({
+          top: 0,
+          behavior: "auto"
+        });
       }
     }
 
@@ -3568,16 +3516,19 @@
       const hash = location.hash.replace("#", "");
 
       if (/^week(?:10|[1-9])$/.test(hash)) {
-        setWeek(hash, false, false);
         showPage("reflections", {
           updateUrl: false,
-          scrollTop: false
+          scrollTop: false,
+          preserveWeek: true
         });
+
+        setWeek(hash, false, false);
         return;
       }
 
       const validPages = [
         "home",
+        "about-me",
         "reflections",
         "projects",
         "documentation",
@@ -3588,14 +3539,20 @@
 
       showPage(page, {
         updateUrl: false,
-        scrollTop: false
+        scrollTop: false,
+        preserveWeek: false
       });
     }
 
     pageLinks.forEach(link => {
       link.addEventListener("click", event => {
         event.preventDefault();
-        showPage(link.dataset.pageLink);
+
+        showPage(link.dataset.pageLink, {
+          updateUrl: true,
+          scrollTop: true,
+          preserveWeek: false
+        });
       });
     });
 
@@ -3605,10 +3562,15 @@
 
         showPage("reflections", {
           updateUrl: false,
-          scrollTop: false
+          scrollTop: false,
+          preserveWeek: true
         });
 
-        setWeek(link.dataset.weekLink, true, true);
+        setWeek(
+          link.dataset.weekLink,
+          true,
+          true
+        );
       });
     });
 
@@ -3626,7 +3588,7 @@
 
     if (!location.hash) {
       history.replaceState(
-        { page: "home", week: selectedWeek },
+        { page: "home" },
         "",
         "#home"
       );

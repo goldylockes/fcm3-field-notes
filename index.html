@@ -2413,6 +2413,70 @@
       }
     }
 
+  
+    /* =========================================================
+       WEEK 11 — balanced reflection archive
+       ========================================================= */
+
+    .journal-index .section-inner {
+      display: grid !important;
+      grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+      column-gap: 16px !important;
+      row-gap: 18px !important;
+    }
+
+    .minimal-index-heading {
+      grid-column: 1 / -1 !important;
+    }
+
+    .week-tile {
+      grid-column: span 2;
+    }
+
+    .week-tile[data-week-link="week7"]  { grid-column: 2 / span 2; }
+    .week-tile[data-week-link="week8"]  { grid-column: 4 / span 2; }
+    .week-tile[data-week-link="week9"]  { grid-column: 6 / span 2; }
+    .week-tile[data-week-link="week10"] { grid-column: 8 / span 2; }
+    .week-tile[data-week-link="week11"] { grid-column: 10 / span 2; }
+
+    .week-tile[data-week-link="week7"],
+    .week-tile[data-week-link="week8"],
+    .week-tile[data-week-link="week9"],
+    .week-tile[data-week-link="week10"],
+    .week-tile[data-week-link="week11"] {
+      border-bottom: 1px solid var(--line);
+    }
+
+    @media (max-width: 980px) {
+      .journal-index .section-inner {
+        grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+      }
+
+      .week-tile,
+      .week-tile[data-week-link="week7"],
+      .week-tile[data-week-link="week8"],
+      .week-tile[data-week-link="week9"],
+      .week-tile[data-week-link="week10"],
+      .week-tile[data-week-link="week11"] {
+        grid-column: span 2;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .journal-index .section-inner {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      }
+
+      .week-tile,
+      .week-tile[data-week-link="week7"],
+      .week-tile[data-week-link="week8"],
+      .week-tile[data-week-link="week9"],
+      .week-tile[data-week-link="week10"],
+      .week-tile[data-week-link="week11"] {
+        grid-column: auto;
+      }
+    }
+
   </style>
 </head>
 
@@ -2644,6 +2708,11 @@
       <a href="#week10" class="index-item week-tile" data-week-link="week10">
         <span class="week-tile-number">10</span>
         <span class="week-tile-date">October 08 · 2026</span>
+      </a>
+
+      <a href="#week11" class="index-item week-tile" data-week-link="week11">
+        <span class="week-tile-number">11</span>
+        <span class="week-tile-date">October 14 · 2026</span>
       </a>
     </div>
   </section>
@@ -3652,6 +3721,109 @@
   </section>
 
 
+
+  <section class="entry week-panel" id="week11" data-week="week11">
+    <div class="section-inner">
+      <div class="entry-header">
+        <div class="entry-number">11</div>
+
+        <div>
+          <div class="entry-meta">Program Planning · October 14, 2026</div>
+          <h2>From Diagnosis to Design</h2>
+          <div class="entry-subtitle">
+            Turning community priorities into a plan for action.
+          </div>
+        </div>
+      </div>
+
+      <div class="entry-body">
+        <p>
+          Week 11 marked a shift from describing community health problems toward
+          thinking about how interventions can actually be planned. The lecture
+          introduced several tools for organizing and analyzing community health
+          programs, including the 4×4 logical framework, the IPOO
+          (input-process-output-outcome) framework, SWOT analysis, and stakeholder
+          analysis, along with other planning tools discussed during the session.
+        </p>
+
+        <p>
+          Seeing the frameworks together made the transition from community diagnosis
+          to program planning much clearer. Up to this point, much of our work had
+          focused on identifying, prioritizing, and validating problems. These tools
+          added the next question: once a priority has been established, how do we
+          systematically think through an intervention and the factors that may help
+          or hinder it?
+        </p>
+
+        <blockquote class="pull-quote">
+          Identifying a community problem is only the beginning; planning asks what
+          can realistically be done about it.
+        </blockquote>
+
+        <p>
+          After the lecture, we were divided into four groups to apply the planning
+          tools to our own community diagnosis. Our group was assigned the SWOT
+          analysis for acute respiratory illnesses, the top priority problem we had
+          identified in the community. Working directly on our number one priority
+          made the framework feel much more practical than it had during the lecture.
+        </p>
+
+        <p>
+          We had to consider what the community already has going for it, what gaps
+          or barriers exist, and what external opportunities or threats could affect
+          a future intervention. It felt like a good first step into the planning
+          phase of the course because we were no longer only describing the problem;
+          we were beginning to organize what would matter when deciding what to do
+          next.
+        </p>
+
+        <div class="dsa-panel" aria-label="Week 11 DSA reflection">
+          <div class="dsa-grid">
+            <article class="dsa-card">
+              <div class="dsa-letter">D</div>
+              <div>
+                <strong>Discovery</strong>
+                <p>Planning frameworks help bridge the gap between identifying a community problem and designing an intervention around it.</p>
+              </div>
+            </article>
+
+            <article class="dsa-card">
+              <div class="dsa-letter">S</div>
+              <div>
+                <strong>Surprise</strong>
+                <p>The frameworks felt much more useful once we applied one to a priority problem from our own community diagnosis instead of viewing it only as a lecture concept.</p>
+              </div>
+            </article>
+
+            <article class="dsa-card">
+              <div class="dsa-letter">A</div>
+              <div>
+                <strong>Affirmation</strong>
+                <p>The activity affirmed that prioritizing a problem is not the endpoint; good community work also requires a structured way to think about what comes next.</p>
+              </div>
+            </article>
+
+            <article class="dsa-card challenge-card">
+              <div class="dsa-letter">C</div>
+              <div>
+                <strong>Challenge</strong>
+                <p>The challenge was separating the factors in the SWOT analysis clearly without oversimplifying how strengths, weaknesses, opportunities, and threats can interact.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="field-note">
+          <div class="field-note-label">Field Note · 11</div>
+          <p>
+            Community diagnosis tells us what matters; planning tools help turn that
+            knowledge into a workable direction for action.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   </main>
 
   <main class="page-view" data-page="projects">
@@ -3743,6 +3915,17 @@
             </div>
           </div>
         </article>
+
+        <article class="project-step">
+          <div class="project-week"><span>Week</span>11</div>
+          <div class="project-main">
+            <h3>Program Planning &amp; SWOT Analysis</h3>
+            <div class="project-columns">
+              <div><small>Activities &amp; Reflections</small><p>Reviewed community health planning tools including the 4×4 logical framework, IPOO framework, SWOT analysis, and stakeholder analysis, then applied SWOT analysis to acute respiratory illnesses, our top-priority community problem.</p></div>
+              <div><small>Discoveries &amp; Challenges</small><p>Applying the framework to our own diagnosis made the planning phase more concrete. The challenge was organizing interacting internal and external factors clearly enough to guide the next steps in intervention planning.</p></div>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -3804,7 +3987,7 @@
       <h2>The journal continues.</h2>
 
       <p>
-        Ten weeks into FCM 3, I am beginning to see community medicine less as a
+        Eleven weeks into FCM 3, I am beginning to see community medicine less as a
         separate subject and more as a way of understanding how health actually happens.
         The work has moved from frameworks and case discussions to community diagnosis,
         partnership, adaptation, field data collection, analysis, and finally bringing our
@@ -3948,7 +4131,7 @@
     function routeFromHash() {
       const hash = location.hash.replace("#", "");
 
-      if (/^week(?:10|[1-9])$/.test(hash)) {
+      if (/^week(?:11|10|[1-9])$/.test(hash)) {
         showPage("reflections", {
           updateUrl: false,
           scrollTop: false,

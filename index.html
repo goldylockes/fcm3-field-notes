@@ -2591,6 +2591,62 @@
       }
     }
 
+  
+    /* =========================================================
+       REFLECTIONS — warmer paper background
+       ========================================================= */
+
+    :root {
+      --journal-paper: #efeae0;
+    }
+
+    .page-view[data-page="reflections"],
+    .journal-index,
+    .page-view[data-page="reflections"] .week-panel,
+    .page-view[data-page="reflections"] .entry,
+    .page-view[data-page="reflections"] .entry:nth-of-type(even) {
+      background: var(--journal-paper) !important;
+    }
+
+  
+    /* =========================================================
+       SITE-WIDE PAPER BACKGROUND
+       Keep dark/photographic surfaces unchanged.
+       ========================================================= */
+
+    :root {
+      --site-paper: #efeae0;
+    }
+
+    body,
+    .page-view:not([data-page="closing"]),
+    .page-view[data-page="home"] .intro,
+    .page-view[data-page="about-me"],
+    .page-view[data-page="about-me"] .author-section,
+    .page-view[data-page="about-me"] .home-framework,
+    .page-view[data-page="reflections"],
+    .journal-index,
+    .page-view[data-page="reflections"] .week-panel,
+    .page-view[data-page="reflections"] .entry,
+    .page-view[data-page="reflections"] .entry:nth-of-type(even),
+    .page-view[data-page="projects"],
+    .projects-section,
+    .page-view[data-page="documentation"],
+    .documentation-section {
+      background: var(--site-paper) !important;
+    }
+
+    /* Preserve the intended dark Closing composition. */
+    body[data-active-page="closing"],
+    .page-view[data-page="closing"],
+    .page-view[data-page="closing"] .closing {
+      background: var(--olive) !important;
+    }
+
+    body[data-active-page="closing"] footer {
+      background: #252925 !important;
+    }
+
   </style>
 </head>
 

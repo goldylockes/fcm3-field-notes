@@ -2499,13 +2499,49 @@
       }
     }
 
+
+  
+    /* =========================================================
+       WEEK 12 REFLECTION INDEX — final 6 + 6 balance
+       ========================================================= */
+
+    .journal-index .section-inner {
+      display: grid !important;
+      grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+      column-gap: 20px !important;
+      row-gap: 22px !important;
+    }
+
+    .minimal-index-heading {
+      grid-column: 1 / -1 !important;
+    }
+
+    .week-tile,
+    .week-tile[data-week-link] {
+      grid-column: span 2 !important;
+      border-top: 1px solid var(--line) !important;
+      border-bottom: 1px solid var(--line) !important;
+    }
+
+    @media (max-width: 980px) {
+      .journal-index .section-inner {
+        grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+      }
+
       .week-tile,
-      .week-tile[data-week-link="week7"],
-      .week-tile[data-week-link="week8"],
-      .week-tile[data-week-link="week9"],
-      .week-tile[data-week-link="week10"],
-      .week-tile[data-week-link="week11"] {
-        grid-column: auto;
+      .week-tile[data-week-link] {
+        grid-column: span 2 !important;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .journal-index .section-inner {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      }
+
+      .week-tile,
+      .week-tile[data-week-link] {
+        grid-column: auto !important;
       }
     }
 

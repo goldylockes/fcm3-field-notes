@@ -2821,6 +2821,30 @@
       }
     }
 
+  
+    /* =========================================================
+       REFLECTION INDEX — consistent hover indicator for all weeks
+       Keep the hover accent separate from structural row rules.
+       ========================================================= */
+
+    .week-tile::after,
+    .week-tile[data-week-link]::after {
+      left: 50% !important;
+      bottom: 9px !important;
+      transform: translateX(-50%) !important;
+      width: 0 !important;
+      height: 1px !important;
+      background: var(--clay) !important;
+      z-index: 2;
+    }
+
+    .week-tile:hover::after,
+    .week-tile.active-week-link::after,
+    .week-tile[data-week-link]:hover::after,
+    .week-tile[data-week-link].active-week-link::after {
+      width: 38px !important;
+    }
+
   </style>
 </head>
 

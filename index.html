@@ -2647,6 +2647,93 @@
       background: #252925 !important;
     }
 
+  
+    /* =========================================================
+       WEEK 13 REFLECTION INDEX — balanced 5 + 4 + 4
+       ========================================================= */
+
+    .journal-index .section-inner {
+      display: grid !important;
+      grid-template-columns: repeat(10, minmax(0, 1fr)) !important;
+      column-gap: 20px !important;
+      row-gap: 20px !important;
+    }
+
+    .minimal-index-heading {
+      grid-column: 1 / -1 !important;
+    }
+
+    .week-tile,
+    .week-tile[data-week-link] {
+      grid-column: span 2 !important;
+      border-top: 1px solid var(--line) !important;
+      border-bottom: 0 !important;
+    }
+
+    /* Row 2: Weeks 06–09, centered. */
+    .week-tile[data-week-link="week6"]  { grid-column: 2 / span 2 !important; }
+    .week-tile[data-week-link="week7"]  { grid-column: 4 / span 2 !important; }
+    .week-tile[data-week-link="week8"]  { grid-column: 6 / span 2 !important; }
+    .week-tile[data-week-link="week9"]  { grid-column: 8 / span 2 !important; }
+
+    /* Row 3: Weeks 10–13, centered. */
+    .week-tile[data-week-link="week10"] { grid-column: 2 / span 2 !important; }
+    .week-tile[data-week-link="week11"] { grid-column: 4 / span 2 !important; }
+    .week-tile[data-week-link="week12"] { grid-column: 6 / span 2 !important; }
+    .week-tile[data-week-link="week13"] { grid-column: 8 / span 2 !important; }
+
+    /* Only the final row gets the closing rule. */
+    .week-tile[data-week-link="week10"],
+    .week-tile[data-week-link="week11"],
+    .week-tile[data-week-link="week12"],
+    .week-tile[data-week-link="week13"] {
+      border-bottom: 1px solid var(--line) !important;
+    }
+
+    @media (max-width: 980px) {
+      .journal-index .section-inner {
+        grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+      }
+
+      .week-tile,
+      .week-tile[data-week-link],
+      .week-tile[data-week-link="week6"],
+      .week-tile[data-week-link="week7"],
+      .week-tile[data-week-link="week8"],
+      .week-tile[data-week-link="week9"],
+      .week-tile[data-week-link="week10"],
+      .week-tile[data-week-link="week11"],
+      .week-tile[data-week-link="week12"],
+      .week-tile[data-week-link="week13"] {
+        grid-column: span 2 !important;
+        border-top: 1px solid var(--line) !important;
+        border-bottom: 0 !important;
+      }
+
+      .week-tile:last-child {
+        border-bottom: 1px solid var(--line) !important;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .journal-index .section-inner {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      }
+
+      .week-tile,
+      .week-tile[data-week-link],
+      .week-tile[data-week-link="week6"],
+      .week-tile[data-week-link="week7"],
+      .week-tile[data-week-link="week8"],
+      .week-tile[data-week-link="week9"],
+      .week-tile[data-week-link="week10"],
+      .week-tile[data-week-link="week11"],
+      .week-tile[data-week-link="week12"],
+      .week-tile[data-week-link="week13"] {
+        grid-column: auto !important;
+      }
+    }
+
   </style>
 </head>
 
@@ -2888,6 +2975,11 @@
       <a href="#week12" class="index-item week-tile" data-week-link="week12">
         <span class="week-tile-number">12</span>
         <span class="week-tile-date">October 21 · 2026</span>
+      </a>
+
+      <a href="#week13" class="index-item week-tile" data-week-link="week13">
+        <span class="week-tile-number">13</span>
+        <span class="week-tile-date">October 28 · 2026</span>
       </a>
     </div>
   </section>
@@ -4112,6 +4204,120 @@
     </div>
   </section>
 
+
+  <section class="entry week-panel" id="week13" data-week="week13">
+    <div class="section-inner">
+      <div class="entry-header">
+        <div class="entry-number">13</div>
+
+        <div>
+          <div class="entry-meta">Implementation Preparation · October 28, 2026</div>
+          <h2>From Plan to Presence</h2>
+          <div class="entry-subtitle">
+            Building the project on paper, then meeting the people it is meant to serve.
+          </div>
+        </div>
+      </div>
+
+      <div class="entry-body">
+        <p>
+          The first half of Week 13, from 7 to 10 AM at PLM, was devoted to making
+          our proposed intervention more concrete. In our groups, we refined the
+          specific objectives for our assigned populations—the toddlers and their
+          teachers—and added caregivers as a third target group. We were also asked
+          to draft a Gantt chart beginning in January, identify the activities and
+          expected outcomes under the project, list the inventory and resources we
+          would need, and come up with a title for the community project.
+        </p>
+
+        <p>
+          We were also advised of our schedule for the next couple of weeks. Having
+          a timeline, a materials list, defined populations, and a project name made
+          the plan feel much more tangible than a set of objectives on paper. It was
+          becoming easier to see how the intervention would actually unfold and what
+          would have to be prepared before implementation could begin.
+        </p>
+
+        <blockquote class="pull-quote">
+          A community project needs both a plan people can act on and relationships
+          that give the plan a place to work.
+        </blockquote>
+
+        <p>
+          The second half of the session, from 10 AM to 12 noon, took place in the
+          community. The group leaders consulted with the barangay captain and other
+          community stakeholders about the proposed projects, while the rest of us
+          stayed at the barangay daycare and spent time with the children. We drew
+          with crayons, built things with blocks, and practiced the alphabet by
+          matching letters with pictures and words.
+        </p>
+
+        <p>
+          Spending time with the children was refreshing, but it was also useful.
+          It gave us an early sense of how much attention, simplicity, repetition,
+          and hands-on interaction will matter once we begin implementing activities
+          for this age group. At the same time, the stakeholder consultations showed
+          that implementation depends on more than a well-designed activity. Local
+          leaders and community partners also need to understand, support, and help
+          shape what is being proposed.
+        </p>
+
+        <p>
+          Seeing both parts of the day side by side reinforced the principles of
+          community participation and intersectoral collaboration that we have been
+          learning in primary health care. Planning may begin with objectives,
+          schedules, and resources, but a community project becomes workable only
+          when those plans are connected to the people and institutions that will
+          help carry them out.
+        </p>
+
+        <div class="dsa-panel" aria-label="Week 13 DSA reflection">
+          <div class="dsa-grid">
+            <article class="dsa-card">
+              <div class="dsa-letter">D</div>
+              <div>
+                <strong>Discovery</strong>
+                <p>A timeline, resource inventory, and clearly defined target groups can turn broad objectives into something that feels operational and implementable.</p>
+              </div>
+            </article>
+
+            <article class="dsa-card">
+              <div class="dsa-letter">S</div>
+              <div>
+                <strong>Surprise</strong>
+                <p>Simply spending time with the daycare children already revealed how important play, repetition, and hands-on interaction will be when designing activities for them.</p>
+              </div>
+            </article>
+
+            <article class="dsa-card">
+              <div class="dsa-letter">A</div>
+              <div>
+                <strong>Affirmation</strong>
+                <p>The day affirmed that community participation is not an added step after planning; stakeholder consultation and relationship-building are part of making the plan feasible in the first place.</p>
+              </div>
+            </article>
+
+            <article class="dsa-card challenge-card">
+              <div class="dsa-letter">C</div>
+              <div>
+                <strong>Challenge</strong>
+                <p>The challenge is aligning the timeline, materials, objectives, and needs of toddlers, caregivers, teachers, and local stakeholders without making the project too complicated to carry out well.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="field-note">
+          <div class="field-note-label">Field Note · 13</div>
+          <p>
+            Implementation begins before the first formal activity—in the timeline,
+            the materials, the stakeholder conversations, and the trust built with
+            the people a project is meant to serve.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
   </main>
 
   <main class="page-view" data-page="projects">
@@ -4123,7 +4329,7 @@
         <p>
           A running record of how our community diagnosis developed—from reassessment
           and prioritization to fieldwork, data consolidation, community validation,
-          and early intervention planning.
+          early intervention planning, and implementation preparation.
         </p>
       </div>
 
@@ -4226,6 +4432,17 @@
             </div>
           </div>
         </article>
+
+        <article class="project-step">
+          <div class="project-week"><span>Week</span>13</div>
+          <div class="project-main">
+            <h3>Implementation Preparation &amp; Community Engagement</h3>
+            <div class="project-columns">
+              <div><small>Activities &amp; Reflections</small><p>Refined objectives for toddlers, Child Development Workers, and caregivers; drafted a January-start Gantt chart; identified needed resources and inventory; and developed a project title. Later, group leaders consulted barangay stakeholders while the rest of the group engaged with children at the daycare.</p></div>
+              <div><small>Discoveries &amp; Challenges</small><p>The planning details made the intervention feel operational, while time with the children gave an early preview of the practical realities of age-appropriate implementation. The challenge is coordinating stakeholder support, resources, scheduling, and the needs of three target populations without overcomplicating the project.</p></div>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -4287,16 +4504,17 @@
       <h2>The journal continues.</h2>
 
       <p>
-        Twelve weeks into FCM 3, I am beginning to see community medicine less as a
+        Thirteen weeks into FCM 3, I am beginning to see community medicine less as a
         separate subject and more as a way of understanding how health actually happens.
         The work has moved from frameworks and case discussions to community diagnosis,
         partnership, adaptation, field data collection, analysis, community validation,
-        and now the first stages of intervention planning. That progression has made
-        community medicine feel less like a sequence of classroom requirements and more
-        like an ongoing conversation with the people whose health we are trying to
-        understand—and with the practical question of what can be done next. This
-        portfolio is still in progress, and I expect the next entries to keep challenging
-        how I connect clinical thinking with the realities of families and communities.
+        intervention planning, and now the practical preparation needed before
+        implementation. As objectives become timelines, materials, stakeholder
+        conversations, and real encounters with the people we hope to serve, the project
+        feels increasingly connected to the realities of the community rather than to a
+        sequence of classroom requirements. This portfolio is still in progress, and I
+        expect the next entries to keep challenging how I connect clinical thinking with
+        the realities of families and communities.
       </p>
     </div>
   </section>
@@ -4431,7 +4649,7 @@
     function routeFromHash() {
       const hash = location.hash.replace("#", "");
 
-      if (/^week(?:11|10|[1-9])$/.test(hash)) {
+      if (/^week(?:1[0-3]|[1-9])$/.test(hash)) {
         showPage("reflections", {
           updateUrl: false,
           scrollTop: false,

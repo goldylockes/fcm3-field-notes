@@ -2734,6 +2734,38 @@
       }
     }
 
+  
+    /* =========================================================
+       DOCUMENTATION — four-photo 2 × 2 equal grid
+       ========================================================= */
+
+    .documentation-gallery {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      gap: 26px 22px !important;
+    }
+
+    .documentation-photo,
+    .documentation-photo:nth-child(3),
+    .documentation-photo:nth-child(4) {
+      grid-column: auto !important;
+      margin: 0 !important;
+    }
+
+    .documentation-photo img,
+    .documentation-photo:nth-child(3) img,
+    .documentation-photo:nth-child(4) img {
+      width: 100% !important;
+      aspect-ratio: 4 / 3 !important;
+      max-height: none !important;
+      object-fit: cover !important;
+    }
+
+    @media (max-width: 760px) {
+      .documentation-gallery {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
   </style>
 </head>
 
@@ -4487,6 +4519,17 @@
           >
           <figcaption>
             Community diagnosis presentation · Week 10 · October 08, 2026
+          </figcaption>
+        </figure>
+
+        <figure class="documentation-photo">
+          <img
+            src="week13-daycare.jpeg"
+            alt="FCM 3 students engaging with children inside the Barangay 655 daycare"
+            style="object-position:center center;"
+          >
+          <figcaption>
+            Daycare engagement · Week 13 · October 28, 2026
           </figcaption>
         </figure>
       </div>
